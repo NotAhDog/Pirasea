@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b10yl0m5jvs56"]
+
+[ext_resource type="Script" path="res://Rowboat.gd" id="1_ibyr2"]
+[ext_resource type="Texture2D" uid="uid://8auufmeio0kn" path="res://Rowboat.png" id="2_vyyyj"]
+
+[node name="Rowboat" type="CharacterBody2D"]
+script = ExtResource("1_ibyr2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+rotation = 1.5708
+texture = ExtResource("2_vyyyj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
+polygon = PackedVector2Array(-7, -13, -1, -18, 1, -18, 7, -13, 7, -4, 14, 3, 14, 4, 11, 4, 7, 0, 7, 12, 2, 15, -2, 15, -7, 12, -7, 0, -11, 4, -14, 4, -14, 3, -7, -4)
