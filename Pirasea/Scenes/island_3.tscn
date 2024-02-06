@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0tdcp7l7wvlu"]
 
-[ext_resource type="Texture2D" uid="uid://dwc4vvkbwx33k" path="res://Island 3.png" id="1_4076p"]
+[ext_resource type="Texture2D" uid="uid://dwc4vvkbwx33k" path="res://Art/Island 3.png" id="1_4076p"]
 
 [node name="Island3" type="Area2D"]
 

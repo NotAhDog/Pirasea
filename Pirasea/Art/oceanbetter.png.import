@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l4edohwutx4b"
-path="res://.godot/imported/island2.png-4c5c8239ec1684ab3491a74c84f41858.ctex"
+uid="uid://bkms55k5jqftp"
+path="res://.godot/imported/oceanbetter.png-3e1967223ccd50fba094626026d160fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://island2.png"
-dest_files=["res://.godot/imported/island2.png-4c5c8239ec1684ab3491a74c84f41858.ctex"]
+source_file="res://Art/oceanbetter.png"
+dest_files=["res://.godot/imported/oceanbetter.png-3e1967223ccd50fba094626026d160fb.ctex"]
 
 [params]
 

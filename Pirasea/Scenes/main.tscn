@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://dadc2u4m8itxp"]
 
-[ext_resource type="Script" path="res://Camera2D.gd" id="2_i2gmc"]
-[ext_resource type="Texture2D" uid="uid://bkms55k5jqftp" path="res://oceanbetter.png" id="3_py1ig"]
-[ext_resource type="Texture2D" uid="uid://b7t2p584332yl" path="res://Island 1.png" id="4_0fuhj"]
-[ext_resource type="PackedScene" uid="uid://c34ipo6uw0vw7" path="res://galleonnavy.tscn" id="4_h56da"]
-[ext_resource type="Texture2D" uid="uid://l4edohwutx4b" path="res://island2.png" id="5_tu7bl"]
-[ext_resource type="PackedScene" uid="uid://b0tdcp7l7wvlu" path="res://island_3.tscn" id="6_letxn"]
+[ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="2_i2gmc"]
+[ext_resource type="Texture2D" uid="uid://bkms55k5jqftp" path="res://Art/oceanbetter.png" id="3_py1ig"]
+[ext_resource type="Texture2D" uid="uid://b7t2p584332yl" path="res://Art/Island 1.png" id="4_0fuhj"]
+[ext_resource type="PackedScene" uid="uid://c34ipo6uw0vw7" path="res://Scenes/galleonnavy.tscn" id="4_h56da"]
+[ext_resource type="Texture2D" uid="uid://l4edohwutx4b" path="res://Art/island2.png" id="5_tu7bl"]
+[ext_resource type="PackedScene" uid="uid://b0tdcp7l7wvlu" path="res://Scenes/island_3.tscn" id="6_letxn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vt7hc"]
 texture = ExtResource("3_py1ig")

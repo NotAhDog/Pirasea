@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkms55k5jqftp"
-path="res://.godot/imported/oceanbetter.png-c4a13802352a8c389ef6c42a36d9df45.ctex"
+uid="uid://8auufmeio0kn"
+path="res://.godot/imported/Rowboat.png-6f1b1af40519b7140baa9f39aebef71f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://oceanbetter.png"
-dest_files=["res://.godot/imported/oceanbetter.png-c4a13802352a8c389ef6c42a36d9df45.ctex"]
+source_file="res://Art/Rowboat.png"
+dest_files=["res://.godot/imported/Rowboat.png-6f1b1af40519b7140baa9f39aebef71f.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwc4vvkbwx33k"
-path="res://.godot/imported/Island 3.png-75379a1ad39a72dc4ae9e08ba669e424.ctex"
+uid="uid://bli3yxspw0p1b"
+path="res://.godot/imported/galleonnavy.png-7108f0509040db632480ca15d8cb2746.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Island 3.png"
-dest_files=["res://.godot/imported/Island 3.png-75379a1ad39a72dc4ae9e08ba669e424.ctex"]
+source_file="res://Art/galleonnavy.png"
+dest_files=["res://.godot/imported/galleonnavy.png-7108f0509040db632480ca15d8cb2746.ctex"]
 
 [params]
 
