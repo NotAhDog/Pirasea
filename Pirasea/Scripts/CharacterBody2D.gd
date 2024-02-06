@@ -1,15 +1,15 @@
 extends CharacterBody2D
 
 var wheel_base = 34
-var steering_angle = 50
-var engine_power = 100
+var steering_angle = 25
+var engine_power = 50
 var friction = -10
 var drag = -0.01
-var braking = -450
-var max_speed_reverse = 10
-var slip_speed = 200
-var traction_fast = 2.5
-var traction_slow = 50
+var braking = -100
+var max_speed_reverse = 15
+var slip_speed = 100
+var traction_fast = 1
+var traction_slow = 10
 var acceleration = Vector2.ZERO
 var steer_direction
 
@@ -54,4 +54,4 @@ func calculate_steering(delta):
 	if d < 0:
 		velocity = -new_heading * min(velocity.length(), max_speed_reverse)
 # velocity = new_heading * velocity.length()
-	rotation = new_heading.angle()	
+	rotation = new_heading.angle()
