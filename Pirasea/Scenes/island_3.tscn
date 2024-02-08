@@ -2,14 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://dwc4vvkbwx33k" path="res://Art/Island 3.png" id="1_4076p"]
 
-[node name="Island3" type="Area2D"]
+[node name="StaticBody2D" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_4076p")
 
 [node name="Dock" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-46, -38, -43, -50, -31, -54, -16, -57, -10, -57, -9, -65, -3, -65, -3, -56, 19, -56, 24, -52, 30, -59, 40, -61, 24, -6, -8, 4, -53, -4, -52, -20)
+polygon = PackedVector2Array(-46, -38, -43, -50, -31, -54, -16, -57, -10, -57, -9, -65, -3, -65, -3, -56, 7, -58, 19, -58, 24, -52, 30, -59, 40, -61, 24, -6, -8, 4, -53, -4, -52, -20)
 
 [node name="Bush" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-53, -4, -57, 6, -58, 22, -58, 38, -54, 46, -47, 48, -39, 49, -31, 50, -25, 59, -7, 60, 3, 60, 23, 61, 44, 60, 57, 53, 59, 42, 53, 35, 51, 24, 61, 14, 61, -1, 56, -8, 58, -19, 60, -29, 63, -41, 60, -51, 49, -58, 40, -61, 32, -35, 24, -8, 14, -5, -2, 1, -14, 2, -27, 0)

@@ -93,7 +93,7 @@ layer_0/tile_data = PackedInt32Array(-1048591, 65536, 4, -983055, 65536, 5, -917
 z_index = 42
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(0.75, 0.75)
 script = ExtResource("2_i2gmc")
 
 [node name="Island3" parent="." instance=ExtResource("6_letxn")]

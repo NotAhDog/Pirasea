@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://b7t2p584332yl" path="res://Art/Island 1.png" id="1_6xl6k"]
 
-[node name="Island1" type="Area2D"]
+[node name="StaticBody2D" type="StaticBody2D"]
 
-[node name="Island1" type="Sprite2D" parent="."]
+[node name="Island2" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(477, -179)
 rotation = 0.699877
