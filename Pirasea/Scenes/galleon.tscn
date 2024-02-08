@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c34ipo6uw0vw7"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterBody2D.gd" id="1_qeckk"]
-[ext_resource type="Texture2D" uid="uid://bli3yxspw0p1b" path="res://Art/galleonnavy.png" id="2_31esj"]
+[ext_resource type="Texture2D" uid="uid://bdfrc1rbd03ym" path="res://Art/Galleon.png" id="2_bv6mv"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_qeckk")
@@ -10,7 +10,7 @@ script = ExtResource("1_qeckk")
 texture_filter = 1
 rotation = 1.5708
 scale = Vector2(1.75, 1.75)
-texture = ExtResource("2_31esj")
+texture = ExtResource("2_bv6mv")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-33, -24, -12, -24, 12, -21, 33, -12, 47, -4, 49, -2, 49, 2, 47, 4, 33, 12, 12, 21, -12, 24, -33, 24, -40, 23, -54, 3, -54, -3, -40, -22)

@@ -21,6 +21,7 @@ func _physics_process(delta):
 	calculate_steering(delta)
 	velocity += acceleration * delta
 	move_and_slide()
+	AutoloadScript.player_position = position
 
 func apply_friction(delta):
 	if acceleration == Vector2.ZERO and velocity.length() < 50:
