@@ -92,11 +92,11 @@ position = Vector2(566, -365)
 [node name="Island2" parent="." instance=ExtResource("3_lnidn")]
 position = Vector2(-852, 53)
 
-[node name="Galleon" parent="." instance=ExtResource("4_h56da")]
+[node name="Player" parent="." instance=ExtResource("4_h56da")]
 z_index = 42
 position = Vector2(-256, 312)
 
-[node name="Camera2D" type="Camera2D" parent="Galleon"]
+[node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(0.75, 0.75)
 script = ExtResource("2_i2gmc")
 
