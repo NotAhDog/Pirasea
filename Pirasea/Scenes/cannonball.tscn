@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://k5rut2uhq6nq"]
+
+[ext_resource type="Texture2D" uid="uid://b4otd7u7txnbq" path="res://Art/Cannonball.png" id="1_c273j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_05n8g"]
+radius = 3.0
+
+[node name="Cannonball" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_c273j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_05n8g")

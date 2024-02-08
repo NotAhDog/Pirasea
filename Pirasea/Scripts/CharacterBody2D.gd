@@ -14,7 +14,6 @@ var acceleration = Vector2.ZERO
 var steer_direction
 var health = 3
 
-
 func _physics_process(delta):
 	acceleration = Vector2.ZERO
 	get_input()

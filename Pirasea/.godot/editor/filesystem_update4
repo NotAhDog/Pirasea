@@ -7,3 +7,5 @@ res://Scenes/autoload.tscn
 res://Scripts/CharacterBody2D.gd
 res://Scripts/enemygalleon.gd
 res://Scripts/autoload.gd
+res://Scripts/game.gd
+res://Scenes/cannonball.tscn
