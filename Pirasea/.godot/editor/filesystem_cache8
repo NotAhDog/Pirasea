@@ -1,30 +1,30 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1707422987
-::res://Art/::1707422740
-Cannonball.png::CompressedTexture2D::4451959131120690510::1707422738::1707422740::1::::<><>::
-Galleon.png::CompressedTexture2D::2608346255761575812::1707421235::1707421235::1::::<><>::
-galleonnavy.png::CompressedTexture2D::3176757157150578361::1707421235::1707421235::1::::<><>::
-icon.svg::CompressedTexture2D::1029442051644767724::1707421235::1707421320::1::::<><>::
-island2.png::CompressedTexture2D::832193207406483599::1707421235::1707421235::1::::<><>::
-Island 1.png::CompressedTexture2D::4673354631185768359::1707421235::1707421235::1::::<><>::
-Island 3.png::CompressedTexture2D::8709344779600534762::1707421235::1707421235::1::::<><>::
-ocean.png::CompressedTexture2D::2008374345820526788::1707421235::1707421235::1::::<><>::
-oceanbetter.png::CompressedTexture2D::3114229725333358969::1707421235::1707421235::1::::<><>::
-Rowboat.png::CompressedTexture2D::2317482177135911477::1707421235::1707421235::1::::<><>::
-::res://Scenes/::1707423247
-autoload.tscn::PackedScene::2747700383523115992::1707422746::0::1::::<><>::res://Scripts/autoload.gd
-enemygalleon.tscn::PackedScene::4932986903814497726::1707422746::0::1::::<><>::uid://bli3yxspw0p1b::::res://Art/galleonnavy.png<>res://Scripts/enemygalleon.gd
-galleon.tscn::PackedScene::6798509251124501960::1707423247::0::1::::<><>::res://Scripts/CharacterBody2D.gd<>uid://bdfrc1rbd03ym::::res://Art/Galleon.png
-island_1.tscn::PackedScene::1420437577496352215::1707421394::0::1::::<><>::uid://b7t2p584332yl::::res://Art/Island 1.png
-island_2.tscn::PackedScene::8266611341462444155::1707421394::0::1::::<><>::uid://l4edohwutx4b::::res://Art/island2.png
-island_3.tscn::PackedScene::4180551512364590830::1707421235::0::1::::<><>::uid://dwc4vvkbwx33k::::res://Art/Island 3.png
-main.tscn::PackedScene::7165625930618439929::1707423019::0::1::::<><>::uid://uicntw7khg0v::::res://Scenes/island_1.tscn<>res://Scripts/Camera2D.gd<>uid://dp1n47p45xco6::::res://Scenes/island_2.tscn<>uid://bkms55k5jqftp::::res://Art/oceanbetter.png<>uid://c34ipo6uw0vw7::::res://Scenes/galleon.tscn<>uid://b0tdcp7l7wvlu::::res://Scenes/island_3.tscn<>uid://ccjttrcjrs2pu::::res://Scenes/enemygalleon.tscn
-cannonball.tscn::PackedScene::764888714329344886::1707422945::0::1::::<><>::uid://b4otd7u7txnbq::::res://Art/Cannonball.png
-game.gd::GDScript::-1::1707423626::0::1::::<>Node<>::
-rowboat.tscn::PackedScene::4264418246690130011::1707421235::0::1::::<><>::res://Scripts/Rowboat.gd<>uid://8auufmeio0kn::::res://Art/Rowboat.png
-::res://Scripts/::1707423247
-autoload.gd::GDScript::-1::1707423574::0::1::::<>Node<>::
-Camera2D.gd::GDScript::-1::1707421235::0::1::::<>Camera2D<>::
-CharacterBody2D.gd::GDScript::-1::1707423247::0::1::::<>CharacterBody2D<>::
-enemygalleon.gd::GDScript::-1::1707422500::0::1::::<>CharacterBody2D<>::
-Rowboat.gd::GDScript::-1::1707421235::0::1::::<>CharacterBody2D<>::
+::res://::1707429021
+::res://Art/::1707428931
+Cannonball.png::CompressedTexture2D::4451959131120690510::1707428931::1707428931::1::::<><>::
+Galleon.png::CompressedTexture2D::2608346255761575812::1707428931::1707428931::1::::<><>::
+galleonnavy.png::CompressedTexture2D::3176757157150578361::1707340059::1707346336::1::::<><>::
+icon.svg::CompressedTexture2D::1029442051644767724::1707340059::1707429024::1::::<><>::
+island2.png::CompressedTexture2D::832193207406483599::1707340059::1707346336::1::::<><>::
+Island 1.png::CompressedTexture2D::4673354631185768359::1707340059::1707346336::1::::<><>::
+Island 3.png::CompressedTexture2D::8709344779600534762::1707340059::1707346336::1::::<><>::
+ocean.png::CompressedTexture2D::2008374345820526788::1707340059::1707346336::1::::<><>::
+oceanbetter.png::CompressedTexture2D::3114229725333358969::1707340059::1707346336::1::::<><>::
+Rowboat.png::CompressedTexture2D::2317482177135911477::1707340059::1707346336::1::::<><>::
+::res://Scenes/::1707428931
+autoload.tscn::PackedScene::2747700383523115992::1707428931::0::1::::<><>::res://Scripts/autoload.gd
+cannonball.tscn::PackedScene::764888714329344886::1707428931::0::1::::<><>::uid://b4otd7u7txnbq::::res://Art/Cannonball.png
+enemygalleon.tscn::PackedScene::4932986903814497726::1707428931::0::1::::<><>::uid://bli3yxspw0p1b::::res://Art/galleonnavy.png<>res://Scripts/enemygalleon.gd
+galleon.tscn::PackedScene::6798509251124501960::1707428931::0::1::::<><>::res://Scripts/CharacterBody2D.gd<>uid://bdfrc1rbd03ym::::res://Art/Galleon.png
+island_1.tscn::PackedScene::1420437577496352215::1707428931::0::1::::<><>::uid://b7t2p584332yl::::res://Art/Island 1.png
+island_2.tscn::PackedScene::8266611341462444155::1707428931::0::1::::<><>::uid://l4edohwutx4b::::res://Art/island2.png
+island_3.tscn::PackedScene::4180551512364590830::1707353829::0::1::::<><>::uid://dwc4vvkbwx33k::::res://Art/Island 3.png
+main.tscn::PackedScene::7165625930618439929::1707428931::0::1::::<><>::res://Scripts/game.gd<>uid://uicntw7khg0v::::res://Scenes/island_1.tscn<>res://Scripts/Camera2D.gd<>uid://dp1n47p45xco6::::res://Scenes/island_2.tscn<>uid://bkms55k5jqftp::::res://Art/oceanbetter.png<>uid://c34ipo6uw0vw7::::res://Scenes/galleon.tscn<>uid://b0tdcp7l7wvlu::::res://Scenes/island_3.tscn<>uid://ccjttrcjrs2pu::::res://Scenes/enemygalleon.tscn
+rowboat.tscn::PackedScene::4264418246690130011::1707353632::0::1::::<><>::res://Scripts/Rowboat.gd<>uid://8auufmeio0kn::::res://Art/Rowboat.png
+::res://Scripts/::1707428931
+autoload.gd::GDScript::-1::1707428931::0::1::::<>Node<>::
+Camera2D.gd::GDScript::-1::1707340059::0::1::::<>Camera2D<>::
+CharacterBody2D.gd::GDScript::-1::1707428931::0::1::::<>CharacterBody2D<>::
+enemygalleon.gd::GDScript::-1::1707428931::0::1::::<>CharacterBody2D<>::
+game.gd::GDScript::-1::1707428931::0::1::::<>Node<>::
+Rowboat.gd::GDScript::-1::1707340059::0::1::::<>CharacterBody2D<>::

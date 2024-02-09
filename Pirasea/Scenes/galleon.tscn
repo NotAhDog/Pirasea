@@ -24,5 +24,8 @@ polygon = PackedVector2Array(-33, -24, -12, -24, 12, -21, 33, -12, 47, -4, 49, -
 [node name="Cannon" type="Timer" parent="."]
 autostart = true
 
+[node name="CannonPoint1" type="Node2D" parent="."]
+position = Vector2(-17, -32)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Cannon" to="." method="_on_cannon_timeout"]
