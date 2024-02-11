@@ -1,7 +1,6 @@
-res://Scenes/main.tscn
 res://Scenes/galleon.tscn
+res://Scenes/main.tscn
 res://Scenes/enemygalleon.tscn
 res://Scenes/autoload.tscn
 res://Scenes/cannonball.tscn
 res://Scripts/game.gd
-res://Scripts/autoload.gd

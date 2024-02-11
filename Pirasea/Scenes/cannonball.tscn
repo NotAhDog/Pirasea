@@ -5,7 +5,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_05n8g"]
 radius = 3.0
 
-[node name="Cannonball" type="StaticBody2D"]
+[node name="RigidBody2D" type="RigidBody2D"]
+gravity_scale = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
