@@ -2,6 +2,7 @@ extends Node
 
 
 var cannonball = preload("res://Scenes/cannonball.tscn")
+var enemygalleon = preload("res://Scenes/enemygalleon.tscn")
 var cannonballxv = 0
 var cannonballyv = 0
 
@@ -20,3 +21,9 @@ func _spawn_cannon_ball(spawn_location, side):
 		cannonballxv = cos($Player.rotation + 1.570795)*300
 		cannonballyv = sin($Player.rotation + 1.570795)*300
 	cannonballinstance.linear_velocity = Vector2(cannonballxv,cannonballyv)
+
+func _on_enemy_galleon_timeout():
+	var enemygalleoninstance = enemygalleon.instantiate()
+	add_child(enemygalleoninstance)
+	enemygalleoninstance.position = AutoloadScript._choose_random_spawn()
+	

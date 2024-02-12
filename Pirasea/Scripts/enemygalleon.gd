@@ -17,3 +17,10 @@ func _on_area_2d_area_entered(area):
 		get_node("..").add_child(coininstance)
 		coininstance.global_position = self.global_position
 		self.queue_free()
+
+
+func _on_area_2d_body_entered(body):
+	if $Timer.wait_time > 0 and "island" in str(body).to_lower():
+		self.position = AutoloadScript._choose_random_spawn()
+		$Timer.wait_time = 0.1
+		print("Location changed")

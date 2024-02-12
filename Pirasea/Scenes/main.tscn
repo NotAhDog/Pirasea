@@ -96,7 +96,7 @@ position = Vector2(-852, 53)
 
 [node name="Player" parent="." instance=ExtResource("4_h56da")]
 z_index = 42
-position = Vector2(-256, 312)
+position = Vector2(219, 284)
 rotation = -0.349066
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -113,4 +113,9 @@ autostart = true
 
 [node name="Enemy" parent="." instance=ExtResource("8_w4mk6")]
 
+[node name="EnemyGalleon" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
 [connection signal="timeout" from="Cannonball" to="." method="_on_cannonball_timeout"]
+[connection signal="timeout" from="EnemyGalleon" to="." method="_on_enemy_galleon_timeout"]
