@@ -12,7 +12,6 @@ var traction_fast = 1
 var traction_slow = 10
 var acceleration = Vector2.ZERO
 var steer_direction
-var health = 3
 
 func _physics_process(delta):
 	acceleration = Vector2.ZERO
@@ -59,3 +58,4 @@ func calculate_steering(delta):
 
 func _on_area_2d_body_entered(body):
 	AutoloadScript.damaged()
+	print("OW")

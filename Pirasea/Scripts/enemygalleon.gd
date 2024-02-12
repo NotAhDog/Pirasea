@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var speed = 50
+var coin = preload("res://Scenes/coin.tscn")
 
 func _process(delta):
 	velocity = position.direction_to(AutoloadScript.player_position) * speed
@@ -8,3 +9,11 @@ func _process(delta):
 	if velocity[0] > 0: rotation = atan(velocity[1]/velocity[0])
 	else: rotation = atan(velocity[1]/velocity[0]) + 3.14159
 
+
+func _on_area_2d_area_entered(area):
+	print(area)
+	if "cannonball" in str(area).to_lower():
+		var coininstance = coin.instantiate()
+		get_node("..").add_child(coininstance)
+		coininstance.global_position = self.global_position
+		self.queue_free()

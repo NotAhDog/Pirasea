@@ -1,16 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://k5rut2uhq6nq"]
+[gd_scene load_steps=4 format=3 uid="uid://k5rut2uhq6nq"]
 
+[ext_resource type="Script" path="res://Scripts/cannonball.gd" id="1_0cxfs"]
 [ext_resource type="Texture2D" uid="uid://b4otd7u7txnbq" path="res://Art/Cannonball.png" id="1_c273j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_05n8g"]
 radius = 3.0
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="Cannonball" type="RigidBody2D"]
 gravity_scale = 0.0
+script = ExtResource("1_0cxfs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_c273j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Disappear" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Cannonball" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cannonball"]
+scale = Vector2(1.1, 1.1)
 shape = SubResource("CircleShape2D_05n8g")
+
+[connection signal="timeout" from="Disappear" to="." method="_on_disappear_timeout"]
+[connection signal="body_entered" from="Cannonball" to="." method="_on_area_2d_body_entered"]

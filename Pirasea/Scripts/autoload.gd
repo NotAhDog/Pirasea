@@ -1,10 +1,12 @@
 extends Node
 
 var player_position
-var player_health = 3
+var player_health = 4
+var player_money = 0
 
 
 func damaged():
 	player_health -= 1
 	if player_health <= 0:
-		print("player dead") #respawn
+		get_tree().reload_current_scene()
+		player_health = 4
