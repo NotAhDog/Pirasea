@@ -6,6 +6,9 @@ var enemygalleon = preload("res://Scenes/enemygalleon.tscn")
 var cannonballxv = 0
 var cannonballyv = 0
 
+func _ready():
+	AutoloadScript.player_health += 1
+
 func _on_cannonball_timeout():
 	for i in get_node("Player/SpawnHandler").get_children():
 		_spawn_cannon_ball(i.global_position, i.position)

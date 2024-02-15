@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bage11eoe04ud"]
+
+[ext_resource type="FontFile" uid="uid://cf8w3t5vni62p" path="res://Themes/Freebooter-6yn1.ttf" id="1_q1gqj"]
+
+[resource]
+default_font = ExtResource("1_q1gqj")
+default_font_size = 32

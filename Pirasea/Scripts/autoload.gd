@@ -1,15 +1,18 @@
 extends Node
 
 var player_position
-var player_health = 4
+var player_max_health = 3
+var player_health = 300000
 var player_money = 0
-
 
 func damaged():
 	player_health -= 1
+	get_node("/root/Main/Player/Camera2D/UI/HealthBar").value = float(player_health) / player_max_health*100
 	if player_health <= 0:
 		get_tree().reload_current_scene()
-		player_health = 4
+		player_health = 3
+		player_max_health = 3
+		player_money = 0
 
 func _choose_random_spawn():
 	var screen_side_spawn = randi_range(1,4)
@@ -27,3 +30,4 @@ func _choose_random_spawn():
 		enemyspawn.x += -768
 		enemyspawn.y += randi_range(-512,512)
 	return enemyspawn
+

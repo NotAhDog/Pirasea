@@ -30,7 +30,6 @@ func apply_friction(delta):
 	acceleration += drag_force + friction_force
 
 func get_input():
-	
 	var turn = Input.get_axis("left", "right")
 	steer_direction = turn * deg_to_rad(steering_angle)
 	if Input.is_action_pressed("foward"):
@@ -58,4 +57,3 @@ func calculate_steering(delta):
 
 func _on_area_2d_body_entered(body):
 	AutoloadScript.damaged()
-	print("OW")
