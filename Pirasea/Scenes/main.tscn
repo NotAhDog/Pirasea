@@ -241,6 +241,7 @@ shape = SubResource("RectangleShape2D_nn5pn")
 
 [node name="Shop" type="CanvasLayer" parent="."]
 process_mode = 3
+visible = false
 script = ExtResource("14_7huxb")
 
 [node name="Cards" type="CenterContainer" parent="Shop"]
