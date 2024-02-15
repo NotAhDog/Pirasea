@@ -12,3 +12,4 @@ res://Scripts/game.gd
 res://Scripts/coin.gd
 res://Scenes/PauseMenu.gd
 res://Scenes/Shop.gd
+res://Scripts/Paused.gd
