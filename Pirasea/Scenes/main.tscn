@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dadc2u4m8itxp"]
+[gd_scene load_steps=28 format=3 uid="uid://dadc2u4m8itxp"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_m3yls"]
 [ext_resource type="PackedScene" uid="uid://uicntw7khg0v" path="res://Scenes/island_1.tscn" id="2_a2rqf"]
@@ -10,10 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://b0tdcp7l7wvlu" path="res://Scenes/island_3.tscn" id="6_letxn"]
 [ext_resource type="Theme" uid="uid://bage11eoe04ud" path="res://Themes/ingametheme.tres" id="7_lo45m"]
 [ext_resource type="Texture2D" uid="uid://dtct1g3qieuk3" path="res://Art/Pirasea Gold Coin.png" id="7_xydeu"]
-[ext_resource type="PackedScene" uid="uid://ccjttrcjrs2pu" path="res://Scenes/enemygalleon.tscn" id="8_w4mk6"]
 [ext_resource type="Texture2D" uid="uid://c4xyf3wo42epi" path="res://Art/Health Bar.png" id="9_3norj"]
 [ext_resource type="Texture2D" uid="uid://6w2bhir5gquy" path="res://Art/Paused Menu.png" id="10_dogds"]
 [ext_resource type="Script" path="res://Scenes/Shop.gd" id="14_7huxb"]
+[ext_resource type="Texture2D" uid="uid://bbml07ien7v6g" path="res://Art/Cannon ball upgrade card.png" id="14_wfqu0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r2381"]
 atlas = ExtResource("10_dogds")
@@ -129,13 +129,19 @@ texture = ExtResource("3_py1ig")
 sources/0 = SubResource("TileSetAtlasSource_vt7hc")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nq87p"]
-bg_color = Color(0.345098, 0.690196, 0.419608, 0)
+bg_color = Color(0.423651, 0.423651, 0.423651, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4d57a"]
 bg_color = Color(0.345098, 0.690196, 0.419608, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nn5pn"]
 size = Vector2(140, 140)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_caexn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7fjf2"]
+bg_color = Color(0.545098, 0.364706, 0.254902, 0.831373)
 
 [node name="Main" type="Node"]
 process_mode = 1
@@ -223,10 +229,8 @@ scale = Vector2(10, 10)
 [node name="Cannonball" type="Timer" parent="."]
 autostart = true
 
-[node name="Enemy" parent="." instance=ExtResource("8_w4mk6")]
-
 [node name="EnemyGalleon" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 autostart = true
 
 [node name="ShopArea" type="Area2D" parent="."]
@@ -237,17 +241,76 @@ shape = SubResource("RectangleShape2D_nn5pn")
 
 [node name="Shop" type="CanvasLayer" parent="."]
 process_mode = 3
-visible = false
 script = ExtResource("14_7huxb")
 
-[node name="Label" type="Label" parent="Shop"]
-offset_left = 432.0
-offset_top = 235.0
-offset_right = 472.0
-offset_bottom = 258.0
-text = "AAAAAAAAAAAAAAAAAAAAAA"
+[node name="Cards" type="CenterContainer" parent="Shop"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Shop/Cards"]
+layout_mode = 2
+
+[node name="Price" type="HBoxContainer" parent="Shop/Cards/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+
+[node name="Coin" type="TextureRect" parent="Shop/Cards/VBoxContainer/Price"]
+layout_mode = 2
+texture = ExtResource("7_xydeu")
+
+[node name="Cost" type="Label" parent="Shop/Cards/VBoxContainer/Price"]
+layout_mode = 2
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 64
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MoreBlackPowder" type="TextureRect" parent="Shop/Cards"]
+layout_mode = 2
+texture = ExtResource("14_wfqu0")
+
+[node name="MorePlacePowderButton" type="Button" parent="Shop/Cards/MoreBlackPowder"]
+offset_left = -19.0
+offset_top = 35.0
+offset_right = 19.0
+offset_bottom = 51.0
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_caexn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7fjf2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_caexn")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_caexn")
+theme_override_styles/focus = SubResource("StyleBoxFlat_caexn")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Shop/Cards/MoreBlackPowder"]
+offset_left = -20.0
+offset_top = 6.0
+offset_right = 180.0
+offset_bottom = 39.0
+scale = Vector2(0.2, 0.2)
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 32
+text = "More black powder!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="timeout" from="Cannonball" to="." method="_on_cannonball_timeout"]
 [connection signal="timeout" from="EnemyGalleon" to="." method="_on_enemy_galleon_timeout"]
 [connection signal="body_entered" from="ShopArea" to="Shop" method="_on_shop_area_body_entered"]
 [connection signal="body_exited" from="ShopArea" to="Shop" method="_on_shop_area_body_exited"]
+[connection signal="pressed" from="Shop/Cards/MoreBlackPowder/MorePlacePowderButton" to="Shop" method="_on_more_place_powder_button_pressed"]

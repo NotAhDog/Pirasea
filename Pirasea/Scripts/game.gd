@@ -18,11 +18,11 @@ func _spawn_cannon_ball(spawn_location, side):
 	add_child(cannonballinstance)
 	cannonballinstance.position = spawn_location
 	if side[1] < 0:
-		cannonballxv = cos($Player.rotation + 4.712385)*300
-		cannonballyv = sin($Player.rotation + 4.712385)*300
+		cannonballxv = cos($Player.rotation + 4.712385)*AutoloadScript.cannon_ball_speed
+		cannonballyv = sin($Player.rotation + 4.712385)*AutoloadScript.cannon_ball_speed
 	if side[1] > 0:
-		cannonballxv = cos($Player.rotation + 1.570795)*300
-		cannonballyv = sin($Player.rotation + 1.570795)*300
+		cannonballxv = cos($Player.rotation + 1.570795)*AutoloadScript.cannon_ball_speed
+		cannonballyv = sin($Player.rotation + 1.570795)*AutoloadScript.cannon_ball_speed
 	cannonballinstance.linear_velocity = Vector2(cannonballxv,cannonballyv)
 
 func _on_enemy_galleon_timeout():

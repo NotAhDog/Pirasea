@@ -23,3 +23,7 @@ func _on_area_2d_body_entered(body):
 	if $Timer.wait_time > 0 and "island" in str(body).to_lower():
 		self.position = AutoloadScript._choose_random_spawn()
 		$Timer.wait_time = 0.1
+
+
+func _on_timer_timeout():
+	show()

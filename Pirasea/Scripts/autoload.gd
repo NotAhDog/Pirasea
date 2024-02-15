@@ -4,6 +4,7 @@ var player_position
 var player_max_health = 3
 var player_health = 3
 var player_money = 0
+var cannon_ball_speed = 300
 
 func damaged():
 	player_health -= 1
