@@ -1,7 +1,7 @@
 extends Node
 
 var player_position
-var player_health = 4000000000000
+var player_health = 4
 var player_money = 0
 
 

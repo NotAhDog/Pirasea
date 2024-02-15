@@ -1,6 +1,8 @@
+RichTextLabel
+TextEdit
+CanvasLayer
 Timer
 Sprite2D
-TextEdit
 Button
 CollisionShape2D
 Area2D

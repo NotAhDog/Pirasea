@@ -103,6 +103,15 @@ rotation = -0.349066
 zoom = Vector2(0.75, 0.75)
 script = ExtResource("2_i2gmc")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
+
+[node name="Money" type="RichTextLabel" parent="Player/Camera2D/CanvasLayer"]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 147.0
+offset_bottom = 65.0
+text = "Money: "
+
 [node name="Island3" parent="." instance=ExtResource("6_letxn")]
 position = Vector2(778, 1343)
 rotation = -0.349066
