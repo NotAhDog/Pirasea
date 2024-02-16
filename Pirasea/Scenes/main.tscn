@@ -183,7 +183,7 @@ position = Vector2(-852, 53)
 
 [node name="Player" parent="." instance=ExtResource("4_h56da")]
 z_index = 42
-position = Vector2(219, 284)
+position = Vector2(482, 706)
 rotation = -0.349066
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
