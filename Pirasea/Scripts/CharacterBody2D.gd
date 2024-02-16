@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 var wheel_base = 34
-var steering_angle = 25
-var engine_power = 50
+var steering_angle = AutoloadScript.player_turn_speed
+var engine_power = AutoloadScript.player_speed
 var friction = -10
 var drag = -0.01
 var braking = -100

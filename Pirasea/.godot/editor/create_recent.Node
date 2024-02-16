@@ -12,4 +12,3 @@ CanvasLayer
 AnimatedSprite2D
 Node
 CollisionShape2D
-Area2D
