@@ -1,11 +1,2 @@
 res://Scenes/main.tscn
-res://Scenes/galleon.tscn
-res://Scenes/enemygalleon.tscn
-res://Scenes/autoload.tscn
-res://Scenes/cannonball.tscn
-res://Scenes/coin.tscn
-res://Scripts/enemygalleon.gd
-res://Scripts/autoload.gd
 res://Themes/ingametheme.tres
-res://Scenes/Shop.gd
-res://Scripts/game.gd
