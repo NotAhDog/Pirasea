@@ -2,7 +2,7 @@ extends CanvasLayer
 
 var player_in_area = false
 var cards_selected = []
-var players_upgrades = []
+var unlockable = ["ThreeMusketeers"]
 
 #player opening/closing the shop
 func _unhandled_key_input(event):
@@ -23,16 +23,25 @@ func _unpause():
 	get_tree().paused = false
 	
 func _reset_shop():
-	if len(get_node("/root/Main/Shop/Cards").get_children()) < 3:
+	if len(get_node("/root/Main/Shop/Cards").get_children()) <= 3:
 		for i in get_node("/root/Main/Shop/Cards").get_children():
 			i.visible = true
 	else:
 		for i in range(0, 3):
 			var card_selected = randi_range(0, len(get_node("/root/Main/Shop/Cards").get_children())-1)
-			while card_selected in cards_selected:
+			while card_selected in cards_selected or str(_unlocked_card(card_selected)) == "Reset":
 				card_selected = randi_range(0, len(get_node("/root/Main/Shop/Cards").get_children())-1)
 			get_node("/root/Main/Shop/Cards").get_child(card_selected).visible = true
 			cards_selected.append(card_selected)
+			
+func _unlocked_card(selected_card):
+	var card = get_node("/root/Main/Shop/Cards").get_child(selected_card)
+	card = str(card).split(":")[0]
+	if str(card) in str(unlockable):
+		print("Reset")
+		return "Reset"
+	else:
+		return "Good"
 	
 func _open_shop():
 	if cards_selected == []:
@@ -112,6 +121,7 @@ func _on_double_trouble_button_pressed():
 		get_node("/root/Main/Player/Camera2D/UI/Money").text = "Money: " + str(AutoloadScript.player_money)
 		$Cards/DoubleTrouble.queue_free()
 		cards_selected = []
+		unlockable.pop_at(unlockable.find("ThreeMusketeers"))
 		_close_shop()
 
 func _on_three_musketeers_button_pressed():

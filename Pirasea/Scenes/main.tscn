@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://uicntw7khg0v" path="res://Scenes/island_1.tscn" id="2_a2rqf"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="2_i2gmc"]
 [ext_resource type="Script" path="res://Scripts/Paused.gd" id="2_t18u3"]
-[ext_resource type="Texture2D" uid="uid://btgumvrhe530c" path="res://ManImDead(screen).png" id="3_4kyfi"]
+[ext_resource type="Texture2D" uid="uid://6w2bhir5gquy" path="res://Art/Paused Menu.png" id="3_1u3cd"]
 [ext_resource type="PackedScene" uid="uid://dp1n47p45xco6" path="res://Scenes/island_2.tscn" id="3_lnidn"]
 [ext_resource type="Texture2D" uid="uid://bkms55k5jqftp" path="res://Art/oceanbetter.png" id="3_py1ig"]
 [ext_resource type="PackedScene" uid="uid://c34ipo6uw0vw7" path="res://Scenes/galleon.tscn" id="4_h56da"]
@@ -15,15 +15,15 @@
 [ext_resource type="Script" path="res://Scripts/Shop.gd" id="14_7huxb"]
 [ext_resource type="Texture2D" uid="uid://bbml07ien7v6g" path="res://Art/Cannon ball upgrade card.png" id="14_wfqu0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t8dap"]
-atlas = ExtResource("3_4kyfi")
-region = Rect2(0, 0, 128, 118)
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1y6k"]
+atlas = ExtResource("3_1u3cd")
+region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gcal2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t8dap")
+"texture": SubResource("AtlasTexture_g1y6k")
 }],
 "loop": true,
 "name": &"default",
@@ -166,7 +166,7 @@ script = ExtResource("2_i2gmc")
 [node name="Money" type="RichTextLabel" parent="Player/Camera2D/UI"]
 offset_left = 65.0
 offset_top = 64.0
-offset_right = 180.0
+offset_right = 251.0
 offset_bottom = 97.0
 theme = ExtResource("7_lo45m")
 theme_override_font_sizes/normal_font_size = 32
@@ -202,7 +202,7 @@ scale = Vector2(10, 10)
 autostart = true
 
 [node name="EnemyGalleon" type="Timer" parent="."]
-wait_time = 300.0
+wait_time = 3.0
 autostart = true
 
 [node name="ShopArea" type="Area2D" parent="."]

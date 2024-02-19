@@ -6,3 +6,5 @@ res://Scenes/autoload.tscn
 res://Scenes/cannonball.tscn
 res://Scenes/coin.tscn
 res://Scenes/island_3.tscn
+res://Scripts/autoload.gd
+res://Scripts/enemygalleon.gd
