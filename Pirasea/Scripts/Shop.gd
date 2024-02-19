@@ -2,7 +2,7 @@ extends CanvasLayer
 
 var player_in_area = false
 var cards_selected = []
-var unlockable = ["ThreeMusketeers"]
+var unlockable = ["ThreeMusketeers", "TrainedCrew"]
 
 #player opening/closing the shop
 func _unhandled_key_input(event):
@@ -82,6 +82,7 @@ func _on_more_crew_button_pressed():
 		AutoloadScript.player_money -= int($Cards/MoreCrew/Price/Cost.text)
 		get_node("/root/Main/Player/Camera2D/UI/Money").text = "Money: " + str(AutoloadScript.player_money)
 		$Cards/MoreCrew.queue_free()
+		unlockable.pop_at(unlockable.find("TrainedCrew"))
 		cards_selected = []
 		_close_shop()
 
@@ -130,5 +131,14 @@ func _on_three_musketeers_button_pressed():
 		AutoloadScript.player_money -= int($Cards/ThreeMusketeers/Price/Cost.text)
 		get_node("/root/Main/Player/Camera2D/UI/Money").text = "Money: " + str(AutoloadScript.player_money)
 		$Cards/ThreeMusketeers.queue_free()
+		cards_selected = []
+		_close_shop()
+
+func _on_trained_crew_button_pressed():
+	if AutoloadScript.player_money >= int($Cards/TrainedCrew/Price/Cost.text):
+		get_node("/root/Main/Cannonball").wait_time = .5
+		AutoloadScript.player_money -= int($Cards/TrainedCrew/Price/Cost.text)
+		get_node("/root/Main/Player/Camera2D/UI/Money").text = "Money: " + str(AutoloadScript.player_money)
+		$Cards/TrainedCrew.queue_free()
 		cards_selected = []
 		_close_shop()

@@ -708,6 +708,74 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_caexn")
 theme_override_styles/focus = SubResource("StyleBoxFlat_caexn")
 metadata/_edit_use_anchors_ = true
 
+[node name="TrainedCrew" type="TextureRect" parent="Shop/Cards"]
+visible = false
+layout_mode = 2
+texture = ExtResource("14_wfqu0")
+
+[node name="Label" type="Label" parent="Shop/Cards/TrainedCrew"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.516129
+anchor_right = 0.5
+anchor_bottom = 0.516129
+offset_left = -20.0
+offset_top = 6.0
+offset_right = 180.0
+offset_bottom = 39.0
+scale = Vector2(0.2, 0.2)
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 32
+text = "Crew training!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Price" type="HBoxContainer" parent="Shop/Cards/TrainedCrew"]
+z_index = 1
+layout_mode = 2
+offset_left = 13.0
+offset_top = 99.0
+offset_right = 203.0
+offset_bottom = 179.0
+scale = Vector2(0.2, 0.2)
+alignment = 1
+
+[node name="Coin" type="TextureRect" parent="Shop/Cards/TrainedCrew/Price"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("7_xydeu")
+
+[node name="Cost" type="Label" parent="Shop/Cards/TrainedCrew/Price"]
+layout_mode = 2
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 64
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TrainedCrewButton" type="Button" parent="Shop/Cards/TrainedCrew"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.516129
+anchor_right = 0.5
+anchor_bottom = 0.516129
+offset_left = -19.0
+offset_top = 35.0
+offset_right = 19.0
+offset_bottom = 51.0
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_caexn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7fjf2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_caexn")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_caexn")
+theme_override_styles/focus = SubResource("StyleBoxFlat_caexn")
+metadata/_edit_use_anchors_ = true
+
 [connection signal="timeout" from="Cannonball" to="." method="_on_cannonball_timeout"]
 [connection signal="timeout" from="EnemyGalleon" to="." method="_on_enemy_galleon_timeout"]
 [connection signal="body_entered" from="ShopArea" to="Shop" method="_on_shop_area_body_entered"]
@@ -719,3 +787,4 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Shop/Cards/StrongerWood/StrongerWoodButton" to="Shop" method="_on_stronger_wood_button_pressed"]
 [connection signal="pressed" from="Shop/Cards/DoubleTrouble/DoubleTroubleButton" to="Shop" method="_on_double_trouble_button_pressed"]
 [connection signal="pressed" from="Shop/Cards/ThreeMusketeers/ThreeMusketeersButton" to="Shop" method="_on_three_musketeers_button_pressed"]
+[connection signal="pressed" from="Shop/Cards/TrainedCrew/TrainedCrewButton" to="Shop" method="_on_trained_crew_button_pressed"]
