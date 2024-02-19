@@ -1,3 +1,5 @@
+Button
+Label
 HBoxContainer
 VBoxContainer
 CenterContainer
@@ -5,9 +7,7 @@ GridContainer
 TextureRect
 Control
 Sprite2D
-Label
 Node2D
-Button
 CanvasLayer
 AnimatedSprite2D
 Node

@@ -1,0 +1,83 @@
+[gd_scene load_steps=10 format=3 uid="uid://0tetb5sw5505"]
+
+[ext_resource type="Script" path="res://Scenes/Menu.gd" id="1_bsgd2"]
+[ext_resource type="Texture2D" uid="uid://bomxyqi2nvenk" path="res://Art/Menu.png" id="2_2kxi5"]
+[ext_resource type="Theme" uid="uid://bage11eoe04ud" path="res://Themes/ingametheme.tres" id="3_ripkh"]
+[ext_resource type="FontFile" uid="uid://cf8w3t5vni62p" path="res://Themes/Freebooter-6yn1.ttf" id="4_dh0oj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t1118"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6tus1"]
+bg_color = Color(0.478431, 0.282353, 0.254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_07r8m"]
+bg_color = Color(0.478431, 0.282353, 0.254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q768o"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ck081"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bsgd2")
+
+[node name="Menu" type="Sprite2D" parent="."]
+position = Vector2(579, 302)
+scale = Vector2(8.1875, 8.1875)
+texture = ExtResource("2_2kxi5")
+
+[node name="Pirasea" type="Label" parent="."]
+offset_left = 506.0
+offset_top = 77.0
+offset_right = 650.0
+offset_bottom = 142.0
+theme = ExtResource("3_ripkh")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "Pirasea"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 211.0
+offset_right = 711.0
+offset_bottom = 261.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_t1118")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6tus1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_07r8m")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_q768o")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ck081")
+
+[node name="Label" type="Label" parent="PlayButton"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 247.0
+offset_bottom = 48.0
+theme = ExtResource("3_ripkh")
+theme_override_fonts/font = ExtResource("4_dh0oj")
+text = "PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_button_pressed"]
