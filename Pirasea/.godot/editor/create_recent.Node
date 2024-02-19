@@ -1,14 +1,14 @@
+ColorRect
+CanvasLayer
+CenterContainer
 Button
 Label
 HBoxContainer
 VBoxContainer
-CenterContainer
 GridContainer
 TextureRect
 Control
 Sprite2D
 Node2D
-CanvasLayer
 AnimatedSprite2D
 Node
-CollisionShape2D
