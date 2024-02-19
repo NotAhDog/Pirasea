@@ -19,6 +19,12 @@ func damaged():
 		player_health = 3
 		player_max_health = 3
 		player_money = 0
+	else:
+		for i in get_node("/root/Main").get_children():
+			if "Enemy" in str(i) or "CharacterBody2D" in str(i):
+				print(i.velocity)
+				i.velocity = i.velocity.normalized() * -200
+				print(i.velocity)
 
 func _choose_random_spawn():
 	var screen_side_spawn = randi_range(1,4)

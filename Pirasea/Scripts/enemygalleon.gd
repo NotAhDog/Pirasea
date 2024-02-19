@@ -5,7 +5,7 @@ var coin = preload("res://Scenes/coin.tscn")
 
 func _process(delta):
 	velocity = position.direction_to(AutoloadScript.player_position) * speed
-	move_and_slide()
+	move_and_slide() #currently knock back is overriden straight away by the enemies code
 	if velocity[0] > 0: rotation = atan(velocity[1]/velocity[0])
 	else: rotation = atan(velocity[1]/velocity[0]) + 3.14159
 

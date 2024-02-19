@@ -214,7 +214,7 @@ scale = Vector2(10, 10)
 [node name="Cannonball" type="Timer" parent="."]
 autostart = true
 
-[node name="EnemyGalleon" type="Timer" parent="."]
+[node name="Galleon" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
 
@@ -861,7 +861,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_caexn")
 metadata/_edit_use_anchors_ = true
 
 [connection signal="timeout" from="Cannonball" to="." method="_on_cannonball_timeout"]
-[connection signal="timeout" from="EnemyGalleon" to="." method="_on_enemy_galleon_timeout"]
+[connection signal="timeout" from="Galleon" to="." method="_on_enemy_galleon_timeout"]
 [connection signal="body_entered" from="ShopArea" to="Shop" method="_on_shop_area_body_entered"]
 [connection signal="body_exited" from="ShopArea" to="Shop" method="_on_shop_area_body_exited"]
 [connection signal="pressed" from="Shop/Cards/MoreBlackPowder/MorePlacePowderButton" to="Shop" method="_on_more_place_powder_button_pressed"]
