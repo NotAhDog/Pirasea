@@ -3,10 +3,11 @@ extends Node
 var player_position
 var player_max_health = 3
 var player_health = 3
-var player_money = 20
+var player_money = 200
 var player_speed = 50
 var player_turn_speed = 25
 var cannon_ball_speed = 300
+var cannon_ball_amount = 1
 
 func damaged():
 	player_health -= 1

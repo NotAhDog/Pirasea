@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://dadc2u4m8itxp"]
+[gd_scene load_steps=24 format=3 uid="uid://dadc2u4m8itxp"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_m3yls"]
 [ext_resource type="PackedScene" uid="uid://uicntw7khg0v" path="res://Scenes/island_1.tscn" id="2_a2rqf"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="2_i2gmc"]
 [ext_resource type="Script" path="res://Scripts/Paused.gd" id="2_t18u3"]
+[ext_resource type="Texture2D" uid="uid://btgumvrhe530c" path="res://ManImDead(screen).png" id="3_4kyfi"]
 [ext_resource type="PackedScene" uid="uid://dp1n47p45xco6" path="res://Scenes/island_2.tscn" id="3_lnidn"]
 [ext_resource type="Texture2D" uid="uid://bkms55k5jqftp" path="res://Art/oceanbetter.png" id="3_py1ig"]
 [ext_resource type="PackedScene" uid="uid://c34ipo6uw0vw7" path="res://Scenes/galleon.tscn" id="4_h56da"]
@@ -11,47 +12,18 @@
 [ext_resource type="Theme" uid="uid://bage11eoe04ud" path="res://Themes/ingametheme.tres" id="7_lo45m"]
 [ext_resource type="Texture2D" uid="uid://dtct1g3qieuk3" path="res://Art/Pirasea Gold Coin.png" id="7_xydeu"]
 [ext_resource type="Texture2D" uid="uid://c4xyf3wo42epi" path="res://Art/Health Bar.png" id="9_3norj"]
-[ext_resource type="Texture2D" uid="uid://6w2bhir5gquy" path="res://Art/Paused Menu.png" id="10_dogds"]
-[ext_resource type="Script" path="res://Scenes/Shop.gd" id="14_7huxb"]
+[ext_resource type="Script" path="res://Scripts/Shop.gd" id="14_7huxb"]
 [ext_resource type="Texture2D" uid="uid://bbml07ien7v6g" path="res://Art/Cannon ball upgrade card.png" id="14_wfqu0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r2381"]
-atlas = ExtResource("10_dogds")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vug1w"]
-atlas = ExtResource("10_dogds")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_khagc"]
-atlas = ExtResource("10_dogds")
-region = Rect2(0, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_13mos"]
-atlas = ExtResource("10_dogds")
-region = Rect2(128, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2yda8"]
-atlas = ExtResource("10_dogds")
-region = Rect2(0, 256, 128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8dap"]
+atlas = ExtResource("3_4kyfi")
+region = Rect2(0, 0, 128, 118)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gcal2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r2381")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vug1w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_khagc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_13mos")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2yda8")
+"texture": SubResource("AtlasTexture_t8dap")
 }],
 "loop": true,
 "name": &"default",
@@ -183,8 +155,7 @@ position = Vector2(-852, 53)
 
 [node name="Player" parent="." instance=ExtResource("4_h56da")]
 z_index = 42
-position = Vector2(482, 706)
-rotation = -0.349066
+position = Vector2(415, 579)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(0.75, 0.75)
@@ -242,7 +213,6 @@ shape = SubResource("RectangleShape2D_nn5pn")
 
 [node name="Shop" type="CanvasLayer" parent="."]
 process_mode = 3
-visible = false
 script = ExtResource("14_7huxb")
 
 [node name="Cards" type="HBoxContainer" parent="Shop"]
@@ -602,6 +572,140 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_caexn")
 theme_override_styles/focus = SubResource("StyleBoxFlat_caexn")
 metadata/_edit_use_anchors_ = true
 
+[node name="DoubleTrouble" type="TextureRect" parent="Shop/Cards"]
+layout_mode = 2
+texture = ExtResource("14_wfqu0")
+
+[node name="Label" type="Label" parent="Shop/Cards/DoubleTrouble"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.516129
+anchor_right = 0.5
+anchor_bottom = 0.516129
+offset_left = -20.0
+offset_top = 6.0
+offset_right = 180.0
+offset_bottom = 39.0
+scale = Vector2(0.2, 0.2)
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 32
+text = "Double Trouble!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Price" type="HBoxContainer" parent="Shop/Cards/DoubleTrouble"]
+z_index = 1
+layout_mode = 2
+offset_left = 13.0
+offset_top = 99.0
+offset_right = 203.0
+offset_bottom = 179.0
+scale = Vector2(0.2, 0.2)
+alignment = 1
+
+[node name="Coin" type="TextureRect" parent="Shop/Cards/DoubleTrouble/Price"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("7_xydeu")
+
+[node name="Cost" type="Label" parent="Shop/Cards/DoubleTrouble/Price"]
+layout_mode = 2
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 64
+text = "8"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="DoubleTroubleButton" type="Button" parent="Shop/Cards/DoubleTrouble"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.516129
+anchor_right = 0.5
+anchor_bottom = 0.516129
+offset_left = -19.0
+offset_top = 35.0
+offset_right = 19.0
+offset_bottom = 51.0
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_caexn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7fjf2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_caexn")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_caexn")
+theme_override_styles/focus = SubResource("StyleBoxFlat_caexn")
+metadata/_edit_use_anchors_ = true
+
+[node name="ThreeMusketeers" type="TextureRect" parent="Shop/Cards"]
+layout_mode = 2
+texture = ExtResource("14_wfqu0")
+
+[node name="Label" type="Label" parent="Shop/Cards/ThreeMusketeers"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.516129
+anchor_right = 0.5
+anchor_bottom = 0.516129
+offset_left = -20.0
+offset_top = 6.0
+offset_right = 180.0
+offset_bottom = 39.0
+scale = Vector2(0.2, 0.2)
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 32
+text = "Three Musketeers!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Price" type="HBoxContainer" parent="Shop/Cards/ThreeMusketeers"]
+z_index = 1
+layout_mode = 2
+offset_left = 13.0
+offset_top = 99.0
+offset_right = 203.0
+offset_bottom = 179.0
+scale = Vector2(0.2, 0.2)
+alignment = 1
+
+[node name="Coin" type="TextureRect" parent="Shop/Cards/ThreeMusketeers/Price"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("7_xydeu")
+
+[node name="Cost" type="Label" parent="Shop/Cards/ThreeMusketeers/Price"]
+layout_mode = 2
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 64
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ThreeMusketeersButton" type="Button" parent="Shop/Cards/ThreeMusketeers"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.516129
+anchor_right = 0.5
+anchor_bottom = 0.516129
+offset_left = -19.0
+offset_top = 35.0
+offset_right = 19.0
+offset_bottom = 51.0
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_caexn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7fjf2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_caexn")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_caexn")
+theme_override_styles/focus = SubResource("StyleBoxFlat_caexn")
+metadata/_edit_use_anchors_ = true
+
 [connection signal="timeout" from="Cannonball" to="." method="_on_cannonball_timeout"]
 [connection signal="timeout" from="EnemyGalleon" to="." method="_on_enemy_galleon_timeout"]
 [connection signal="body_entered" from="ShopArea" to="Shop" method="_on_shop_area_body_entered"]
@@ -611,3 +715,5 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Shop/Cards/BiggerSails/BiggerSailsButton" to="Shop" method="_on_bigger_sails_button_pressed"]
 [connection signal="pressed" from="Shop/Cards/BiggerRudder/BiggerRudderButton" to="Shop" method="_on_bigger_rudder_button_pressed"]
 [connection signal="pressed" from="Shop/Cards/StrongerWood/StrongerWoodButton" to="Shop" method="_on_stronger_wood_button_pressed"]
+[connection signal="pressed" from="Shop/Cards/DoubleTrouble/DoubleTroubleButton" to="Shop" method="_on_double_trouble_button_pressed"]
+[connection signal="pressed" from="Shop/Cards/ThreeMusketeers/ThreeMusketeersButton" to="Shop" method="_on_three_musketeers_button_pressed"]

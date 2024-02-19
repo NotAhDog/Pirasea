@@ -14,16 +14,59 @@ func _on_cannonball_timeout():
 		_spawn_cannon_ball(i.global_position, i.position)
 
 func _spawn_cannon_ball(spawn_location, side):
-	var cannonballinstance = cannonball.instantiate()
-	add_child(cannonballinstance)
-	cannonballinstance.position = spawn_location
-	if side[1] < 0:
-		cannonballxv = cos($Player.rotation + 4.712385)*AutoloadScript.cannon_ball_speed
-		cannonballyv = sin($Player.rotation + 4.712385)*AutoloadScript.cannon_ball_speed
-	if side[1] > 0:
-		cannonballxv = cos($Player.rotation + 1.570795)*AutoloadScript.cannon_ball_speed
-		cannonballyv = sin($Player.rotation + 1.570795)*AutoloadScript.cannon_ball_speed
-	cannonballinstance.linear_velocity = Vector2(cannonballxv,cannonballyv)
+	if AutoloadScript.cannon_ball_amount == 1:
+		var cannonballinstance = cannonball.instantiate()
+		add_child(cannonballinstance)
+		cannonballinstance.position = spawn_location
+		if side[1] < 0:
+			cannonballxv = cos($Player.rotation + 4.712385)*AutoloadScript.cannon_ball_speed
+			cannonballyv = sin($Player.rotation + 4.712385)*AutoloadScript.cannon_ball_speed
+		elif side[1] > 0:
+			cannonballxv = cos($Player.rotation + 1.570795)*AutoloadScript.cannon_ball_speed
+			cannonballyv = sin($Player.rotation + 1.570795)*AutoloadScript.cannon_ball_speed
+		cannonballinstance.linear_velocity = Vector2(cannonballxv,cannonballyv)
+	if AutoloadScript.cannon_ball_amount == 2:
+		for i in range(2):
+			var cannonballinstance = cannonball.instantiate()
+			add_child(cannonballinstance)
+			cannonballinstance.position = spawn_location
+			if side[1] < 0 and i == 0:
+				cannonballxv = cos($Player.rotation + 4.450586)*AutoloadScript.cannon_ball_speed
+				cannonballyv = sin($Player.rotation + 4.450586)*AutoloadScript.cannon_ball_speed
+			elif side[1] > 0 and i == 0:
+				cannonballxv = cos($Player.rotation + 1.308996)*AutoloadScript.cannon_ball_speed
+				cannonballyv = sin($Player.rotation + 1.308996)*AutoloadScript.cannon_ball_speed
+			elif side[1] < 0 and i == 1:
+				cannonballxv = cos($Player.rotation + 4.974184)*AutoloadScript.cannon_ball_speed
+				cannonballyv = sin($Player.rotation + 4.974184)*AutoloadScript.cannon_ball_speed
+			elif side[1] > 0 and i == 1:
+				cannonballxv = cos($Player.rotation + 1.832594)*AutoloadScript.cannon_ball_speed
+				cannonballyv = sin($Player.rotation + 1.832594)*AutoloadScript.cannon_ball_speed
+			cannonballinstance.linear_velocity = Vector2(cannonballxv,cannonballyv)
+	if AutoloadScript.cannon_ball_amount == 3:
+		for i in range(3):
+			var cannonballinstance = cannonball.instantiate()
+			add_child(cannonballinstance)
+			cannonballinstance.position = spawn_location
+			if side[1] < 0 and i == 0:
+				cannonballxv = cos($Player.rotation + 4.450586)*AutoloadScript.cannon_ball_speed
+				cannonballyv = sin($Player.rotation + 4.450586)*AutoloadScript.cannon_ball_speed
+			elif side[1] > 0 and i == 0:
+				cannonballxv = cos($Player.rotation + 1.308996)*AutoloadScript.cannon_ball_speed
+				cannonballyv = sin($Player.rotation + 1.308996)*AutoloadScript.cannon_ball_speed
+			elif side[1] < 0 and i == 1:
+				cannonballxv = cos($Player.rotation + 4.974184)*AutoloadScript.cannon_ball_speed
+				cannonballyv = sin($Player.rotation + 4.974184)*AutoloadScript.cannon_ball_speed
+			elif side[1] > 0 and i == 1:
+				cannonballxv = cos($Player.rotation + 1.832594)*AutoloadScript.cannon_ball_speed
+				cannonballyv = sin($Player.rotation + 1.832594)*AutoloadScript.cannon_ball_speed
+			elif side[1] < 0 and i == 2:
+				cannonballxv = cos($Player.rotation + 4.712385)*AutoloadScript.cannon_ball_speed
+				cannonballyv = sin($Player.rotation + 4.712385)*AutoloadScript.cannon_ball_speed
+			elif side[1] > 0 and i == 2:
+				cannonballxv = cos($Player.rotation + 1.570795)*AutoloadScript.cannon_ball_speed
+				cannonballyv = sin($Player.rotation + 1.570795)*AutoloadScript.cannon_ball_speed
+			cannonballinstance.linear_velocity = Vector2(cannonballxv,cannonballyv)
 
 func _on_enemy_galleon_timeout():
 	var enemygalleoninstance = enemygalleon.instantiate()

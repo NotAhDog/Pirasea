@@ -93,3 +93,19 @@ func _on_stronger_wood_button_pressed():
 		get_node("/root/Main/Player/Camera2D/UI/Money").text = "Money: " + str(AutoloadScript.player_money)
 		$Cards/StrongerWood.queue_free()
 		_close_shop()
+
+func _on_double_trouble_button_pressed():
+	if AutoloadScript.player_money >= int($Cards/DoubleTrouble/Price/Cost.text):
+		AutoloadScript.cannon_ball_amount = 2
+		AutoloadScript.player_money -= int($Cards/DoubleTrouble/Price/Cost.text)
+		get_node("/root/Main/Player/Camera2D/UI/Money").text = "Money: " + str(AutoloadScript.player_money)
+		$Cards/DoubleTrouble.queue_free()
+		_close_shop()
+
+func _on_three_musketeers_button_pressed():
+	if AutoloadScript.player_money >= int($Cards/ThreeMusketeers/Price/Cost.text):
+		AutoloadScript.cannon_ball_amount = 3
+		AutoloadScript.player_money -= int($Cards/ThreeMusketeers/Price/Cost.text)
+		get_node("/root/Main/Player/Camera2D/UI/Money").text = "Money: " + str(AutoloadScript.player_money)
+		$Cards/ThreeMusketeers.queue_free()
+		_close_shop()
