@@ -1,8 +1,9 @@
 ColorRect
+Label
+HSlider
 CanvasLayer
 CenterContainer
 Button
-Label
 HBoxContainer
 VBoxContainer
 GridContainer
@@ -11,4 +12,3 @@ Control
 Sprite2D
 Node2D
 AnimatedSprite2D
-Node
