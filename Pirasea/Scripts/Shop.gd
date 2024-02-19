@@ -44,6 +44,7 @@ func _unlocked_card(selected_card):
 		return "Good"
 	
 func _open_shop():
+	print(cards_selected)
 	if cards_selected == []:
 		_reset_shop()
 	else:
@@ -140,5 +141,15 @@ func _on_trained_crew_button_pressed():
 		AutoloadScript.player_money -= int($Cards/TrainedCrew/Price/Cost.text)
 		get_node("/root/Main/Player/Camera2D/UI/Money").text = "Money: " + str(AutoloadScript.player_money)
 		$Cards/TrainedCrew.queue_free()
+		cards_selected = []
+		_close_shop()
+
+func _on_wealthier_enemies_button_pressed():
+	if AutoloadScript.player_money >= int($Cards/WealthierEnemies/Price/Cost.text):
+		AutoloadScript.double_drop_chance += 1
+		AutoloadScript.player_money -= int($Cards/WealthierEnemies/Price/Cost.text)
+		get_node("/root/Main/Player/Camera2D/UI/Money").text = "Money: " + str(AutoloadScript.player_money)
+		if AutoloadScript.double_drop_chance == 4:
+			$Cards/WealthierEnemies.queue_free()
 		cards_selected = []
 		_close_shop()

@@ -14,7 +14,7 @@ func _on_area_2d_area_entered(area):
 	if "cannonball" in str(area).to_lower():
 		var chance = randi_range(1, 4)
 		if chance <= AutoloadScript.double_drop_chance:
-			for i in range(1,2):
+			for i in range(2):
 				var coininstance = coin.instantiate()
 				get_node("..").add_child(coininstance)
 				coininstance.global_position = self.global_position

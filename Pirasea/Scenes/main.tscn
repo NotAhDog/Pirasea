@@ -107,7 +107,7 @@ bg_color = Color(0.509804, 0.266667, 0.239216, 1)
 bg_color = Color(0.345098, 0.690196, 0.419608, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nn5pn"]
-size = Vector2(140, 140)
+size = Vector2(375.611, 236.474)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_caexn"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -166,7 +166,7 @@ script = ExtResource("2_i2gmc")
 [node name="Money" type="RichTextLabel" parent="Player/Camera2D/UI"]
 offset_left = 65.0
 offset_top = 64.0
-offset_right = 251.0
+offset_right = 379.0
 offset_bottom = 97.0
 theme = ExtResource("7_lo45m")
 theme_override_font_sizes/normal_font_size = 32
@@ -174,6 +174,19 @@ text = "Money: 0"
 
 [node name="Coin" type="Sprite2D" parent="Player/Camera2D/UI"]
 position = Vector2(49.5, 78.5)
+texture = ExtResource("7_xydeu")
+
+[node name="CollectedMoney" type="RichTextLabel" parent="Player/Camera2D/UI"]
+offset_left = 65.0
+offset_top = 88.0
+offset_right = 431.0
+offset_bottom = 121.0
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/normal_font_size = 32
+text = "Total Collected Money: 0"
+
+[node name="Coin2" type="Sprite2D" parent="Player/Camera2D/UI"]
+position = Vector2(49.5, 102.5)
 texture = ExtResource("7_xydeu")
 
 [node name="HealthBar" type="ProgressBar" parent="Player/Camera2D/UI"]
@@ -202,13 +215,16 @@ scale = Vector2(10, 10)
 autostart = true
 
 [node name="EnemyGalleon" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 autostart = true
 
 [node name="ShopArea" type="Area2D" parent="."]
 position = Vector2(606, 690)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShopArea"]
+position = Vector2(-122.11, 27.9392)
+rotation = -0.349066
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_nn5pn")
 
 [node name="Shop" type="CanvasLayer" parent="."]
@@ -776,6 +792,74 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_caexn")
 theme_override_styles/focus = SubResource("StyleBoxFlat_caexn")
 metadata/_edit_use_anchors_ = true
 
+[node name="WealthierEnemies" type="TextureRect" parent="Shop/Cards"]
+visible = false
+layout_mode = 2
+texture = ExtResource("14_wfqu0")
+
+[node name="Label" type="Label" parent="Shop/Cards/WealthierEnemies"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.516129
+anchor_right = 0.5
+anchor_bottom = 0.516129
+offset_left = -20.0
+offset_top = 6.0
+offset_right = 180.0
+offset_bottom = 39.0
+scale = Vector2(0.2, 0.2)
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 32
+text = "Wealthier Enemies!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Price" type="HBoxContainer" parent="Shop/Cards/WealthierEnemies"]
+z_index = 1
+layout_mode = 2
+offset_left = 13.0
+offset_top = 99.0
+offset_right = 203.0
+offset_bottom = 179.0
+scale = Vector2(0.2, 0.2)
+alignment = 1
+
+[node name="Coin" type="TextureRect" parent="Shop/Cards/WealthierEnemies/Price"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("7_xydeu")
+
+[node name="Cost" type="Label" parent="Shop/Cards/WealthierEnemies/Price"]
+layout_mode = 2
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 64
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="WealthierEnemiesButton" type="Button" parent="Shop/Cards/WealthierEnemies"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.516129
+anchor_right = 0.5
+anchor_bottom = 0.516129
+offset_left = -19.0
+offset_top = 35.0
+offset_right = 19.0
+offset_bottom = 51.0
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_caexn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7fjf2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_caexn")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_caexn")
+theme_override_styles/focus = SubResource("StyleBoxFlat_caexn")
+metadata/_edit_use_anchors_ = true
+
 [connection signal="timeout" from="Cannonball" to="." method="_on_cannonball_timeout"]
 [connection signal="timeout" from="EnemyGalleon" to="." method="_on_enemy_galleon_timeout"]
 [connection signal="body_entered" from="ShopArea" to="Shop" method="_on_shop_area_body_entered"]
@@ -788,3 +872,4 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Shop/Cards/DoubleTrouble/DoubleTroubleButton" to="Shop" method="_on_double_trouble_button_pressed"]
 [connection signal="pressed" from="Shop/Cards/ThreeMusketeers/ThreeMusketeersButton" to="Shop" method="_on_three_musketeers_button_pressed"]
 [connection signal="pressed" from="Shop/Cards/TrainedCrew/TrainedCrewButton" to="Shop" method="_on_trained_crew_button_pressed"]
+[connection signal="pressed" from="Shop/Cards/WealthierEnemies/WealthierEnemiesButton" to="Shop" method="_on_wealthier_enemies_button_pressed"]

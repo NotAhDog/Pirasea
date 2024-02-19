@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/CharacterBody2D.gd" id="1_qeckk"]
 [ext_resource type="Texture2D" uid="uid://bdfrc1rbd03ym" path="res://Art/Galleon.png" id="2_bv6mv"]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_qeckk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
