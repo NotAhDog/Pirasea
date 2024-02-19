@@ -22,7 +22,7 @@ func _unpause():
 	hide()
 	get_tree().paused = false
 	
-func _open_shop():
+func _reset_shop():
 	if len(get_node("/root/Main/Shop/Cards").get_children()) < 3:
 		for i in get_node("/root/Main/Shop/Cards").get_children():
 			i.visible = true
@@ -33,7 +33,13 @@ func _open_shop():
 				card_selected = randi_range(0, len(get_node("/root/Main/Shop/Cards").get_children())-1)
 			get_node("/root/Main/Shop/Cards").get_child(card_selected).visible = true
 			cards_selected.append(card_selected)
-		cards_selected = []
+	
+func _open_shop():
+	if cards_selected == []:
+		_reset_shop()
+	else:
+		for i in cards_selected:
+			get_node("/root/Main/Shop/Cards").get_child(i).visible = true
 	
 func _close_shop():
 	get_node("/root/Main/Shop").visible = false
@@ -58,6 +64,7 @@ func _on_more_place_powder_button_pressed():
 		get_node("/root/Main/Player/Camera2D/UI/Money").text = "Money: " + str(AutoloadScript.player_money)
 		if AutoloadScript.cannon_ball_speed >= 600:
 			$Cards/MoreBlackPowder.queue_free()
+		cards_selected = []
 		_close_shop()
 
 func _on_more_crew_button_pressed():
@@ -66,6 +73,7 @@ func _on_more_crew_button_pressed():
 		AutoloadScript.player_money -= int($Cards/MoreCrew/Price/Cost.text)
 		get_node("/root/Main/Player/Camera2D/UI/Money").text = "Money: " + str(AutoloadScript.player_money)
 		$Cards/MoreCrew.queue_free()
+		cards_selected = []
 		_close_shop()
 
 func _on_bigger_sails_button_pressed():
@@ -74,6 +82,7 @@ func _on_bigger_sails_button_pressed():
 		AutoloadScript.player_money -= int($Cards/BiggerSails/Price/Cost.text)
 		get_node("/root/Main/Player/Camera2D/UI/Money").text = "Money: " + str(AutoloadScript.player_money)
 		$Cards/BiggerSails.queue_free()
+		cards_selected = []
 		_close_shop()
 
 func _on_bigger_rudder_button_pressed():
@@ -82,6 +91,7 @@ func _on_bigger_rudder_button_pressed():
 		AutoloadScript.player_money -= int($Cards/BiggerRudder/Price/Cost.text)
 		get_node("/root/Main/Player/Camera2D/UI/Money").text = "Money: " + str(AutoloadScript.player_money)
 		$Cards/BiggerRudder.queue_free()
+		cards_selected = []
 		_close_shop()
 
 func _on_stronger_wood_button_pressed():
@@ -92,6 +102,7 @@ func _on_stronger_wood_button_pressed():
 		AutoloadScript.player_money -= int($Cards/StrongerWood/Price/Cost.text)
 		get_node("/root/Main/Player/Camera2D/UI/Money").text = "Money: " + str(AutoloadScript.player_money)
 		$Cards/StrongerWood.queue_free()
+		cards_selected = []
 		_close_shop()
 
 func _on_double_trouble_button_pressed():
@@ -100,6 +111,7 @@ func _on_double_trouble_button_pressed():
 		AutoloadScript.player_money -= int($Cards/DoubleTrouble/Price/Cost.text)
 		get_node("/root/Main/Player/Camera2D/UI/Money").text = "Money: " + str(AutoloadScript.player_money)
 		$Cards/DoubleTrouble.queue_free()
+		cards_selected = []
 		_close_shop()
 
 func _on_three_musketeers_button_pressed():
@@ -108,4 +120,5 @@ func _on_three_musketeers_button_pressed():
 		AutoloadScript.player_money -= int($Cards/ThreeMusketeers/Price/Cost.text)
 		get_node("/root/Main/Player/Camera2D/UI/Money").text = "Money: " + str(AutoloadScript.player_money)
 		$Cards/ThreeMusketeers.queue_free()
+		cards_selected = []
 		_close_shop()

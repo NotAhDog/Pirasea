@@ -573,6 +573,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_caexn")
 metadata/_edit_use_anchors_ = true
 
 [node name="DoubleTrouble" type="TextureRect" parent="Shop/Cards"]
+visible = false
 layout_mode = 2
 texture = ExtResource("14_wfqu0")
 
@@ -640,6 +641,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_caexn")
 metadata/_edit_use_anchors_ = true
 
 [node name="ThreeMusketeers" type="TextureRect" parent="Shop/Cards"]
+visible = false
 layout_mode = 2
 texture = ExtResource("14_wfqu0")
 
