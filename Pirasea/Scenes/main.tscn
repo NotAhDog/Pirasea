@@ -224,7 +224,6 @@ position = Vector2(606, 690)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShopArea"]
 position = Vector2(-122.11, 27.9392)
 rotation = -0.349066
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_nn5pn")
 
 [node name="Shop" type="CanvasLayer" parent="."]

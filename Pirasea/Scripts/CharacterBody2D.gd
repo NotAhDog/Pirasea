@@ -56,4 +56,4 @@ func calculate_steering(delta):
 	rotation = new_heading.angle()
 
 func _on_area_2d_body_entered(body):
-	AutoloadScript.damaged()
+	AutoloadScript.damaged(body)

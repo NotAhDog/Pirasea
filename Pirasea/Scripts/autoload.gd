@@ -10,8 +10,9 @@ var player_turn_speed = 25
 var cannon_ball_speed = 300
 var cannon_ball_amount = 1
 var double_drop_chance = 0
+var knockback = false
 
-func damaged():
+func damaged(body):
 	player_health -= 1
 	get_node("/root/Main/Player/Camera2D/UI/HealthBar").value = float(player_health) / player_max_health*100
 	if player_health <= 0:
@@ -19,12 +20,10 @@ func damaged():
 		player_health = 3
 		player_max_health = 3
 		player_money = 0
-	else:
-		for i in get_node("/root/Main").get_children():
-			if "Enemy" in str(i) or "CharacterBody2D" in str(i):
-				print(i.velocity)
-				i.velocity = i.velocity.normalized() * -200
-				print(i.velocity)
+	elif "Player" not in str(body):
+		knockback = true
+		await get_tree().create_timer(1).timeout
+		knockback = false
 
 func _choose_random_spawn():
 	var screen_side_spawn = randi_range(1,4)
