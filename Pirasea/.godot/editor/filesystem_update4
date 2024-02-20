@@ -6,5 +6,6 @@ res://Scenes/cannonball.tscn
 res://Scenes/coin.tscn
 res://Scenes/island_3.tscn
 res://Scenes/Menu.tscn
-res://Scenes/Menu.gd
 res://Scenes/Setting.tscn
+res://Scenes/Setting.gd
+res://Scripts/autoload.gd
