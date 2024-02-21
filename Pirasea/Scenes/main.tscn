@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dadc2u4m8itxp"]
+[gd_scene load_steps=31 format=3 uid="uid://dadc2u4m8itxp"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_m3yls"]
 [ext_resource type="PackedScene" uid="uid://uicntw7khg0v" path="res://Scenes/island_1.tscn" id="2_a2rqf"]
@@ -12,8 +12,15 @@
 [ext_resource type="Theme" uid="uid://bage11eoe04ud" path="res://Themes/ingametheme.tres" id="7_lo45m"]
 [ext_resource type="Texture2D" uid="uid://dtct1g3qieuk3" path="res://Art/Pirasea Gold Coin.png" id="7_xydeu"]
 [ext_resource type="Texture2D" uid="uid://c4xyf3wo42epi" path="res://Art/Health Bar.png" id="9_3norj"]
+[ext_resource type="Texture2D" uid="uid://bkqmu4n5c1s1d" path="res://Art/BP.png" id="14_6hbjp"]
 [ext_resource type="Script" path="res://Scripts/Shop.gd" id="14_7huxb"]
 [ext_resource type="Texture2D" uid="uid://bbml07ien7v6g" path="res://Art/Cannon ball upgrade card.png" id="14_wfqu0"]
+[ext_resource type="Texture2D" uid="uid://bf3qlcvnn7wsu" path="res://Art/S.png" id="16_wruoe"]
+[ext_resource type="Texture2D" uid="uid://eaml17arhk6j" path="res://Art/R.png" id="17_hx8ky"]
+[ext_resource type="Texture2D" uid="uid://ch7v8bbv0k8ux" path="res://Art/SW.png" id="18_ufk1i"]
+[ext_resource type="Texture2D" uid="uid://y4yj3g550nag" path="res://Art/DT.png" id="19_jxryy"]
+[ext_resource type="Texture2D" uid="uid://cucsy80inrsqu" path="res://Art/TM.png" id="20_sgejb"]
+[ext_resource type="Texture2D" uid="uid://cqqs62c6nuyn1" path="res://Art/C.png" id="21_dlfh2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1y6k"]
 atlas = ExtResource("3_1u3cd")
@@ -219,10 +226,10 @@ wait_time = 2.0
 autostart = true
 
 [node name="ShopArea" type="Area2D" parent="."]
-position = Vector2(606, 690)
+position = Vector2(479, 718)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShopArea"]
-position = Vector2(-122.11, 27.9392)
 rotation = -0.349066
 shape = SubResource("RectangleShape2D_nn5pn")
 
@@ -250,7 +257,7 @@ alignment = 1
 [node name="MoreBlackPowder" type="TextureRect" parent="Shop/Cards"]
 visible = false
 layout_mode = 2
-texture = ExtResource("14_wfqu0")
+texture = ExtResource("14_6hbjp")
 
 [node name="Label" type="Label" parent="Shop/Cards/MoreBlackPowder"]
 layout_mode = 1
@@ -299,9 +306,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.516129
+anchor_top = 0.500504
 anchor_right = 0.5
-anchor_bottom = 0.516129
+anchor_bottom = 0.500504
 offset_left = -19.0
 offset_top = 35.0
 offset_right = 19.0
@@ -343,11 +350,12 @@ metadata/_edit_use_anchors_ = true
 z_index = 1
 layout_mode = 2
 offset_left = 13.0
-offset_top = 99.0
+offset_top = 102.333
 offset_right = 203.0
-offset_bottom = 179.0
+offset_bottom = 182.333
 scale = Vector2(0.2, 0.2)
 alignment = 1
+metadata/_edit_group_ = true
 
 [node name="Coin" type="TextureRect" parent="Shop/Cards/MoreCrew/Price"]
 custom_minimum_size = Vector2(64, 64)
@@ -367,9 +375,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.516129
+anchor_top = 0.523942
 anchor_right = 0.5
-anchor_bottom = 0.516129
+anchor_bottom = 0.523942
 offset_left = -19.0
 offset_top = 35.0
 offset_right = 19.0
@@ -386,7 +394,7 @@ metadata/_edit_use_anchors_ = true
 [node name="BiggerSails" type="TextureRect" parent="Shop/Cards"]
 visible = false
 layout_mode = 2
-texture = ExtResource("14_wfqu0")
+texture = ExtResource("16_wruoe")
 
 [node name="Label" type="Label" parent="Shop/Cards/BiggerSails"]
 layout_mode = 1
@@ -435,9 +443,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.516129
+anchor_top = 0.500504
 anchor_right = 0.5
-anchor_bottom = 0.516129
+anchor_bottom = 0.500504
 offset_left = -19.0
 offset_top = 35.0
 offset_right = 19.0
@@ -454,7 +462,7 @@ metadata/_edit_use_anchors_ = true
 [node name="BiggerRudder" type="TextureRect" parent="Shop/Cards"]
 visible = false
 layout_mode = 2
-texture = ExtResource("14_wfqu0")
+texture = ExtResource("17_hx8ky")
 
 [node name="Label" type="Label" parent="Shop/Cards/BiggerRudder"]
 layout_mode = 1
@@ -503,9 +511,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.516129
+anchor_top = 0.500504
 anchor_right = 0.5
-anchor_bottom = 0.516129
+anchor_bottom = 0.500504
 offset_left = -19.0
 offset_top = 35.0
 offset_right = 19.0
@@ -522,7 +530,7 @@ metadata/_edit_use_anchors_ = true
 [node name="StrongerWood" type="TextureRect" parent="Shop/Cards"]
 visible = false
 layout_mode = 2
-texture = ExtResource("14_wfqu0")
+texture = ExtResource("18_ufk1i")
 
 [node name="Label" type="Label" parent="Shop/Cards/StrongerWood"]
 layout_mode = 1
@@ -571,9 +579,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.516129
+anchor_top = 0.500504
 anchor_right = 0.5
-anchor_bottom = 0.516129
+anchor_bottom = 0.500504
 offset_left = -19.0
 offset_top = 35.0
 offset_right = 19.0
@@ -590,7 +598,7 @@ metadata/_edit_use_anchors_ = true
 [node name="DoubleTrouble" type="TextureRect" parent="Shop/Cards"]
 visible = false
 layout_mode = 2
-texture = ExtResource("14_wfqu0")
+texture = ExtResource("19_jxryy")
 
 [node name="Label" type="Label" parent="Shop/Cards/DoubleTrouble"]
 layout_mode = 1
@@ -639,9 +647,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.516129
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.516129
+anchor_bottom = 0.5
 offset_left = -19.0
 offset_top = 35.0
 offset_right = 19.0
@@ -658,7 +666,7 @@ metadata/_edit_use_anchors_ = true
 [node name="ThreeMusketeers" type="TextureRect" parent="Shop/Cards"]
 visible = false
 layout_mode = 2
-texture = ExtResource("14_wfqu0")
+texture = ExtResource("20_sgejb")
 
 [node name="Label" type="Label" parent="Shop/Cards/ThreeMusketeers"]
 layout_mode = 1
@@ -707,9 +715,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.516129
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.516129
+anchor_bottom = 0.5
 offset_left = -19.0
 offset_top = 35.0
 offset_right = 19.0
@@ -751,11 +759,12 @@ metadata/_edit_use_anchors_ = true
 z_index = 1
 layout_mode = 2
 offset_left = 13.0
-offset_top = 99.0
+offset_top = 102.333
 offset_right = 203.0
-offset_bottom = 179.0
+offset_bottom = 182.333
 scale = Vector2(0.2, 0.2)
 alignment = 1
+metadata/_edit_group_ = true
 
 [node name="Coin" type="TextureRect" parent="Shop/Cards/TrainedCrew/Price"]
 custom_minimum_size = Vector2(64, 64)
@@ -775,9 +784,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.516129
+anchor_top = 0.523438
 anchor_right = 0.5
-anchor_bottom = 0.516129
+anchor_bottom = 0.53125
 offset_left = -19.0
 offset_top = 35.0
 offset_right = 19.0
@@ -794,7 +803,7 @@ metadata/_edit_use_anchors_ = true
 [node name="WealthierEnemies" type="TextureRect" parent="Shop/Cards"]
 visible = false
 layout_mode = 2
-texture = ExtResource("14_wfqu0")
+texture = ExtResource("21_dlfh2")
 
 [node name="Label" type="Label" parent="Shop/Cards/WealthierEnemies"]
 layout_mode = 1
@@ -843,9 +852,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.516129
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.516129
+anchor_bottom = 0.5
 offset_left = -19.0
 offset_top = 35.0
 offset_right = 19.0
