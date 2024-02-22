@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Timer
 CollisionPolygon2D
 Area2D
@@ -12,3 +13,19 @@ VBoxContainer
 GridContainer
 TextureRect
 Control
+=======
+VBoxContainer
+HBoxContainer
+CheckButton
+ColorRect
+Label
+HSlider
+CanvasLayer
+CenterContainer
+Button
+GridContainer
+TextureRect
+Control
+Sprite2D
+Node2D
+>>>>>>> Menu

@@ -9,3 +9,8 @@ res://Scenes/autoload.tscn
 res://Scenes/cannonball.tscn
 res://Scenes/coin.tscn
 res://Scenes/island_3.tscn
+<<<<<<< HEAD
+=======
+res://Scenes/Menu.tscn
+res://Scenes/Setting.tscn
+>>>>>>> Menu
