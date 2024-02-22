@@ -2,7 +2,7 @@ extends CanvasLayer
 
 var player_in_area = false
 var cards_selected = []
-var unlockable = ["ThreeMusketeers", "TrainedCrew"]
+var unlockable = ["ThreeMusketeers", "TrainedCrew", "ExperincedCrew", "EliteCrew"]
 
 #player opening/closing the shop
 func _unhandled_key_input(event):
@@ -23,8 +23,12 @@ func _unpause():
 	get_tree().paused = false
 	
 func _reset_shop():
-	if len(get_node("/root/Main/Shop/Cards").get_children()) <= 3:
-		for i in get_node("/root/Main/Shop/Cards").get_children():
+	var unlocked_left = []
+	for cd in get_node("/root/Main/Shop/Cards").get_children():
+		if str(cd).split(":")[0] in str(unlockable): pass
+		else: unlocked_left.append(cd)
+	if len(unlocked_left) <= 3:
+		for i in unlocked_left:
 			i.visible = true
 	else:
 		for i in range(0, 3):
@@ -79,7 +83,7 @@ func _on_more_place_powder_button_pressed():
 
 func _on_more_crew_button_pressed():
 	if AutoloadScript.player_money >= int($Cards/MoreCrew/Price/Cost.text):
-		get_node("/root/Main/Cannonball").wait_time = .75
+		get_node("/root/Main/Cannonball").wait_time = .85
 		AutoloadScript.player_money -= int($Cards/MoreCrew/Price/Cost.text)
 		get_node("/root/Main/Player/Camera2D/UI/Money").text = "Money: " + str(AutoloadScript.player_money)
 		$Cards/MoreCrew.queue_free()
@@ -137,10 +141,11 @@ func _on_three_musketeers_button_pressed():
 
 func _on_trained_crew_button_pressed():
 	if AutoloadScript.player_money >= int($Cards/TrainedCrew/Price/Cost.text):
-		get_node("/root/Main/Cannonball").wait_time = .5
+		get_node("/root/Main/Cannonball").wait_time = .60
 		AutoloadScript.player_money -= int($Cards/TrainedCrew/Price/Cost.text)
 		get_node("/root/Main/Player/Camera2D/UI/Money").text = "Money: " + str(AutoloadScript.player_money)
 		$Cards/TrainedCrew.queue_free()
+		unlockable.pop_at(unlockable.find("ExperincedCrew"))
 		cards_selected = []
 		_close_shop()
 
@@ -151,5 +156,24 @@ func _on_wealthier_enemies_button_pressed():
 		get_node("/root/Main/Player/Camera2D/UI/Money").text = "Money: " + str(AutoloadScript.player_money)
 		if AutoloadScript.double_drop_chance == 4:
 			$Cards/WealthierEnemies.queue_free()
+		cards_selected = []
+		_close_shop()
+
+func _on_experinced_crew_button_pressed():
+	if AutoloadScript.player_money >= int($Cards/ExperincedCrew/Price/Cost.text):
+		get_node("/root/Main/Cannonball").wait_time = .45
+		AutoloadScript.player_money -= int($Cards/ExperincedCrew/Price/Cost.text)
+		get_node("/root/Main/Player/Camera2D/UI/Money").text = "Money: " + str(AutoloadScript.player_money)
+		$Cards/ExperincedCrew.queue_free()
+		unlockable.pop_at(unlockable.find("EliteCrew"))		
+		cards_selected = []
+		_close_shop()
+
+func _on_elite_crew_button_pressed():
+	if AutoloadScript.player_money >= int($Cards/EliteCrew/Price/Cost.text):
+		get_node("/root/Main/Cannonball").wait_time = .30
+		AutoloadScript.player_money -= int($Cards/EliteCrew/Price/Cost.text)
+		get_node("/root/Main/Player/Camera2D/UI/Money").text = "Money: " + str(AutoloadScript.player_money)
+		$Cards/EliteCrew.queue_free()
 		cards_selected = []
 		_close_shop()

@@ -1,6 +1,5 @@
 extends Node
 
-
 var cannonball = preload("res://Scenes/cannonball.tscn")
 var enemygalleon = preload("res://Scenes/enemygalleon.tscn")
 var enemyrammer = preload("res://Scenes/rammer.tscn")

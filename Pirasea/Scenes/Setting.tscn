@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cvkxdymojgrow"]
 
 [ext_resource type="Theme" uid="uid://bage11eoe04ud" path="res://Themes/ingametheme.tres" id="1_lhfnu"]
-[ext_resource type="Script" path="res://Scenes/Setting.gd" id="1_r1iga"]
+[ext_resource type="Script" path="res://Scripts/Setting.gd" id="1_r1iga"]
 [ext_resource type="FontFile" uid="uid://cf8w3t5vni62p" path="res://Themes/Freebooter-6yn1.ttf" id="2_cf3hg"]
 [ext_resource type="Texture2D" uid="uid://b4otd7u7txnbq" path="res://Art/Cannonball.png" id="4_3t00d"]
 

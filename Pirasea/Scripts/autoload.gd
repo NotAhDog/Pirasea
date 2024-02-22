@@ -3,7 +3,7 @@ extends Node
 var player_position
 var player_max_health = 3
 var player_health = 3
-var player_money = 0
+var player_money = 100
 var total_collected_money = 0
 var player_speed = 50
 var player_turn_speed = 25
