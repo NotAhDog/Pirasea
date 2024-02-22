@@ -1,6 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1708471957
-::res://Art/::1708476757
+::res://::1708564360
+::res://Art/::1708564692
 BDS.png::CompressedTexture2D::7698772600237059021::1708476757::1708476757::1::::<><>::
 BP.png::CompressedTexture2D::3122105028556067375::1708476757::1708476757::1::::<><>::
 BS.png::CompressedTexture2D::7984466012799336875::1708476757::1708476757::1::::<><>::
@@ -24,18 +24,20 @@ Pirasea Gold Coin.png::CompressedTexture2D::8498179248346590816::1707856245::170
 R.png::CompressedTexture2D::281505037262131479::1708476757::1708476757::1::::<><>::
 Rowboat.png::CompressedTexture2D::2317482177135911477::1707340059::1707346336::1::::<><>::
 S.png::CompressedTexture2D::2796158732711063680::1708476757::1708476757::1::::<><>::
+sail boat navy.png::CompressedTexture2D::3752702893986478321::1708564692::1708564692::1::::<><>::
 SW.png::CompressedTexture2D::5331557404085437699::1708476757::1708476757::1::::<><>::
 TM.png::CompressedTexture2D::6181884532850693652::1708476757::1708476757::1::::<><>::
-::res://Scenes/::1708472387
-autoload.tscn::PackedScene::2747700383523115992::1708472386::0::1::::<><>::res://Scripts/autoload.gd
-cannonball.tscn::PackedScene::764888714329344886::1708472387::0::1::::<><>::res://Scripts/cannonball.gd<>uid://b4otd7u7txnbq::::res://Art/Cannonball.png
-coin.tscn::PackedScene::3278078062115754436::1708472387::0::1::::<><>::res://Scripts/coin.gd<>uid://dtct1g3qieuk3::::res://Art/Pirasea Gold Coin.png
-enemygalleon.tscn::PackedScene::4932986903814497726::1708472386::0::1::::<><>::uid://bli3yxspw0p1b::::res://Art/galleonnavy.png<>res://Scripts/enemygalleon.gd
-galleon.tscn::PackedScene::6798509251124501960::1708472386::0::1::::<><>::res://Scripts/CharacterBody2D.gd<>uid://bdfrc1rbd03ym::::res://Art/Galleon.png
+::res://Scenes/::1708564616
+autoload.tscn::PackedScene::2747700383523115992::1708477353::0::1::::<><>::res://Scripts/autoload.gd
+cannonball.tscn::PackedScene::764888714329344886::1708477353::0::1::::<><>::res://Scripts/cannonball.gd<>uid://b4otd7u7txnbq::::res://Art/Cannonball.png
+coin.tscn::PackedScene::3278078062115754436::1708477353::0::1::::<><>::res://Scripts/coin.gd<>uid://dtct1g3qieuk3::::res://Art/Pirasea Gold Coin.png
+enemygalleon.tscn::PackedScene::4932986903814497726::1708564614::0::1::::<><>::uid://bli3yxspw0p1b::::res://Art/galleonnavy.png<>res://Scripts/enemygalleon.gd
+galleon.tscn::PackedScene::6798509251124501960::1708477353::0::1::::<><>::res://Scripts/CharacterBody2D.gd<>uid://bdfrc1rbd03ym::::res://Art/Galleon.png
 island_1.tscn::PackedScene::1420437577496352215::1707428931::0::1::::<><>::uid://b7t2p584332yl::::res://Art/Island 1.png
 island_2.tscn::PackedScene::8266611341462444155::1707428931::0::1::::<><>::uid://l4edohwutx4b::::res://Art/island2.png
-island_3.tscn::PackedScene::4180551512364590830::1708472387::0::1::::<><>::uid://dwc4vvkbwx33k::::res://Art/Island 3.png
-main.tscn::PackedScene::7165625930618439929::1708472386::0::1::::<><>::res://Scripts/game.gd<>uid://uicntw7khg0v::::res://Scenes/island_1.tscn<>res://Scripts/Camera2D.gd<>res://Scripts/Paused.gd<>uid://6w2bhir5gquy::::res://Art/Paused Menu.png<>uid://dp1n47p45xco6::::res://Scenes/island_2.tscn<>uid://bkms55k5jqftp::::res://Art/oceanbetter.png<>uid://c34ipo6uw0vw7::::res://Scenes/galleon.tscn<>uid://b0tdcp7l7wvlu::::res://Scenes/island_3.tscn<>uid://bage11eoe04ud::::res://Themes/ingametheme.tres<>uid://dtct1g3qieuk3::::res://Art/Pirasea Gold Coin.png<>uid://c4xyf3wo42epi::::res://Art/Health Bar.png<>res://Scripts/Shop.gd<>uid://bbml07ien7v6g::::res://Art/Cannon ball upgrade card.png
+island_3.tscn::PackedScene::4180551512364590830::1708477353::0::1::::<><>::uid://dwc4vvkbwx33k::::res://Art/Island 3.png
+main.tscn::PackedScene::7165625930618439929::1708477353::0::1::::<><>::res://Scripts/game.gd<>uid://uicntw7khg0v::::res://Scenes/island_1.tscn<>res://Scripts/Camera2D.gd<>res://Scripts/Paused.gd<>uid://6w2bhir5gquy::::res://Art/Paused Menu.png<>uid://dp1n47p45xco6::::res://Scenes/island_2.tscn<>uid://bkms55k5jqftp::::res://Art/oceanbetter.png<>uid://c34ipo6uw0vw7::::res://Scenes/galleon.tscn<>uid://b0tdcp7l7wvlu::::res://Scenes/island_3.tscn<>uid://bage11eoe04ud::::res://Themes/ingametheme.tres<>uid://dtct1g3qieuk3::::res://Art/Pirasea Gold Coin.png<>uid://c4xyf3wo42epi::::res://Art/Health Bar.png<>uid://bkqmu4n5c1s1d::::res://Art/BP.png<>res://Scripts/Shop.gd<>uid://bbml07ien7v6g::::res://Art/Cannon ball upgrade card.png<>uid://bf3qlcvnn7wsu::::res://Art/S.png<>uid://eaml17arhk6j::::res://Art/R.png<>uid://ch7v8bbv0k8ux::::res://Art/SW.png<>uid://y4yj3g550nag::::res://Art/DT.png<>uid://cucsy80inrsqu::::res://Art/TM.png<>uid://cqqs62c6nuyn1::::res://Art/C.png
+rammer.tscn::PackedScene::8887641976211134210::1708564616::0::1::::<><>::
 rowboat.tscn::PackedScene::4264418246690130011::1707353632::0::1::::<><>::res://Scripts/Rowboat.gd<>uid://8auufmeio0kn::::res://Art/Rowboat.png
 ::res://Scripts/::1708472386
 autoload.gd::GDScript::-1::1708471931::0::1::::<>Node<>::

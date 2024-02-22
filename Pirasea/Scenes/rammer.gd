@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 50
+var speed = 100
 var coin = preload("res://Scenes/coin.tscn")
 
 func _process(delta):

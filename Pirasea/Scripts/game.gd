@@ -3,6 +3,7 @@ extends Node
 
 var cannonball = preload("res://Scenes/cannonball.tscn")
 var enemygalleon = preload("res://Scenes/enemygalleon.tscn")
+var enemyrammer = preload("res://Scenes/rammer.tscn")
 var cannonballxv = 0
 var cannonballyv = 0
 
@@ -73,3 +74,7 @@ func _on_enemy_galleon_timeout():
 	add_child(enemygalleoninstance)
 	enemygalleoninstance.position = AutoloadScript._choose_random_spawn()
 	
+func _on_rammer_timeout():
+	var enemyrammerinstance = enemyrammer.instantiate()
+	add_child(enemyrammerinstance)
+	enemyrammerinstance.position = AutoloadScript._choose_random_spawn()
