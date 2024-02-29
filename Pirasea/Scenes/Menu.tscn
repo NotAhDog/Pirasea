@@ -30,6 +30,7 @@ grow_vertical = 2
 script = ExtResource("1_bsgd2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
 
 [node name="Menu" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(579, 302)
