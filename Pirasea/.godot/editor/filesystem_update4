@@ -1,17 +1,3 @@
 res://Scenes/Menu.tscn
 res://Scenes/main.tscn
-res://Scenes/autoload.tscn
-res://Scenes/enemygalleon.tscn
-res://Scenes/rammer.tscn
-<<<<<<< HEAD
-res://Scenes/island_1.tscn
-res://Scenes/island_2.tscn
-res://Scenes/island_3.tscn
-res://Scenes/cannonball.tscn
-res://Scenes/water.tscn
-res://Scripts/enemygalleon.gd
-res://Scripts/rammer.gd
-=======
 res://Scenes/Setting.tscn
-res://Scripts/Setting.gd
->>>>>>> Menu

@@ -1,4 +1,8 @@
+TextureRect
+Node2D
+PanelContainer
 MarginContainer
+GridContainer
 Button
 HBoxContainer
 Timer
@@ -9,12 +13,3 @@ NavigationObstacle2D
 NavigationAgent2D
 CharacterBody2D
 CollisionPolygon2D
-Area2D
-CollisionShape2D
-Sprite2D
-CenterContainer
-<<<<<<< HEAD
-RigidBody2D
-Button
-=======
->>>>>>> Menu
