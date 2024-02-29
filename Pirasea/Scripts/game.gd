@@ -12,9 +12,9 @@ var island3 = preload("res://Scenes/island_3.tscn")
 
 func _ready():
 	AutoloadScript.player_health += 1
-	for i in range(5):
+	for i in range(6):
 		var yposis = 1000 + (i * 2000)
-		for x in range(5):
+		for x in range(6):
 			var xposis = 1000 + (x * 2000)
 			_spawn_island(randi_range(0,4), xposis, yposis)
 			
