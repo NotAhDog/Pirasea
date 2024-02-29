@@ -11,6 +11,8 @@ var cannon_ball_speed = 300
 var cannon_ball_amount = 1
 var double_drop_chance = 0
 var knockback = false
+var unlockable = ["ThreeMusketeers", "TrainedCrew", "ExperincedCrew", "EliteCrew"]
+var cards_selected = []
 
 func damaged(body):
 	player_health -= 1

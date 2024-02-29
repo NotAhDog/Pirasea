@@ -6,7 +6,10 @@ res://Scenes/rammer.tscn
 res://Scenes/island_1.tscn
 res://Scenes/island_2.tscn
 res://Scenes/island_3.tscn
-res://Scripts/enemygalleon.gd
-res://Scripts/rammer.gd
-res://Scripts/Shop.gd
 res://Scenes/ShopArea.gd
+res://Scripts/Shop.gd
+res://Scripts/autoload.gd
+res://Scripts/cannonball.gd
+res://Scenes/cannonball.tscn
+res://Scripts/game.gd
+res://Scenes/water.tscn

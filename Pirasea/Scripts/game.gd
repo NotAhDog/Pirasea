@@ -5,10 +5,33 @@ var enemygalleon = preload("res://Scenes/enemygalleon.tscn")
 var enemyrammer = preload("res://Scenes/rammer.tscn")
 var cannonballxv = 0
 var cannonballyv = 0
+var island0 = preload("res://Scenes/water.tscn")
+var island1 = preload("res://Scenes/island_1.tscn")
+var island2 = preload("res://Scenes/island_2.tscn")
+var island3 = preload("res://Scenes/island_3.tscn")
 
 func _ready():
 	AutoloadScript.player_health += 1
-
+	for i in range(5):
+		var yposis = 1000 + (i * 2000)
+		for x in range(5):
+			var xposis = 1000 + (x * 2000)
+			_spawn_island(randi_range(0,4), xposis, yposis)
+			
+func _spawn_island(island, x, y):
+	var islandinstance = island0.instantiate() 
+	var randdirection = [0.0, 90.0, 180.0, 270.0]
+	if island == 1: 
+		islandinstance = island1.instantiate() 
+	if island == 2: 
+		islandinstance = island2.instantiate() 
+	if island == 3: 
+		islandinstance = island3.instantiate() 
+	add_child(islandinstance)
+	islandinstance.position.x = x
+	islandinstance.position.y = y
+	islandinstance.rotation = deg_to_rad(randdirection.pick_random())
+		
 func _on_cannonball_timeout():
 	for i in get_node("Player/SpawnHandler").get_children():
 		_spawn_cannon_ball(i.global_position, i.position)

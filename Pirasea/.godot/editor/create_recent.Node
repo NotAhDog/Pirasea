@@ -1,6 +1,7 @@
-ColorRect
-Timer
 NavigationRegion2D
+ColorRect
+StaticBody2D
+Timer
 NavigationObstacle2D
 NavigationAgent2D
 CharacterBody2D
@@ -11,4 +12,3 @@ Sprite2D
 CenterContainer
 RigidBody2D
 Button
-HBoxContainer

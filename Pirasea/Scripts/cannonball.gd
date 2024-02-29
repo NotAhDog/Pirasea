@@ -8,5 +8,5 @@ func _on_disappear_timeout():
 
 
 func _on_area_2d_body_entered(body):
-	if "island" in str(body).to_lower() or "character" in str(body).to_lower():
+	if "static" in str(body).to_lower() or "character" in str(body).to_lower():
 		queue_free()
