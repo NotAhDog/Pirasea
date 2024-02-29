@@ -203,65 +203,16 @@ position = Vector2(100, 38.5)
 scale = Vector2(1.9375, 1.9375)
 texture = ExtResource("9_3norj")
 
-<<<<<<< HEAD
-=======
-[node name="tester" type="CharacterBody2D" parent="."]
-position = Vector2(1126, 747)
-script = ExtResource("22_jvahl")
-
-[node name="Sprite2D" type="Sprite2D" parent="tester"]
-rotation = 1.5708
-texture = ExtResource("23_mxptt")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tester"]
-polygon = PackedVector2Array(-12, -10, 11, -10, 24, -1, 24, 1, 11, 10, -12, 10, -17, 6, -17, -6)
-
-[node name="Area2D" type="Area2D" parent="tester"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tester/Area2D"]
-polygon = PackedVector2Array(-12, -10, 11, -10, 24, -1, 24, 1, 11, 10, -12, 10, -17, 6, -17, -6)
-
-[node name="Timer" type="Timer" parent="tester"]
-autostart = true
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="tester"]
-target_desired_distance = 1.0
-avoidance_enabled = true
-radius = 20.0
-debug_enabled = true
-
-[node name="Island3" parent="." instance=ExtResource("6_letxn")]
-position = Vector2(2624, 456)
-
->>>>>>> Menu
 [node name="Cannonball" type="Timer" parent="."]
 autostart = true
 
 [node name="Galleon" type="Timer" parent="."]
-<<<<<<< HEAD
 wait_time = 5.0
 autostart = true
 
 [node name="Rammer" type="Timer" parent="."]
 wait_time = 7.0
 autostart = true
-=======
-wait_time = 0.097
-autostart = true
-
-[node name="Rammer" type="Timer" parent="."]
-wait_time = 0.55
-autostart = true
-
-[node name="ShopArea" type="Area2D" parent="."]
-position = Vector2(2519, 244)
-rotation = 0.349066
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopArea"]
-rotation = -0.349066
-shape = SubResource("RectangleShape2D_nn5pn")
->>>>>>> Menu
 
 [node name="Shop" type="CanvasLayer" parent="."]
 process_mode = 3
