@@ -1,5 +1,5 @@
-NavigationRegion2D
 ColorRect
+NavigationRegion2D
 StaticBody2D
 Timer
 NavigationObstacle2D

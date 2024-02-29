@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dadc2u4m8itxp"]
+[gd_scene load_steps=31 format=3 uid="uid://dadc2u4m8itxp"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_m3yls"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="2_i2gmc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://6w2bhir5gquy" path="res://Art/Paused Menu.png" id="3_1u3cd"]
 [ext_resource type="Texture2D" uid="uid://bkms55k5jqftp" path="res://Art/oceanbetter.png" id="3_py1ig"]
 [ext_resource type="PackedScene" uid="uid://c34ipo6uw0vw7" path="res://Scenes/galleon.tscn" id="4_h56da"]
+[ext_resource type="PackedScene" uid="uid://b0tdcp7l7wvlu" path="res://Scenes/island_3.tscn" id="6_letxn"]
 [ext_resource type="Theme" uid="uid://bage11eoe04ud" path="res://Themes/ingametheme.tres" id="7_lo45m"]
 [ext_resource type="Texture2D" uid="uid://dtct1g3qieuk3" path="res://Art/Pirasea Gold Coin.png" id="7_xydeu"]
 [ext_resource type="Texture2D" uid="uid://c4xyf3wo42epi" path="res://Art/Health Bar.png" id="9_3norj"]
@@ -16,8 +17,11 @@
 [ext_resource type="Texture2D" uid="uid://eaml17arhk6j" path="res://Art/R.png" id="17_hx8ky"]
 [ext_resource type="Texture2D" uid="uid://ch7v8bbv0k8ux" path="res://Art/SW.png" id="18_ufk1i"]
 [ext_resource type="Texture2D" uid="uid://y4yj3g550nag" path="res://Art/DT.png" id="19_jxryy"]
+[ext_resource type="PackedScene" uid="uid://uicntw7khg0v" path="res://Scenes/island_1.tscn" id="19_k5eul"]
+[ext_resource type="PackedScene" uid="uid://dp1n47p45xco6" path="res://Scenes/island_2.tscn" id="20_4bqx3"]
 [ext_resource type="Texture2D" uid="uid://cucsy80inrsqu" path="res://Art/TM.png" id="20_sgejb"]
 [ext_resource type="Texture2D" uid="uid://cqqs62c6nuyn1" path="res://Art/C.png" id="21_dlfh2"]
+[ext_resource type="PackedScene" uid="uid://ca0xe4pc4vnen" path="res://Scenes/water.tscn" id="22_vi5x3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1y6k"]
 atlas = ExtResource("3_1u3cd")
@@ -152,10 +156,10 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608,
 
 [node name="Player" parent="." instance=ExtResource("4_h56da")]
 z_index = 42
-position = Vector2(1819, 406)
+position = Vector2(4179, 3022)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(0.1, 0.1)
+zoom = Vector2(0.15, 0.15)
 script = ExtResource("2_i2gmc")
 
 [node name="UI" type="CanvasLayer" parent="Player/Camera2D"]
@@ -207,7 +211,7 @@ texture = ExtResource("9_3norj")
 autostart = true
 
 [node name="Galleon" type="Timer" parent="."]
-wait_time = 3.0
+autostart = true
 
 [node name="Rammer" type="Timer" parent="."]
 wait_time = 5.0
@@ -983,6 +987,18 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_caexn")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_caexn")
 theme_override_styles/focus = SubResource("StyleBoxFlat_caexn")
 metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D" parent="." instance=ExtResource("19_k5eul")]
+position = Vector2(1000, 1000)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("20_4bqx3")]
+position = Vector2(3000, 1000)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("6_letxn")]
+position = Vector2(5000, 1000)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("22_vi5x3")]
+position = Vector2(7000, 1000)
 
 [connection signal="timeout" from="Cannonball" to="." method="_on_cannonball_timeout"]
 [connection signal="timeout" from="Galleon" to="." method="_on_enemy_galleon_timeout"]

@@ -13,3 +13,4 @@ res://Scripts/cannonball.gd
 res://Scenes/cannonball.tscn
 res://Scripts/game.gd
 res://Scenes/water.tscn
+res://Scripts/enemygalleon.gd
