@@ -1,17 +1,13 @@
 extends Area2D
 
-
-var player_in_area = false
-
+var player_in_area = true
 
 #player opening/closing the shop
 func _unhandled_key_input(event):
-		if Input.is_action_pressed("shop") and get_node("/root/Main/Shop").visible == false and player_in_area == true: 
-			_pause()
-			_open_shop()
-		elif Input.is_action_pressed("shop") and get_node("/root/Main/Shop").visible == true: 
-			_unpause()
-			_close_shop()
+	if Input.is_action_just_pressed("shop") and get_node("/root/Main/Shop").visible == true: 
+		_close_shop()
+	elif Input.is_action_just_pressed("shop") and get_node("/root/Main/Shop").visible == false and player_in_area == true: 
+		_open_shop()
 
 #functions
 func _pause():
@@ -49,7 +45,7 @@ func _unlocked_card(selected_card):
 		return "Good"
 	
 func _open_shop():
-	print(AutoloadScript.cards_selected)
+	_pause()
 	if AutoloadScript.cards_selected == []:
 		_reset_shop()
 	else:
@@ -57,7 +53,7 @@ func _open_shop():
 			get_node("/root/Main/Shop/Cards").get_child(i).visible = true
 	
 func _close_shop():
-	get_node("/root/Main/Shop").visible = false
+	get_node("/root/Main/Shop").hide()
 	for i in get_node("/root/Main/Shop/Cards").get_children():
 		i.visible = false
 	_unpause()

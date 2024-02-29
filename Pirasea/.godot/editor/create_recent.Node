@@ -1,7 +1,7 @@
+Timer
 ColorRect
 NavigationRegion2D
 StaticBody2D
-Timer
 NavigationObstacle2D
 NavigationAgent2D
 CharacterBody2D

@@ -9,3 +9,4 @@ res://Scenes/island_2.tscn
 res://Scenes/island_3.tscn
 res://Scenes/cannonball.tscn
 res://Scenes/water.tscn
+res://Scripts/ShopArea.gd

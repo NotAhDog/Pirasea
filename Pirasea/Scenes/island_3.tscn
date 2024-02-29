@@ -13,6 +13,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-153, 144, -510, 525, -
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="StaticBody2D" type="StaticBody2D"]
+process_mode = 3
 position = Vector2(500, 500)
 scale = Vector2(2, 2)
 
