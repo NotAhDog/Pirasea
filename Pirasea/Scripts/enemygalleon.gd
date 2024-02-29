@@ -2,16 +2,21 @@ extends CharacterBody2D
 
 var speed = 50
 var coin = preload("res://Scenes/coin.tscn")
+@onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 
-func _process(delta):
-	if AutoloadScript.knockback == true:
-		velocity = -(position.direction_to(AutoloadScript.player_position) * speed)*3
-		move_and_slide() #currently knock back is overriden straight away by the enemies code
-	else:
-		velocity = position.direction_to(AutoloadScript.player_position) * speed
-		move_and_slide() #currently knock back is overriden straight away by the enemies code
-		if velocity[0] > 0: rotation = atan(velocity[1]/velocity[0])
-		else: rotation = atan(velocity[1]/velocity[0]) + 3.14159
+func _ready():
+	_make_path()
+
+func _physics_process(delta): 
+	var dir = to_local(nav_agent.get_next_path_position()).normalized()
+	velocity = dir * speed
+	move_and_slide()
+	
+func _make_path() -> void:
+	nav_agent.target_position = get_node("/root/Main/Player").global_position
+
+func _on_nav_timeout():
+	_make_path() 
 
 func _on_area_2d_area_entered(area):
 	if "cannonball" in str(area).to_lower():

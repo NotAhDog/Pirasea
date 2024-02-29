@@ -1,31 +1,14 @@
-<<<<<<< HEAD
 Timer
+NavigationRegion2D
+ColorRect
+NavigationObstacle2D
+NavigationAgent2D
+CharacterBody2D
 CollisionPolygon2D
 Area2D
 CollisionShape2D
 Sprite2D
-CharacterBody2D
 CenterContainer
 RigidBody2D
 Button
 HBoxContainer
-VBoxContainer
-GridContainer
-TextureRect
-Control
-=======
-VBoxContainer
-HBoxContainer
-CheckButton
-ColorRect
-Label
-HSlider
-CanvasLayer
-CenterContainer
-Button
-GridContainer
-TextureRect
-Control
-Sprite2D
-Node2D
->>>>>>> Menu

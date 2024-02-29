@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://uicntw7khg0v"]
+[gd_scene load_steps=3 format=3 uid="uid://uicntw7khg0v"]
 
 [ext_resource type="Texture2D" uid="uid://b7t2p584332yl" path="res://Art/Island 1.png" id="1_6xl6k"]
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_mogj5"]
+vertices = PackedVector2Array(283, -9, 500, -500, 500, 500, 229, 81, 170, -162, 50, 238, -500, 500, -188, 148, -283, 40, -500, -500, -270, -15, -120, -217, 27, -259)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 0, 2), PackedInt32Array(1, 0, 4), PackedInt32Array(5, 3, 2), PackedInt32Array(5, 2, 6, 7), PackedInt32Array(8, 7, 6), PackedInt32Array(8, 6, 9, 10), PackedInt32Array(11, 10, 9), PackedInt32Array(11, 9, 1, 12), PackedInt32Array(12, 1, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-182, 140, -511, 520, -510, -511, 510, -510, 511, 511, -523, 510, -182, 140, 48, 227, 221, 75, 271, -8, 163, -155, 25, -248, -114, -208, -261, -11, -272, 37)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
 [node name="StaticBody2D" type="StaticBody2D"]
+position = Vector2(500, 500)
 
 [node name="Island2" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -12,3 +19,6 @@ texture = ExtResource("1_6xl6k")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-180, 139, -170, 138, -151, 126, -134, 105, -100, 43, -106, 29, -111, 24, -93, 3, -88, 7, -79, -3, -74, 1, -70, -4, -59, 5, -54, 0, -33, 17, -37, 23, -31, 37, -21, 46, -48, 78, -97, 82, -110, 98, -62, 138, -66, 143, -45, 161, -50, 167, -2, 207, 39, 223, 49, 222, 75, 191, 73, 162, 109, 119, 118, 127, 129, 127, 143, 121, 158, 115, 168, 113, 186, 102, 200, 96, 231, 59, 238, 29, 270, -8, 269, -18, 251, -61, 228, -89, 160, -147, 164, -152, 58, -241, 43, -245, 34, -244, 18, -248, -21, -245, -39, -233, -50, -232, -63, -226, -73, -225, -88, -219, -102, -213, -116, -207, -165, -149, -160, -144, -205, -91, -200, -86, -222, -59, -227, -64, -249, -38, -244, -33, -262, -12, -260, 7, -269, 18, -273, 34, -261, 52, -260, 62, -254, 76)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_mogj5")

@@ -20,10 +20,13 @@ polygon = PackedVector2Array(-33, -24, -13, -24, -13, -22, 11, -21, 33, -12, 47,
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(-33, -24, -13, -24, -13, -22, 11, -21, 33, -12, 47, -3, 47, 3, 32, 12, 12, 20, -12, 22, -12, 24, -33, 24, -47, 15, -54, 3, -54, -3, -47, -15)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 0.25
 autostart = true
 
+[node name="Nav" type="Timer" parent="."]
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Nav" to="." method="_on_nav_timeout"]
