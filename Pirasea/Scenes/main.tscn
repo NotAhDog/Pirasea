@@ -243,16 +243,18 @@ radius = 20.0
 debug_enabled = true
 
 [node name="Island3" parent="." instance=ExtResource("6_letxn")]
-position = Vector2(2500, 500)
+position = Vector2(2624, 456)
 
 [node name="Cannonball" type="Timer" parent="."]
 autostart = true
 
 [node name="Galleon" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 0.097
+autostart = true
 
 [node name="Rammer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 0.55
+autostart = true
 
 [node name="ShopArea" type="Area2D" parent="."]
 position = Vector2(2519, 244)
