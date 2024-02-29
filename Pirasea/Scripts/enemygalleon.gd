@@ -11,6 +11,14 @@ func _physics_process(delta):
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
 	velocity = dir * speed
 	move_and_slide()
+	if velocity[0] > 0: 
+		$Sprite2D.rotation = atan(velocity[1]/velocity[0]) + 1.5708
+		$CollisionPolygon2D.rotation = atan(velocity[1]/velocity[0]) 
+		$Area2D.rotation = atan(velocity[1]/velocity[0]) 
+	else: 
+		$Sprite2D.rotation = atan(velocity[1]/velocity[0]) + 3.14159 + 1.5708
+		$CollisionPolygon2D.rotation = atan(velocity[1]/velocity[0]) + 3.14159
+		$Area2D.rotation = atan(velocity[1]/velocity[0]) + 3.14159
 	
 func _make_path() -> void:
 	nav_agent.target_position = get_node("/root/Main/Player").global_position
@@ -34,9 +42,9 @@ func _on_area_2d_area_entered(area):
 			self.queue_free()
 
 func _on_area_2d_body_entered(body):
-	if $Timer.wait_time > 0 and "island" in str(body).to_lower():
+	if $SpawnTimer.time_left > 0 and "island" in str(body).to_lower():
 		self.position = AutoloadScript._choose_random_spawn()
-		$Timer.wait_time = 0.25
+		$SpawnTimer.start(0.25)
 
 func _on_timer_timeout():
 	show()

@@ -250,9 +250,11 @@ autostart = true
 
 [node name="Galleon" type="Timer" parent="."]
 wait_time = 3.0
+autostart = true
 
 [node name="Rammer" type="Timer" parent="."]
 wait_time = 5.0
+autostart = true
 
 [node name="ShopArea" type="Area2D" parent="."]
 position = Vector2(2519, 244)
