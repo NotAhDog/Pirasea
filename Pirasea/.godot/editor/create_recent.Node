@@ -1,6 +1,6 @@
+ColorRect
 Timer
 NavigationRegion2D
-ColorRect
 NavigationObstacle2D
 NavigationAgent2D
 CharacterBody2D

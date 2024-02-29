@@ -8,3 +8,5 @@ res://Scenes/island_2.tscn
 res://Scenes/island_3.tscn
 res://Scripts/enemygalleon.gd
 res://Scripts/rammer.gd
+res://Scripts/Shop.gd
+res://Scenes/ShopArea.gd

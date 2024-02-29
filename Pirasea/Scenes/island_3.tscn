@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0tdcp7l7wvlu"]
+[gd_scene load_steps=5 format=3 uid="uid://b0tdcp7l7wvlu"]
 
 [ext_resource type="Texture2D" uid="uid://dwc4vvkbwx33k" path="res://Art/Island 3.png" id="1_4076p"]
+[ext_resource type="Script" path="res://Scenes/ShopArea.gd" id="2_tx3jd"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_rf6yb"]
 vertices = PackedVector2Array(191, -3, 197, -151, 500, -500, 500, 500, 191, 37, 182, 58, 185, 126, 185, 163, 176, -173, 141, -194, -500, -500, 98, -194, 78, -184, 24, -184, -11, -202, -30, -202, -69, -181, -127, -162, -146, -140, -500, 500, -168, -73, 130, 192, -21, 191, -75, 190, -106, 154, -156, 154, -187, 133, -188, 62, -145, -106, -181, 15, -168, -32, -181, 16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 4, 3, 6), PackedInt32Array(7, 6, 3), PackedInt32Array(2, 1, 8), PackedInt32Array(2, 8, 9), PackedInt32Array(10, 2, 9, 11), PackedInt32Array(10, 11, 12, 13, 14), PackedInt32Array(10, 14, 15), PackedInt32Array(10, 15, 16, 17), PackedInt32Array(10, 17, 18), PackedInt32Array(19, 10, 18, 20), PackedInt32Array(21, 7, 3), PackedInt32Array(21, 3, 19, 22), PackedInt32Array(23, 22, 19), PackedInt32Array(24, 23, 19, 25), PackedInt32Array(26, 25, 19), PackedInt32Array(27, 26, 19), PackedInt32Array(18, 28, 20), PackedInt32Array(27, 19, 20, 29), PackedInt32Array(20, 30, 29), PackedInt32Array(27, 29, 31)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-153, 144, -510, 525, -510, -510, 510, -511, 511, 510, -516, 512, -153, 144, -101, 144, -70, 180, -21, 181, 128, 182, 175, 157, 175, 126, 172, 57, 181, 35, 181, -3, 187, -147, 170, -165, 138, -184, 100, -184, 81, -174, 23, -175, -13, -192, -27, -192, -66, -171, -121, -153, -136, -136, -135, -105, -158, -70, -158, -29, -171, 18, -178, 63, -177, 128)])
 source_geometry_group_name = &"navigation_polygon_source_group"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grugg"]
+size = Vector2(375.611, 236.474)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 position = Vector2(500, 500)
@@ -22,3 +26,24 @@ polygon = PackedVector2Array(-9, -64, -9, -57, -22, -57, -34, -53, -41, -50, -45
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_rf6yb")
+
+[node name="ShopArea" type="Area2D" parent="."]
+position = Vector2(15.9998, -254)
+rotation = 0.349066
+script = ExtResource("2_tx3jd")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopArea"]
+rotation = -0.349066
+shape = SubResource("RectangleShape2D_grugg")
+
+[node name="ColorRect" type="ColorRect" parent="ShopArea"]
+offset_left = -218.0
+offset_top = -47.0
+offset_right = 159.0
+offset_bottom = 190.0
+rotation = -0.349066
+color = Color(0, 0, 0, 0.298039)
+
+[connection signal="body_entered" from="ShopArea" to="ShopArea" method="_on_body_entered"]
+[connection signal="body_exited" from="ShopArea" to="ShopArea" method="_on_body_exited"]
