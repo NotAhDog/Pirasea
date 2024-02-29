@@ -1,21 +1,28 @@
 extends Area2D
 
 var player_in_area = true
+var timeout = false
 
 #player opening/closing the shop
-func _unhandled_key_input(event):
-	if Input.is_action_just_pressed("shop") and get_node("/root/Main/Shop").visible == true: 
-		_close_shop()
-	elif Input.is_action_just_pressed("shop") and get_node("/root/Main/Shop").visible == false and player_in_area == true: 
-		_open_shop()
+func _input(event): #The shop opens and closes multiple times when e is pressed once
+	if timeout == false and event.is_echo() == false:
+		print(event)
+		if Input.is_action_just_pressed("shop"):
+			timeout = true
+			if get_node("/root/Main/Shop").visible == true: 
+				_close_shop()
+			elif player_in_area == true: 
+				_open_shop()
+			await get_tree().create_timer(1).timeout
+			timeout = false
 
 #functions
 func _pause():
-	print("Paused")
+	print("pause")
 	get_node("/root/Main/Shop").show()
 
 func _unpause():
-	print("Unpaused")
+	print("unpause")
 	get_node("/root/Main/Shop").hide()
 	
 
