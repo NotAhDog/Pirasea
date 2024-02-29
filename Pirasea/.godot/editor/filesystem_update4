@@ -1,5 +1,4 @@
 res://Scenes/main.tscn
-res://Scripts/game.gd
 res://Scenes/Menu.tscn
 res://Scenes/autoload.tscn
 res://Scenes/enemygalleon.tscn
@@ -9,4 +8,5 @@ res://Scenes/island_2.tscn
 res://Scenes/island_3.tscn
 res://Scenes/cannonball.tscn
 res://Scenes/water.tscn
-res://Scripts/ShopArea.gd
+res://Scripts/enemygalleon.gd
+res://Scripts/rammer.gd
