@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://0tetb5sw5505"]
+[gd_scene load_steps=11 format=3 uid="uid://0tetb5sw5505"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_bsgd2"]
 [ext_resource type="Texture2D" uid="uid://bomxyqi2nvenk" path="res://Art/Menu.png" id="2_2kxi5"]
+[ext_resource type="Texture2D" uid="uid://c5bi2lh6srw8g" path="res://Art/menubackground.png" id="2_10d86"]
 [ext_resource type="Theme" uid="uid://bage11eoe04ud" path="res://Themes/ingametheme.tres" id="3_ripkh"]
 [ext_resource type="FontFile" uid="uid://cf8w3t5vni62p" path="res://Themes/Freebooter-6yn1.ttf" id="4_dh0oj"]
 
@@ -32,27 +33,24 @@ script = ExtResource("1_bsgd2")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -29.0
-offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/h_separation = 100
-theme_override_constants/v_separation = 100
+texture = ExtResource("2_10d86")
 
-[node name="Menu" type="Sprite2D" parent="CanvasLayer/GridContainer"]
-position = Vector2(576, 324)
+[node name="Menu" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(579, 302)
 scale = Vector2(8.1875, 8.1875)
 texture = ExtResource("2_2kxi5")
 
-[node name="Pirasea" type="Label" parent="CanvasLayer/GridContainer"]
-custom_minimum_size = Vector2(200, 260)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 0
+[node name="Pirasea" type="Label" parent="CanvasLayer"]
+offset_left = 506.0
+offset_top = 77.0
+offset_right = 650.0
+offset_bottom = 142.0
 theme = ExtResource("3_ripkh")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
@@ -60,20 +58,43 @@ text = "Pirasea"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SettingsButton" type="Button" parent="CanvasLayer/GridContainer"]
-visible = false
-custom_minimum_size = Vector2(245, 49)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 2
-size_flags_stretch_ratio = 0.0
+[node name="PlayButton" type="Button" parent="CanvasLayer"]
+z_index = 1
+offset_left = 464.0
+offset_top = 211.0
+offset_right = 711.0
+offset_bottom = 261.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_t1118")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6tus1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_07r8m")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_q768o")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ck081")
 
-[node name="Settings" type="Label" parent="CanvasLayer/GridContainer/SettingsButton"]
+[node name="Play" type="Label" parent="CanvasLayer/PlayButton"]
+z_index = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 246.0
+offset_bottom = 50.0
+theme = ExtResource("3_ripkh")
+theme_override_fonts/font = ExtResource("4_dh0oj")
+text = "PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingsButton" type="Button" parent="CanvasLayer"]
+offset_left = 464.0
+offset_top = 326.0
+offset_right = 711.0
+offset_bottom = 376.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_t1118")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6tus1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_07r8m")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_q768o")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ck081")
+
+[node name="Settings" type="Label" parent="CanvasLayer/SettingsButton"]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 1.0
@@ -85,20 +106,18 @@ text = "SETTINGS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="QuitButton" type="Button" parent="CanvasLayer/GridContainer"]
-visible = false
-custom_minimum_size = Vector2(245, 49)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 2
-size_flags_stretch_ratio = 0.0
+[node name="QuitButton" type="Button" parent="CanvasLayer"]
+offset_left = 464.0
+offset_top = 441.0
+offset_right = 711.0
+offset_bottom = 491.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_t1118")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6tus1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_07r8m")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_q768o")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ck081")
 
-[node name="Quit" type="Label" parent="CanvasLayer/GridContainer/QuitButton"]
+[node name="Quit" type="Label" parent="CanvasLayer/QuitButton"]
 layout_mode = 0
 offset_left = 1.0
 offset_right = 246.0
@@ -109,35 +128,6 @@ text = "QUIT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Node2D" type="Node2D" parent="CanvasLayer/GridContainer"]
-
-[node name="PlayButton" type="Button" parent="CanvasLayer/GridContainer/Node2D"]
-z_index = 1
-clip_contents = true
-custom_minimum_size = Vector2(245, 49)
-offset_left = 462.0
-offset_top = 234.0
-offset_right = 707.0
-offset_bottom = 283.0
-size_flags_horizontal = 4
-size_flags_vertical = 12
-theme_override_styles/normal = SubResource("StyleBoxFlat_t1118")
-theme_override_styles/hover = SubResource("StyleBoxFlat_6tus1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_07r8m")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_q768o")
-theme_override_styles/focus = SubResource("StyleBoxFlat_ck081")
-
-[node name="Play" type="Label" parent="CanvasLayer/GridContainer/Node2D/PlayButton"]
-z_index = 1
-layout_mode = 0
-offset_right = 245.0
-offset_bottom = 49.0
-theme = ExtResource("3_ripkh")
-theme_override_fonts/font = ExtResource("4_dh0oj")
-text = "PLAY"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[connection signal="pressed" from="CanvasLayer/GridContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/GridContainer/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/GridContainer/Node2D/PlayButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PlayButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/QuitButton" to="." method="_on_quit_button_pressed"]
