@@ -21,6 +21,7 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Control" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchor_left = -0.23
 anchor_top = -0.305

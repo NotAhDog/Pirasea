@@ -1,3 +1,5 @@
+AnimatedSprite2D
+CanvasLayer
 Button
 VBoxContainer
 HBoxContainer
@@ -11,4 +13,3 @@ ColorRect
 NavigationRegion2D
 StaticBody2D
 NavigationObstacle2D
-NavigationAgent2D

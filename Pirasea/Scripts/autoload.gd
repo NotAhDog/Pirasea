@@ -18,7 +18,8 @@ func damaged(body):
 	player_health -= 1
 	get_node("/root/Main/Player/Camera2D/UI/HealthBar").value = float(player_health) / player_max_health*100
 	if player_health <= 0:
-		get_tree().reload_current_scene()
+		get_node("/root/Main/DeadScreen").visible = true
+		#on restart pressed reset stats \/
 		player_health = 3
 		player_max_health = 3
 		player_money = 0
