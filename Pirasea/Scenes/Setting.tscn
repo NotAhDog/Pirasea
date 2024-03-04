@@ -47,52 +47,56 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer"]
 layout_mode = 2
+alignment = 1
 
-[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(100, 250)
-layout_direction = 3
-layout_mode = 2
-size_flags_vertical = 5
-size_flags_stretch_ratio = 0.65
-theme = ExtResource("1_lhfnu")
-theme_override_colors/font_shadow_color = Color(0.478431, 0.282353, 0.254902, 1)
-theme_override_constants/shadow_offset_x = 8
-theme_override_constants/shadow_offset_y = 8
-theme_override_constants/shadow_outline_size = 8
-theme_override_fonts/font = ExtResource("2_cf3hg")
-theme_override_font_sizes/font_size = 100
-text = "SETTINGS"
-horizontal_alignment = 1
-
-[node name="CheckButton" type="CheckButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 2
-size_flags_stretch_ratio = 0.0
-theme = ExtResource("1_lhfnu")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_cf3hg")
-theme_override_font_sizes/font_size = 60
-text = "FULL SCREEN"
+size_flags_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(100, 0)
+[node name="VBoxContainerTEXT" type="VBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
+size_flags_vertical = 4
 
-[node name="Volume" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Volume" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainerTEXT"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_stretch_ratio = 0.0
 theme = ExtResource("1_lhfnu")
 theme_override_fonts/font = ExtResource("2_cf3hg")
 theme_override_font_sizes/font_size = 60
-text = "VOLUME"
+text = "MAIN VOLUME"
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="SFXVolume" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainerTEXT"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("1_lhfnu")
+theme_override_fonts/font = ExtResource("2_cf3hg")
+theme_override_font_sizes/font_size = 60
+text = "SFX VOLUME"
+vertical_alignment = 1
+
+[node name="MUSICVolume" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainerTEXT"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("1_lhfnu")
+theme_override_fonts/font = ExtResource("2_cf3hg")
+theme_override_font_sizes/font_size = 60
+text = "MUSIC VOLUME"
+vertical_alignment = 1
+
+[node name="VBoxContainerSLIDER" type="VBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MAIN MENU SLIDER" type="HSlider" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainerSLIDER"]
 z_index = 3
 custom_minimum_size = Vector2(300, 50)
 layout_direction = 2
@@ -104,11 +108,50 @@ theme_override_icons/grabber = ExtResource("4_3t00d")
 theme_override_icons/grabber_highlight = ExtResource("4_3t00d")
 theme_override_icons/grabber_disabled = ExtResource("4_3t00d")
 
-[node name="Back" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+[node name="SFX SLIDER" type="HSlider" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainerSLIDER"]
+z_index = 3
+custom_minimum_size = Vector2(300, 50)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+theme_override_icons/grabber = ExtResource("4_3t00d")
+theme_override_icons/grabber_highlight = ExtResource("4_3t00d")
+theme_override_icons/grabber_disabled = ExtResource("4_3t00d")
+
+[node name="MUSIC SLIDER" type="HSlider" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainerSLIDER"]
+z_index = 3
+custom_minimum_size = Vector2(300, 50)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+theme_override_icons/grabber = ExtResource("4_3t00d")
+theme_override_icons/grabber_highlight = ExtResource("4_3t00d")
+theme_override_icons/grabber_disabled = ExtResource("4_3t00d")
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("1_lhfnu")
+theme_override_colors/font_shadow_color = Color(0.478431, 0.282353, 0.254902, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("2_cf3hg")
+theme_override_font_sizes/font_size = 100
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="Back" type="Button" parent="CanvasLayer/MarginContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 10
+size_flags_vertical = 8
 theme = ExtResource("1_lhfnu")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_cf3hg")
@@ -121,6 +164,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_jmv4d")
 text = "BACK"
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_direction = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -129,6 +173,5 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.678431, 0.466667, 0.341176, 1)
 
-[connection signal="toggled" from="CanvasLayer/MarginContainer/VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
-[connection signal="toggled" from="CanvasLayer/MarginContainer/VBoxContainer/Back" to="." method="_on_back_toggled"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="toggled" from="CanvasLayer/MarginContainer/Back" to="." method="_on_back_toggled"]

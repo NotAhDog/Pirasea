@@ -1,24 +1,14 @@
+Button
+VBoxContainer
+HBoxContainer
 TextureRect
-<<<<<<< Updated upstream
 Node2D
 PanelContainer
-=======
->>>>>>> Stashed changes
 MarginContainer
 GridContainer
-Button
-HBoxContainer
 Timer
 ColorRect
 NavigationRegion2D
 StaticBody2D
 NavigationObstacle2D
 NavigationAgent2D
-CharacterBody2D
-CollisionPolygon2D
-<<<<<<< Updated upstream
-=======
-Area2D
-CollisionShape2D
-Sprite2D
->>>>>>> Stashed changes

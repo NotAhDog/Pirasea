@@ -1,3 +1,6 @@
 res://Scenes/Menu.tscn
+res://Scripts/game.gd
 res://Scenes/main.tscn
 res://Scenes/Setting.tscn
+res://Scripts/Paused.gd
+res://Scripts/Setting.gd

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dadc2u4m8itxp"]
+[gd_scene load_steps=33 format=3 uid="uid://dadc2u4m8itxp"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_m3yls"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="2_i2gmc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://6w2bhir5gquy" path="res://Art/Paused Menu.png" id="3_1u3cd"]
 [ext_resource type="Texture2D" uid="uid://bkms55k5jqftp" path="res://Art/oceanbetter.png" id="3_py1ig"]
 [ext_resource type="PackedScene" uid="uid://c34ipo6uw0vw7" path="res://Scenes/galleon.tscn" id="4_h56da"]
+[ext_resource type="FontFile" uid="uid://cf8w3t5vni62p" path="res://Themes/Freebooter-6yn1.ttf" id="5_obd52"]
 [ext_resource type="Theme" uid="uid://bage11eoe04ud" path="res://Themes/ingametheme.tres" id="7_lo45m"]
 [ext_resource type="Texture2D" uid="uid://dtct1g3qieuk3" path="res://Art/Pirasea Gold Coin.png" id="7_xydeu"]
 [ext_resource type="Texture2D" uid="uid://c4xyf3wo42epi" path="res://Art/Health Bar.png" id="9_3norj"]
@@ -33,6 +34,21 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtivv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d1gtq"]
+bg_color = Color(0.478431, 0.282353, 0.254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jtvtv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3r1i8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3sw3f"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ba1w8"]
 texture = ExtResource("3_py1ig")
@@ -128,9 +144,73 @@ visible = false
 script = ExtResource("2_t18u3")
 
 [node name="Board" type="AnimatedSprite2D" parent="PauseMenu"]
-position = Vector2(576, 324)
+position = Vector2(575, 327)
 scale = Vector2(5.0625, 5.0625)
 sprite_frames = SubResource("SpriteFrames_gcal2")
+
+[node name="RESUME" type="Button" parent="PauseMenu/Board"]
+offset_left = -17.0
+offset_top = -5.0
+offset_right = 264.0
+offset_bottom = 77.0
+scale = Vector2(0.121, 0.121)
+theme = ExtResource("7_lo45m")
+theme_override_fonts/font = ExtResource("5_obd52")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_gtivv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d1gtq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jtvtv")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_3r1i8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3sw3f")
+text = "RESUME"
+
+[node name="SETTINGS" type="Button" parent="PauseMenu/Board"]
+offset_left = -16.9877
+offset_top = 12.0494
+offset_right = 264.012
+offset_bottom = 94.0494
+scale = Vector2(0.121, 0.121)
+theme = ExtResource("7_lo45m")
+theme_override_fonts/font = ExtResource("5_obd52")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_gtivv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d1gtq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jtvtv")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_3r1i8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3sw3f")
+text = "SETTINGS"
+
+[node name="MAIN MENU" type="Button" parent="PauseMenu/Board"]
+offset_left = -16.9877
+offset_top = 29.037
+offset_right = 264.012
+offset_bottom = 111.037
+scale = Vector2(0.121, 0.121)
+theme = ExtResource("7_lo45m")
+theme_override_fonts/font = ExtResource("5_obd52")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_gtivv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d1gtq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jtvtv")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_3r1i8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3sw3f")
+text = "MAIN MENU"
+
+[node name="QUIT" type="Button" parent="PauseMenu/Board"]
+offset_left = -17.0
+offset_top = 46.0
+offset_right = 392.0
+offset_bottom = 107.0
+scale = Vector2(0.083, 0.083)
+theme = ExtResource("7_lo45m")
+theme_override_fonts/font = ExtResource("5_obd52")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_gtivv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d1gtq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jtvtv")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_3r1i8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3sw3f")
+text = "QUIT"
 
 [node name="Pirasea" type="Label" parent="PauseMenu"]
 offset_left = 460.0
@@ -986,6 +1066,10 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_caexn")
 theme_override_styles/focus = SubResource("StyleBoxFlat_caexn")
 metadata/_edit_use_anchors_ = true
 
+[connection signal="pressed" from="PauseMenu/Board/RESUME" to="PauseMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseMenu/Board/SETTINGS" to="PauseMenu" method="_on_settings_pressed"]
+[connection signal="pressed" from="PauseMenu/Board/MAIN MENU" to="PauseMenu" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="PauseMenu/Board/QUIT" to="PauseMenu" method="_on_quit_pressed"]
 [connection signal="timeout" from="Cannonball" to="." method="_on_cannonball_timeout"]
 [connection signal="timeout" from="Galleon" to="." method="_on_enemy_galleon_timeout"]
 [connection signal="timeout" from="Rammer" to="." method="_on_rammer_timeout"]
