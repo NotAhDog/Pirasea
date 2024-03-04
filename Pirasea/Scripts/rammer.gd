@@ -9,7 +9,8 @@ func _ready():
 
 func _physics_process(delta): 
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
-	velocity = dir * speed
+	if AutoloadScript.knockback == false: velocity = dir * speed
+	if AutoloadScript.knockback == true: velocity = -(dir * speed)*1.5
 	move_and_slide()
 	if velocity[0] > 0: 
 		$Sprite2D.rotation = atan(velocity[1]/velocity[0]) + 1.5708

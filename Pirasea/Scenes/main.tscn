@@ -173,19 +173,6 @@ text = "Money: 0"
 position = Vector2(49.5, 78.5)
 texture = ExtResource("7_xydeu")
 
-[node name="CollectedMoney" type="RichTextLabel" parent="Player/Camera2D/UI"]
-offset_left = 65.0
-offset_top = 88.0
-offset_right = 431.0
-offset_bottom = 121.0
-theme = ExtResource("7_lo45m")
-theme_override_font_sizes/normal_font_size = 32
-text = "Total Collected Money: 0"
-
-[node name="Coin2" type="Sprite2D" parent="Player/Camera2D/UI"]
-position = Vector2(49.5, 102.5)
-texture = ExtResource("7_xydeu")
-
 [node name="HealthBar" type="ProgressBar" parent="Player/Camera2D/UI"]
 offset_left = 72.0
 offset_top = 32.0

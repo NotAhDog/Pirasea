@@ -3,7 +3,7 @@ extends Node
 var player_position
 var player_max_health = 3
 var player_health = 3
-var player_money = 100
+var player_money = 0
 var total_collected_money = 0
 var player_speed = 50
 var player_turn_speed = 25
@@ -24,7 +24,7 @@ func damaged(body):
 		player_money = 0
 	elif "Player" not in str(body):
 		knockback = true
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(2).timeout
 		knockback = false
 
 func _choose_random_spawn():

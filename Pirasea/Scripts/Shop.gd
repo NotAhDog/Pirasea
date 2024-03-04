@@ -1,7 +1,5 @@
 extends CanvasLayer
 
-var player_in_area = false
-
 func _close_shop():
 	get_node("/root/Main/Shop").visible = false
 	for i in get_node("/root/Main/Shop/Cards").get_children():

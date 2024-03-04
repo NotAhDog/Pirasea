@@ -1,3 +1,9 @@
-res://Scenes/Menu.tscn
 res://Scenes/main.tscn
 res://Scripts/ShopArea.gd
+res://Scenes/Menu.tscn
+res://Scripts/coin.gd
+res://Scripts/enemygalleon.gd
+res://Scripts/rammer.gd
+res://Scripts/autoload.gd
+res://Scenes/island_3.tscn
+res://Scripts/Shop.gd
