@@ -9,6 +9,7 @@ var island0 = preload("res://Scenes/water.tscn")
 var island1 = preload("res://Scenes/island_1.tscn")
 var island2 = preload("res://Scenes/island_2.tscn")
 var island3 = preload("res://Scenes/island_3.tscn")
+var progressionLevel = 0
 
 func _ready():
 	AutoloadScript.player_health += 1
@@ -100,3 +101,14 @@ func _on_rammer_timeout():
 	var enemyrammerinstance = enemyrammer.instantiate()
 	add_child(enemyrammerinstance)
 	enemyrammerinstance.position = AutoloadScript._choose_random_spawn()
+
+func _on_progression_timeout():
+	progressionLevel += 1
+	if progressionLevel == 1:
+		$Galleon.wait_time = 4
+	if progressionLevel >= 2 and progressionLevel <= 5:
+		$Galleon.wait_time -= 0.5
+		$Rammer.wait_time -= 0.5
+	if progressionLevel == 2:
+		$Rammer.start
+		

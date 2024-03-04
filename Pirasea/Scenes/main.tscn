@@ -198,8 +198,10 @@ wait_time = 5.0
 autostart = true
 
 [node name="Rammer" type="Timer" parent="."]
-wait_time = 7.0
-autostart = true
+wait_time = 7.5
+
+[node name="Progression" type="Timer" parent="."]
+wait_time = 30.0
 
 [node name="Shop" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -976,6 +978,7 @@ metadata/_edit_use_anchors_ = true
 [connection signal="timeout" from="Cannonball" to="." method="_on_cannonball_timeout"]
 [connection signal="timeout" from="Galleon" to="." method="_on_enemy_galleon_timeout"]
 [connection signal="timeout" from="Rammer" to="." method="_on_rammer_timeout"]
+[connection signal="timeout" from="Progression" to="." method="_on_progression_timeout"]
 [connection signal="visibility_changed" from="Shop" to="Shop" method="_on_visibility_changed"]
 [connection signal="pressed" from="Shop/Cards/MoreBlackPowder/MorePlacePowderButton" to="Shop" method="_on_more_place_powder_button_pressed"]
 [connection signal="pressed" from="Shop/Cards/MoreCrew/MoreCrewButton" to="Shop" method="_on_more_crew_button_pressed"]

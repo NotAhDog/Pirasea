@@ -7,3 +7,4 @@ res://Scripts/rammer.gd
 res://Scripts/autoload.gd
 res://Scenes/island_3.tscn
 res://Scripts/Shop.gd
+res://Scripts/game.gd
