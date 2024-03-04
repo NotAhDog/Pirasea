@@ -7,6 +7,7 @@ var timeout = false
 func _unhandled_key_input(event): #The shop opens and closes multiple times when e is pressed once
 	if timeout == false and event.is_echo() == false:
 		if Input.is_action_just_pressed("shop"):
+			print(event)
 			print(str(Time.get_ticks_msec()))
 			timeout = true
 			if get_node("/root/Main/Shop").visible == true: 
