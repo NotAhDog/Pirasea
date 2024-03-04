@@ -198,10 +198,11 @@ wait_time = 5.0
 autostart = true
 
 [node name="Rammer" type="Timer" parent="."]
-wait_time = 7.5
+wait_time = 7.0
 
 [node name="Progression" type="Timer" parent="."]
 wait_time = 30.0
+autostart = true
 
 [node name="Shop" type="CanvasLayer" parent="."]
 process_mode = 3

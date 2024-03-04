@@ -104,11 +104,12 @@ func _on_rammer_timeout():
 
 func _on_progression_timeout():
 	progressionLevel += 1
+	print("Progression Level: " + str(progressionLevel))
 	if progressionLevel == 1:
 		$Galleon.wait_time = 4
-	if progressionLevel >= 2 and progressionLevel <= 5:
+	if progressionLevel > 2 and progressionLevel <= 6:
 		$Galleon.wait_time -= 0.5
 		$Rammer.wait_time -= 0.5
 	if progressionLevel == 2:
-		$Rammer.start
+		$Rammer.start(0)
 		
