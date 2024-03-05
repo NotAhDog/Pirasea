@@ -1,15 +1,15 @@
 extends Area2D
 
-var player_in_area = false
+var player_in_area = true
 var timeout = false
 
 #player opening/closing the shop
 func _unhandled_key_input(event): #The shop opens and closes multiple times when e is pressed once
-	if timeout == false and event.is_echo() == false:
-		if Input.is_action_just_pressed("shop"):
+	if event.is_action_pressed("shop"):
+		if timeout == false and event.is_echo() == false:
+			timeout = true
 			print(event)
 			print(str(Time.get_ticks_msec()))
-			timeout = true
 			if get_node("/root/Main/Shop").visible == true: 
 				_close_shop()
 				print("DAMNIT")

@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://2rgts6dp4gbv"]
+
+[ext_resource type="Script" path="res://Scripts/enemygalleon.gd" id="1_8tmu1"]
+[ext_resource type="Texture2D" uid="uid://dn3xx8nvm6de3" path="res://Art/Sloop Navy.png" id="2_5sgf3"]
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_8tmu1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_5sgf3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-4, 0)
+scale = Vector2(0.7, 0.7)
+polygon = PackedVector2Array(-19, -23, 3, -23, 3, -21, 11, -21, 33, -12, 47, -3, 47, 3, 32, 12, 11, 21, 3, 21, 3, 23, -19, 23, -30, 17, -35, 9, -35, -9, -32, -15)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-4, 0)
+scale = Vector2(0.7, 0.7)
+polygon = PackedVector2Array(-19, -23, 3, -23, 3, -21, 11, -21, 33, -12, 47, -3, 47, 3, 32, 12, 11, 21, 3, 21, 3, 23, -19, 23, -30, 17, -35, 9, -35, -9, -32, -15)
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[node name="Nav" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+target_desired_distance = 1.0
+avoidance_enabled = true
+radius = 20.0
+debug_enabled = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Nav" to="." method="_on_nav_timeout"]

@@ -112,4 +112,6 @@ func _on_progression_timeout():
 		$Rammer.wait_time -= 0.5
 	if progressionLevel == 2:
 		$Rammer.start(0)
-		
+	#At this point, Rammers spawn every 5 seconds and Galleons 2 seconds
+	if progressionLevel == 8:
+		pass
