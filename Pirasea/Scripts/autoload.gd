@@ -37,17 +37,17 @@ func _choose_random_spawn():
 	var screen_side_spawn = randi_range(1,4)
 	var enemyspawn = get_node("/root/Main/Player").global_position
 	if screen_side_spawn == 1:
-		enemyspawn.y += 1024
-		enemyspawn.x += randi_range(-1536,1536)
+		enemyspawn.y += 2000
+		enemyspawn.x += randi_range(-2000,2000)
 	if screen_side_spawn == 2:
-		enemyspawn.x += 1536
-		enemyspawn.y += randi_range(-1024,1024)
+		enemyspawn.x += 2000
+		enemyspawn.y += randi_range(-2000,2000)
 	if screen_side_spawn == 3:
-		enemyspawn.y += -1024
-		enemyspawn.x += randi_range(-1536,1536)
+		enemyspawn.y += -2000
+		enemyspawn.x += randi_range(-2000,2000)
 	if screen_side_spawn == 4:
-		enemyspawn.x += -1536
-		enemyspawn.y += randi_range(-1024,1024)
+		enemyspawn.x += -2000
+		enemyspawn.y += randi_range(-2000,2000)
 	return enemyspawn
 
 func _full_screen(toggled_on):

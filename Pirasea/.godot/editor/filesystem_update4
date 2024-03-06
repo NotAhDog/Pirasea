@@ -1,6 +1,5 @@
-res://Scenes/Menu.tscn
-res://Scripts/ShopArea.gd
-res://Scenes/main.tscn
 res://Scenes/galleon.tscn
+res://Scenes/Menu.tscn
+res://Scripts/autoload.gd
+res://Scenes/main.tscn
 res://Scenes/bomber.tscn
-res://Scripts/game.gd
