@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckw4ic810jqpj"]
+
+[ext_resource type="Texture2D" uid="uid://cx7gtpw47wm1u" path="res://Art/BIGBOOMCRASHBOOMBEACH.png" id="1_o5v0h"]
+[ext_resource type="Script" path="res://Scripts/boom.gd" id="1_w0va8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eyr8q"]
+radius = 15.0
+
+[node name="boom" type="Area2D"]
+script = ExtResource("1_w0va8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_o5v0h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_eyr8q")
+
+[node name="delete" type="Timer" parent="."]
+wait_time = 0.33
+autostart = true
+
+[connection signal="timeout" from="delete" to="." method="_on_delete_timeout"]

@@ -40,6 +40,9 @@ func _on_area_2d_area_entered(area):
 			var coininstance = coin.instantiate()
 			get_node("..").add_child(coininstance)
 			coininstance.global_position = self.global_position
+		var boominstance = boom.instantiate()
+		get_node("..").add_child(boominstance)
+		boominstance.global_position = self.global_position
 		self.queue_free()
 
 func _on_area_2d_body_entered(body):
