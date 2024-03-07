@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://2rgts6dp4gbv"]
 
-[ext_resource type="Script" path="res://Scenes/bomber.gd" id="1_33dta"]
+[ext_resource type="Script" path="res://Scripts/bomber.gd" id="1_33dta"]
 [ext_resource type="Texture2D" uid="uid://dn3xx8nvm6de3" path="res://Art/Sloop Navy.png" id="2_5sgf3"]
 
 [node name="Enemy" type="CharacterBody2D"]

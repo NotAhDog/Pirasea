@@ -5,19 +5,12 @@ var timeout = false
 
 #player opening/closing the shop
 func _unhandled_key_input(event): #The shop opens and closes multiple times when e is pressed once
-	if event.is_action_pressed("shop"):
-		if timeout == false and event.is_echo() == false:
-			timeout = true
-			print(event)
-			print(str(Time.get_ticks_msec()))
-			if get_node("/root/Main/Shop").visible == true: 
-				_close_shop()
-				print("DAMNIT")
-			elif player_in_area == true: 
-				_open_shop()
-				print("DAMNIT")
-			await get_tree().create_timer(.25).timeout
-			timeout = false
+	if event.pressed == true:
+		print(event)
+		if Input.is_action_pressed("shop") and self.visible == false and player_in_area == true: 
+			_open_shop()
+		elif Input.is_action_pressed("shop") and self.visible == true: 
+			_close_shop()
 
 #functions
 func _reset_shop():
