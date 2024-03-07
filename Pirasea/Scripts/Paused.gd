@@ -14,7 +14,8 @@ func _on_resume_pressed():
 	get_tree().paused = false
 
 func _on_settings_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Setting.tscn")
+	hide()
+	get_node("/root/Main/PopUpSettings").visible = true
 	
 func _on_main_menu_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Menu.tscn")

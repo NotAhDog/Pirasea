@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dadc2u4m8itxp"]
+[gd_scene load_steps=44 format=3 uid="uid://dadc2u4m8itxp"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_m3yls"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="2_i2gmc"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cucsy80inrsqu" path="res://Art/TM.png" id="20_sgejb"]
 [ext_resource type="Texture2D" uid="uid://cqqs62c6nuyn1" path="res://Art/C.png" id="21_dlfh2"]
 [ext_resource type="AudioStream" uid="uid://l5htagc5evrf" path="res://Audio/ocean-sea-soft-waves-121349.mp3" id="22_3yny4"]
+[ext_resource type="Script" path="res://Scenes/PopUpSettings.gd" id="22_g7frg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1y6k"]
 atlas = ExtResource("3_1u3cd")
@@ -151,6 +152,21 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngdpc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrtsq"]
+bg_color = Color(0.478431, 0.282353, 0.254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yp41j"]
+bg_color = Color(0.478431, 0.282353, 0.254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bmtd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7eir2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Main" type="Node"]
 process_mode = 1
@@ -1129,6 +1145,9 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_3sw3f")
 text = "MENU"
 
 [node name="PopUpSettings" type="CanvasLayer" parent="."]
+process_mode = 3
+visible = false
+script = ExtResource("22_g7frg")
 
 [node name="ColorRect" type="ColorRect" parent="PopUpSettings"]
 anchors_preset = 8
@@ -1159,6 +1178,74 @@ theme_override_fonts/font = ExtResource("5_obd52")
 text = "SETTINGS"
 horizontal_alignment = 1
 
+[node name="HBoxContainer" type="HBoxContainer" parent="PopUpSettings/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopUpSettings/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+alignment = 1
+
+[node name="MAINVOLUME" type="Label" parent="PopUpSettings/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("7_lo45m")
+text = "MAIN VOLUME"
+vertical_alignment = 1
+
+[node name="SFXVOLUME" type="Label" parent="PopUpSettings/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("7_lo45m")
+text = "SFX VOLUME"
+
+[node name="MUSICVOLUME" type="Label" parent="PopUpSettings/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("7_lo45m")
+text = "MUSIC VOLUME"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PopUpSettings/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HSliderMAIN" type="HSlider" parent="PopUpSettings/MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="HSliderSFX" type="HSlider" parent="PopUpSettings/MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="HSliderMUSIC" type="HSlider" parent="PopUpSettings/MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="RESUMEButton" type="Button" parent="PopUpSettings/MarginContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("7_lo45m")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ngdpc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xrtsq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yp41j")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_0bmtd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7eir2")
+text = "RESUME"
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("22_3yny4")
 
@@ -1184,3 +1271,4 @@ stream = ExtResource("22_3yny4")
 [connection signal="visibility_changed" from="DeadScreen" to="DeadScreen" method="_on_visibility_changed"]
 [connection signal="pressed" from="DeadScreen/Dead/Restart" to="DeadScreen" method="_on_restart_pressed"]
 [connection signal="pressed" from="DeadScreen/Dead/Main Menu" to="DeadScreen" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="PopUpSettings/MarginContainer/RESUMEButton" to="PopUpSettings" method="_on_resume_button_pressed"]

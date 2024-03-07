@@ -45,8 +45,3 @@ func _choose_random_spawn():
 		enemyspawn.y += randi_range(-1024,1024)
 	return enemyspawn
 
-func _full_screen(toggled_on):
-	if toggled_on == true:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	else:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
