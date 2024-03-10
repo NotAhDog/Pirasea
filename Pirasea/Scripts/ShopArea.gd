@@ -1,16 +1,19 @@
 extends Area2D
 
-var player_in_area = true
+var player_in_area = null
 var timeout = false
+var open = false
 
 #player opening/closing the shop
 func _unhandled_key_input(event): #The shop opens and closes multiple times when e is pressed once
 	if event.pressed == true:
-		print(event)
-		if Input.is_action_pressed("shop") and self.visible == false and player_in_area == true: 
-			_open_shop()
-		elif Input.is_action_pressed("shop") and self.visible == true: 
-			_close_shop()
+		if Input.is_action_pressed("shop") and player_in_area == self:
+			if open == false: 
+				_open_shop()
+				open = true
+			else:
+				_close_shop()
+				open = false
 
 #functions
 func _reset_shop():
@@ -53,8 +56,9 @@ func _close_shop():
 
 func _on_body_entered(body):
 	if "player" in str(body).to_lower():
-		player_in_area = true
+		player_in_area = self
+		print(self, player_in_area)
 
 func _on_body_exited(body):
 	if "player" in str(body).to_lower():
-		player_in_area = false
+		player_in_area = null
