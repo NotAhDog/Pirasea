@@ -1,7 +1,7 @@
-res://Scenes/main.tscn
 res://Scenes/Menu.tscn
+res://Scenes/main.tscn
 res://Scenes/Setting.tscn
 res://Scenes/autoload.tscn
-res://Scripts/autoload.gd
-res://Scripts/Paused.gd
-res://Scenes/PopUpSettings.gd
+res://Scenes/galleon.tscn
+res://default_bus_layout.tres
+res://Scenes/MAIN MENU SLIDER.gd

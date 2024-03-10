@@ -1,9 +1,9 @@
+AudioStreamPlayer2D
 HBoxContainer
 Button
 VBoxContainer
 HSlider
 Label
-AudioStreamPlayer2D
 MarginContainer
 ColorRect
 CanvasLayer
