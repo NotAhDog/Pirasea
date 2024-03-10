@@ -7,3 +7,7 @@ res://Scenes/bomber.tscn
 res://Scenes/boom.tscn
 res://Scenes/island_1.tscn
 res://Scenes/island_3.tscn
+res://Scripts/game.gd
+res://Scenes/fleet_handler.tscn
+res://Scenes/enemygalleon.tscn
+res://Scenes/rammer.tscn

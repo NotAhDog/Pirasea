@@ -113,5 +113,9 @@ func _on_progression_timeout():
 	if progressionLevel == 2:
 		$Rammer.start(0)
 	#At this point, Rammers spawn every 5 seconds and Galleons 2 seconds
-	if progressionLevel == 8:
-		pass
+	if progressionLevel == 1:
+		for i in $PirateFleetStorage.get_children():
+			var fleet = i.duplicate()
+			for x in range(4):
+				self.add_child(fleet)
+				fleet.position = AutoloadScript._choose_random_spawn()
