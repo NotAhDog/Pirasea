@@ -3,6 +3,9 @@ extends Node
 var cannonball = preload("res://Scenes/cannonball.tscn")
 var enemygalleon = preload("res://Scenes/enemygalleon.tscn")
 var enemyrammer = preload("res://Scenes/rammer.tscn")
+var pirategalleon = preload("res://Scenes/pirate_galleon.tscn")
+var piraterammer = preload("res://Scenes/pirate_rammer.tscn")
+var piratebomber = preload("res://Scenes/pirate_boomer.tscn")
 var cannonballxv = 0
 var cannonballyv = 0
 var island0 = preload("res://Scenes/water.tscn")
@@ -114,8 +117,18 @@ func _on_progression_timeout():
 		$Rammer.start(0)
 	#At this point, Rammers spawn every 5 seconds and Galleons 2 seconds
 	if progressionLevel == 1:
-		for i in $PirateFleetStorage.get_children():
-			var fleet = i.duplicate()
-			for x in range(4):
-				self.add_child(fleet)
-				fleet.position = AutoloadScript._choose_random_spawn()
+		for x in range(4):
+			print("Process")
+			var fleet = pirategalleon.instantiate()
+			self.add_child(fleet)
+			fleet.position = AutoloadScript._choose_random_spawn()
+		for x in range(4):
+			print("Process")
+			var fleet = piraterammer.instantiate()
+			self.add_child(fleet)
+			fleet.position = AutoloadScript._choose_random_spawn()
+		for x in range(4):
+			print("Process")
+			var fleet = piratebomber.instantiate()
+			self.add_child(fleet)
+			fleet.position = AutoloadScript._choose_random_spawn()

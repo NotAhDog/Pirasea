@@ -7,6 +7,7 @@ var boom = preload("res://Scenes/boom.tscn")
 
 func _ready():
 	_make_path()
+	$SpawnTimer.start(0.25)
 
 func _physics_process(delta): 
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
@@ -49,3 +50,7 @@ func _on_area_2d_body_entered(body):
 
 func _on_timer_timeout():
 	show()
+
+
+func _on_spawn_timer_timeout():
+	pass # Replace with function body.

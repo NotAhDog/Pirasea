@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dadc2u4m8itxp"]
+[gd_scene load_steps=27 format=3 uid="uid://dadc2u4m8itxp"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_m3yls"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="2_i2gmc"]
@@ -15,15 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://bf3qlcvnn7wsu" path="res://Art/S.png" id="16_wruoe"]
 [ext_resource type="Texture2D" uid="uid://eaml17arhk6j" path="res://Art/R.png" id="17_hx8ky"]
 [ext_resource type="Texture2D" uid="uid://ch7v8bbv0k8ux" path="res://Art/SW.png" id="18_ufk1i"]
-[ext_resource type="Script" path="res://Scripts/enemygalleon.gd" id="19_ewy8f"]
 [ext_resource type="Texture2D" uid="uid://y4yj3g550nag" path="res://Art/DT.png" id="19_jxryy"]
-[ext_resource type="Script" path="res://Scripts/rammer.gd" id="19_kcw6g"]
-[ext_resource type="Texture2D" uid="uid://bdfrc1rbd03ym" path="res://Art/Galleon.png" id="20_4lbsd"]
 [ext_resource type="Texture2D" uid="uid://cucsy80inrsqu" path="res://Art/TM.png" id="20_sgejb"]
-[ext_resource type="Texture2D" uid="uid://3t61lqpc7bab" path="res://Art/sail boat pirate.png" id="20_t1xhy"]
 [ext_resource type="Texture2D" uid="uid://cqqs62c6nuyn1" path="res://Art/C.png" id="21_dlfh2"]
-[ext_resource type="Script" path="res://Scripts/bomber.gd" id="21_h510m"]
-[ext_resource type="Texture2D" uid="uid://br7ex8x2pya3c" path="res://Art/Sloop.png" id="22_5b0ny"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1y6k"]
 atlas = ExtResource("3_1u3cd")
@@ -981,103 +975,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_caexn")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_caexn")
 theme_override_styles/focus = SubResource("StyleBoxFlat_caexn")
 metadata/_edit_use_anchors_ = true
-
-[node name="PirateFleetStorage" type="Node2D" parent="."]
-process_mode = 4
-
-[node name="PirateGalleon" type="CharacterBody2D" parent="PirateFleetStorage"]
-position = Vector2(-1341, -1502)
-script = ExtResource("19_ewy8f")
-
-[node name="Sprite2D" type="Sprite2D" parent="PirateFleetStorage/PirateGalleon"]
-rotation = 1.5708
-scale = Vector2(1.75, 1.75)
-texture = ExtResource("20_4lbsd")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PirateFleetStorage/PirateGalleon"]
-polygon = PackedVector2Array(-33, -24, -13, -24, -13, -22, 11, -21, 33, -12, 47, -3, 47, 3, 32, 12, 12, 20, -12, 22, -12, 24, -33, 24, -47, 15, -54, 3, -54, -3, -47, -15)
-
-[node name="Area2D" type="Area2D" parent="PirateFleetStorage/PirateGalleon"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PirateFleetStorage/PirateGalleon/Area2D"]
-polygon = PackedVector2Array(-33, -24, -13, -24, -13, -22, 11, -21, 33, -12, 47, -3, 47, 3, 32, 12, 12, 20, -12, 22, -12, 24, -33, 24, -47, 15, -54, 3, -54, -3, -47, -15)
-
-[node name="SpawnTimer" type="Timer" parent="PirateFleetStorage/PirateGalleon"]
-wait_time = 0.25
-autostart = true
-
-[node name="Nav" type="Timer" parent="PirateFleetStorage/PirateGalleon"]
-wait_time = 0.1
-autostart = true
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="PirateFleetStorage/PirateGalleon"]
-target_desired_distance = 1.0
-avoidance_enabled = true
-radius = 20.0
-debug_enabled = true
-
-[node name="PirateRammer" type="CharacterBody2D" parent="PirateFleetStorage"]
-position = Vector2(-1055, -1639)
-script = ExtResource("19_kcw6g")
-
-[node name="Sprite2D" type="Sprite2D" parent="PirateFleetStorage/PirateRammer"]
-texture = ExtResource("20_t1xhy")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PirateFleetStorage/PirateRammer"]
-polygon = PackedVector2Array(-12, -10, 11, -10, 24, -1, 24, 1, 11, 10, -12, 10, -17, 6, -17, -6)
-
-[node name="Area2D" type="Area2D" parent="PirateFleetStorage/PirateRammer"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PirateFleetStorage/PirateRammer/Area2D"]
-polygon = PackedVector2Array(-12, -10, 11, -10, 24, -1, 24, 1, 11, 10, -12, 10, -17, 6, -17, -6)
-
-[node name="SpawnTimer" type="Timer" parent="PirateFleetStorage/PirateRammer"]
-wait_time = 0.25
-
-[node name="Nav" type="Timer" parent="PirateFleetStorage/PirateRammer"]
-wait_time = 0.1
-autostart = true
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="PirateFleetStorage/PirateRammer"]
-target_desired_distance = 1.0
-avoidance_enabled = true
-radius = 20.0
-debug_enabled = true
-
-[node name="PirateBoomer" type="CharacterBody2D" parent="PirateFleetStorage"]
-position = Vector2(350, 350)
-script = ExtResource("21_h510m")
-
-[node name="Sprite2D" type="Sprite2D" parent="PirateFleetStorage/PirateBoomer"]
-rotation = 1.5708
-scale = Vector2(1.25, 1.25)
-texture = ExtResource("22_5b0ny")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PirateFleetStorage/PirateBoomer"]
-position = Vector2(-4, 0)
-scale = Vector2(1.25, 1.25)
-polygon = PackedVector2Array(-10.4, -12.8, 2.4, -12.8, 2.4, -12, 8, -12, 17.6, -8, 27.2, -1.6, 27.2, 1.6, 17.6, 8, 8, 12, 2.4, 12, 2.4, 12.8, -10.4, 12.8, -16.8, 9.6, -20, 4, -20, -4, -16.8, -9.6)
-
-[node name="Area2D" type="Area2D" parent="PirateFleetStorage/PirateBoomer"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PirateFleetStorage/PirateBoomer/Area2D"]
-position = Vector2(-4, 0)
-scale = Vector2(1.25, 1.25)
-polygon = PackedVector2Array(-10.4, -12.8, 2.4, -12.8, 2.4, -12, 8, -12, 17.6, -8, 27.2, -1.6, 27.2, 1.6, 17.6, 8, 8, 12, 2.4, 12, 2.4, 12.8, -10.4, 12.8, -16.8, 9.6, -20, 4, -20, -4, -16.8, -9.6)
-
-[node name="SpawnTimer" type="Timer" parent="PirateFleetStorage/PirateBoomer"]
-wait_time = 0.25
-autostart = true
-
-[node name="Nav" type="Timer" parent="PirateFleetStorage/PirateBoomer"]
-wait_time = 0.1
-autostart = true
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="PirateFleetStorage/PirateBoomer"]
-target_desired_distance = 1.0
-avoidance_enabled = true
-radius = 20.0
-debug_enabled = true
 
 [connection signal="timeout" from="Cannonball" to="." method="_on_cannonball_timeout"]
 [connection signal="timeout" from="Galleon" to="." method="_on_enemy_galleon_timeout"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://wbolek1142su"]
+
+[ext_resource type="Script" path="res://Scripts/rammer.gd" id="1_c5kdm"]
+[ext_resource type="Texture2D" uid="uid://3t61lqpc7bab" path="res://Art/sail boat pirate.png" id="2_nlf6f"]
+
+[node name="PirateRammer" type="CharacterBody2D"]
+script = ExtResource("1_c5kdm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_nlf6f")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-12, -10, 11, -10, 24, -1, 24, 1, 11, 10, -12, 10, -17, 6, -17, -6)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-12, -10, 11, -10, 24, -1, 24, 1, 11, 10, -12, 10, -17, 6, -17, -6)
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.25
+
+[node name="Nav" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+target_desired_distance = 1.0
+avoidance_enabled = true
+radius = 20.0
+debug_enabled = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Nav" to="." method="_on_nav_timeout"]

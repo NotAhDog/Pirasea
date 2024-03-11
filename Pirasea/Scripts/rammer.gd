@@ -6,6 +6,7 @@ var coin = preload("res://Scenes/coin.tscn")
 
 func _ready():
 	_make_path()
+	$SpawnTimer.start(0.25)
 
 func _physics_process(delta): 
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
