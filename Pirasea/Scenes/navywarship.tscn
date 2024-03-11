@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv75k77stjl1q"]
+
+[ext_resource type="Script" path="res://Scripts/navywarship.gd" id="1_5p1kl"]
+[ext_resource type="Texture2D" uid="uid://gx57qdgnslyr" path="res://Art/navy war ship.png" id="2_lvabg"]
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_5p1kl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("2_lvabg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(196, -7, 196, 7, 189, 14, 168, 21, 161, 28, 133, 49, 49, 84, -49, 98, -133, 98, -161, 91, -217, 14, -217, -14, -161, -91, -133, -98, -49, -98, 49, -84, 133, -49, 161, -28, 168, -21, 189, -14)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(196, -7, 196, 7, 189, 14, 168, 21, 161, 28, 133, 49, 49, 84, -49, 98, -133, 98, -161, 91, -217, 14, -217, -14, -161, -91, -133, -98, -49, -98, 49, -84, 133, -49, 161, -28, 168, -21, 189, -14)
+
+[node name="SpawnHandler" type="Node2D" parent="."]
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[node name="Nav" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="Cannon" type="Timer" parent="."]
+
+[node name="Galleon" type="Timer" parent="."]
+
+[node name="Rammer" type="Timer" parent="."]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+target_desired_distance = 1.0
+avoidance_enabled = true
+radius = 20.0
+debug_enabled = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Nav" to="." method="_on_nav_timeout"]
+[connection signal="timeout" from="Cannon" to="." method="_on_cannonball_timeout"]
+[connection signal="timeout" from="Galleon" to="." method="_on_galleon_timeout"]
+[connection signal="timeout" from="Rammer" to="." method="_on_rammer_timeout"]

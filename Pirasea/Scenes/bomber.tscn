@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dn3xx8nvm6de3" path="res://Art/Sloop Navy.png" id="2_5sgf3"]
 
 [node name="Enemy" type="CharacterBody2D"]
+visible = false
 script = ExtResource("1_33dta")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

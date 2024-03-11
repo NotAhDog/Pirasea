@@ -1,7 +1,8 @@
+Timer
 Node2D
+CollisionPolygon2D
 CharacterBody2D
 Area2D
-Timer
 CollisionShape2D
 Sprite2D
 StaticBody2D
@@ -11,4 +12,3 @@ HBoxContainer
 ColorRect
 NavigationRegion2D
 NavigationObstacle2D
-NavigationAgent2D

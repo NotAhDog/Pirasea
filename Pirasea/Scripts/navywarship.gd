@@ -4,6 +4,9 @@ var speed = 100
 var coin = preload("res://Scenes/coin.tscn")
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 var boom = preload("res://Scenes/boom.tscn")
+var enemygalleon = preload("res://Scenes/enemygalleon.tscn")
+var enemyrammer = preload("res://Scenes/rammer.tscn")
+var health = 100
 
 func _ready():
 	_make_path()
@@ -31,17 +34,13 @@ func _on_nav_timeout():
 
 func _on_area_2d_area_entered(area):
 	if "cannonball" in str(area).to_lower() or "boom" in str(area).to_lower():
-		var chance = randi_range(1, 4)
-		if chance <= AutoloadScript.double_drop_chance:
-			for i in range(2):
+		health -= 1
+		if health <= 0:
+			for i in range(20):
 				var coininstance = coin.instantiate()
-				get_node("..").add_child(coininstance)
+				get_node("/root/Main").add_child(coininstance)
 				coininstance.global_position = self.global_position
-		else:
-			var coininstance = coin.instantiate()
-			get_node("..").add_child(coininstance)
-			coininstance.global_position = self.global_position
-		self.queue_free()
+			self.queue_free()
 
 func _on_area_2d_body_entered(body):
 	if $SpawnTimer.time_left > 0 and "island" in str(body).to_lower():
@@ -50,3 +49,18 @@ func _on_area_2d_body_entered(body):
 
 func _on_timer_timeout():
 	show()
+
+func _on_galleon_timeout():
+	var galleoninstance = enemygalleon.instantiate()
+	get_node("/root/Main").add_child(galleoninstance)
+	galleoninstance.global_position = self.global_position
+
+func _on_rammer_timeout():
+	pass # Replace with function body.
+	
+func _random_spawn():
+	var spawnside = randi_range(1, 4)
+	var spawn = Vector2(0.0, 0.0)
+	if spawnside == 1:
+		spawn = self.global_position
+		spawn.y -= 200

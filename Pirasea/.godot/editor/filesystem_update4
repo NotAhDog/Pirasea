@@ -15,3 +15,5 @@ res://Scripts/bomber.gd
 res://Scenes/pirate_boomer.tscn
 res://Scenes/pirate_rammer.tscn
 res://Scenes/pirate_galleon.tscn
+res://Scripts/navywarship.gd
+res://Scenes/navywarship.tscn

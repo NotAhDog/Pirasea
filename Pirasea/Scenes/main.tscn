@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dadc2u4m8itxp"]
+[gd_scene load_steps=28 format=3 uid="uid://dadc2u4m8itxp"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_m3yls"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="2_i2gmc"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://eaml17arhk6j" path="res://Art/R.png" id="17_hx8ky"]
 [ext_resource type="Texture2D" uid="uid://ch7v8bbv0k8ux" path="res://Art/SW.png" id="18_ufk1i"]
 [ext_resource type="Texture2D" uid="uid://y4yj3g550nag" path="res://Art/DT.png" id="19_jxryy"]
+[ext_resource type="PackedScene" uid="uid://cv75k77stjl1q" path="res://Scenes/navywarship.tscn" id="19_ndm0m"]
 [ext_resource type="Texture2D" uid="uid://cucsy80inrsqu" path="res://Art/TM.png" id="20_sgejb"]
 [ext_resource type="Texture2D" uid="uid://cqqs62c6nuyn1" path="res://Art/C.png" id="21_dlfh2"]
 
@@ -201,7 +202,7 @@ autostart = true
 wait_time = 7.0
 
 [node name="Progression" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 30.0
 autostart = true
 
 [node name="Shop" type="CanvasLayer" parent="."]
@@ -975,6 +976,9 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_caexn")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_caexn")
 theme_override_styles/focus = SubResource("StyleBoxFlat_caexn")
 metadata/_edit_use_anchors_ = true
+
+[node name="Enemy" parent="." instance=ExtResource("19_ndm0m")]
+position = Vector2(6010, 5244)
 
 [connection signal="timeout" from="Cannonball" to="." method="_on_cannonball_timeout"]
 [connection signal="timeout" from="Galleon" to="." method="_on_enemy_galleon_timeout"]

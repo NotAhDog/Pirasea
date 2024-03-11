@@ -1,6 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1710185769
-::res://Art/::1710185751
+::res://::1710187091
+::res://Art/::1710187299
 BDS.png::CompressedTexture2D::7698772600237059021::1710185751::1710185751::1::::<><>::
 BIGBOOMCRASHBOOMBEACH.png::CompressedTexture2D::6453643914428870408::1710185751::1710185751::1::::<><>::
 BP.png::CompressedTexture2D::3122105028556067375::1710185751::1710185751::1::::<><>::
@@ -19,6 +19,7 @@ island2.png::CompressedTexture2D::832193207406483599::1710185751::1710185751::1:
 Island 1.png::CompressedTexture2D::4673354631185768359::1710185751::1710185751::1::::<><>::
 Island 3.png::CompressedTexture2D::8709344779600534762::1710185751::1710185751::1::::<><>::
 Menu.png::CompressedTexture2D::3395277231538614828::1710185751::1710185751::1::::<><>::
+navy war ship.png::CompressedTexture2D::470493250658241229::1710187298::1710187299::1::::<><>::
 ocean.png::CompressedTexture2D::2008374345820526788::1710185751::1710185751::1::::<><>::
 oceanbetter.png::CompressedTexture2D::3114229725333358969::1710185751::1710185751::1::::<><>::
 Paused Menu.png::CompressedTexture2D::2222911988801552048::1710185751::1710185751::1::::<><>::
@@ -32,37 +33,41 @@ Sloop Navy.png::CompressedTexture2D::8130958913905253320::1710185751::1710185751
 Sloop.png::CompressedTexture2D::3645976824949244938::1710185751::1710185751::1::::<><>::
 SW.png::CompressedTexture2D::5331557404085437699::1710185751::1710185751::1::::<><>::
 TM.png::CompressedTexture2D::6181884532850693652::1710185751::1710185751::1::::<><>::
-::res://Scenes/::1710185751
+::res://Scenes/::1710187335
 autoload.tscn::PackedScene::2747700383523115992::1710185751::0::1::::<><>::res://Scripts/autoload.gd
-bomber.tscn::PackedScene::1930592425553419975::1710185751::0::1::::<><>::res://Scripts/bomber.gd<>uid://dn3xx8nvm6de3::::res://Art/Sloop Navy.png
-boom.tscn::PackedScene::5521921350737655839::1710185751::0::1::::<><>::uid://cx7gtpw47wm1u::::res://Art/BIGBOOMCRASHBOOMBEACH.png<>res://Scripts/boom.gd
+bomber.tscn::PackedScene::1930592425553419975::1710187434::0::1::::<><>::res://Scripts/bomber.gd<>uid://dn3xx8nvm6de3::::res://Art/Sloop Navy.png
+boom.tscn::PackedScene::5521921350737655839::1710186385::0::1::::<><>::uid://cx7gtpw47wm1u::::res://Art/BIGBOOMCRASHBOOMBEACH.png<>res://Scripts/boom.gd
 cannonball.tscn::PackedScene::764888714329344886::1710185751::0::1::::<><>::res://Scripts/cannonball.gd<>uid://b4otd7u7txnbq::::res://Art/Cannonball.png
 coin.tscn::PackedScene::3278078062115754436::1710185751::0::1::::<><>::res://Scripts/coin.gd<>uid://dtct1g3qieuk3::::res://Art/Pirasea Gold Coin.png
-enemygalleon.tscn::PackedScene::4932986903814497726::1710185751::0::1::::<><>::uid://bli3yxspw0p1b::::res://Art/galleonnavy.png<>res://Scripts/enemygalleon.gd
-galleon.tscn::PackedScene::6798509251124501960::1710185751::0::1::::<><>::res://Scripts/CharacterBody2D.gd<>uid://bdfrc1rbd03ym::::res://Art/Galleon.png
-island_1.tscn::PackedScene::1420437577496352215::1710185751::0::1::::<><>::uid://b7t2p584332yl::::res://Art/Island 1.png
+enemygalleon.tscn::PackedScene::4932986903814497726::1710186646::0::1::::<><>::uid://bli3yxspw0p1b::::res://Art/galleonnavy.png<>res://Scripts/enemygalleon.gd
+galleon.tscn::PackedScene::6798509251124501960::1710186646::0::1::::<><>::res://Scripts/CharacterBody2D.gd<>uid://bdfrc1rbd03ym::::res://Art/Galleon.png
+island_1.tscn::PackedScene::1420437577496352215::1710186385::0::1::::<><>::uid://b7t2p584332yl::::res://Art/Island 1.png
 island_2.tscn::PackedScene::8266611341462444155::1710185751::0::1::::<><>::uid://l4edohwutx4b::::res://Art/island2.png
-island_3.tscn::PackedScene::4180551512364590830::1710185751::0::1::::<><>::uid://dwc4vvkbwx33k::::res://Art/Island 3.png<>res://Scripts/ShopArea.gd
-main.tscn::PackedScene::7165625930618439929::1710185751::0::1::::<><>::res://Scripts/game.gd<>res://Scripts/Camera2D.gd<>res://Scripts/Paused.gd<>uid://6w2bhir5gquy::::res://Art/Paused Menu.png<>uid://bkms55k5jqftp::::res://Art/oceanbetter.png<>uid://c34ipo6uw0vw7::::res://Scenes/galleon.tscn<>uid://bage11eoe04ud::::res://Themes/ingametheme.tres<>uid://dtct1g3qieuk3::::res://Art/Pirasea Gold Coin.png<>uid://c4xyf3wo42epi::::res://Art/Health Bar.png<>uid://bkqmu4n5c1s1d::::res://Art/BP.png<>res://Scripts/Shop.gd<>uid://bbml07ien7v6g::::res://Art/Cannon ball upgrade card.png<>uid://bf3qlcvnn7wsu::::res://Art/S.png<>uid://eaml17arhk6j::::res://Art/R.png<>uid://ch7v8bbv0k8ux::::res://Art/SW.png<>res://Scripts/enemygalleon.gd<>uid://y4yj3g550nag::::res://Art/DT.png<>res://Scripts/rammer.gd<>uid://bdfrc1rbd03ym::::res://Art/Galleon.png<>uid://cucsy80inrsqu::::res://Art/TM.png<>uid://3t61lqpc7bab::::res://Art/sail boat pirate.png<>uid://cqqs62c6nuyn1::::res://Art/C.png<>res://Scripts/bomber.gd<>uid://br7ex8x2pya3c::::res://Art/Sloop.png
-Menu.tscn::PackedScene::1794221166049138552::1710185751::0::1::::<><>::res://Scripts/Menu.gd<>uid://bomxyqi2nvenk::::res://Art/Menu.png<>uid://bage11eoe04ud::::res://Themes/ingametheme.tres<>uid://cf8w3t5vni62p::::res://Themes/Freebooter-6yn1.ttf
-rammer.tscn::PackedScene::8887641976211134210::1710185751::0::1::::<><>::res://Scripts/rammer.gd<>uid://btp3p6pqxfjwj::::res://Art/sail boat navy.png
+island_3.tscn::PackedScene::4180551512364590830::1710186646::0::1::::<><>::uid://dwc4vvkbwx33k::::res://Art/Island 3.png<>res://Scripts/ShopArea.gd
+main.tscn::PackedScene::7165625930618439929::1710186646::0::1::::<><>::res://Scripts/game.gd<>res://Scripts/Camera2D.gd<>res://Scripts/Paused.gd<>uid://6w2bhir5gquy::::res://Art/Paused Menu.png<>uid://bkms55k5jqftp::::res://Art/oceanbetter.png<>uid://c34ipo6uw0vw7::::res://Scenes/galleon.tscn<>uid://bage11eoe04ud::::res://Themes/ingametheme.tres<>uid://dtct1g3qieuk3::::res://Art/Pirasea Gold Coin.png<>uid://c4xyf3wo42epi::::res://Art/Health Bar.png<>uid://bkqmu4n5c1s1d::::res://Art/BP.png<>res://Scripts/Shop.gd<>uid://bbml07ien7v6g::::res://Art/Cannon ball upgrade card.png<>uid://bf3qlcvnn7wsu::::res://Art/S.png<>uid://eaml17arhk6j::::res://Art/R.png<>uid://ch7v8bbv0k8ux::::res://Art/SW.png<>uid://y4yj3g550nag::::res://Art/DT.png<>uid://cucsy80inrsqu::::res://Art/TM.png<>uid://cqqs62c6nuyn1::::res://Art/C.png
+Menu.tscn::PackedScene::1794221166049138552::1710186646::0::1::::<><>::res://Scripts/Menu.gd<>uid://bomxyqi2nvenk::::res://Art/Menu.png<>uid://bage11eoe04ud::::res://Themes/ingametheme.tres<>uid://cf8w3t5vni62p::::res://Themes/Freebooter-6yn1.ttf
+navywarship.tscn::PackedScene::6314708270661379176::1710187335::0::1::::<><>::res://Scripts/enemygalleon.gd<>uid://bli3yxspw0p1b::::res://Art/galleonnavy.png
+pirate_boomer.tscn::PackedScene::8795842532412659932::1710187426::0::1::::<><>::res://Scripts/bomber.gd<>uid://br7ex8x2pya3c::::res://Art/Sloop.png
+pirate_galleon.tscn::PackedScene::4087723678765278717::1710187428::0::1::::<><>::res://Scripts/enemygalleon.gd<>uid://bdfrc1rbd03ym::::res://Art/Galleon.png
+pirate_rammer.tscn::PackedScene::1547088846181138732::1710186646::0::1::::<><>::res://Scripts/rammer.gd<>uid://3t61lqpc7bab::::res://Art/sail boat pirate.png
+rammer.tscn::PackedScene::8887641976211134210::1710187439::0::1::::<><>::res://Scripts/rammer.gd<>uid://btp3p6pqxfjwj::::res://Art/sail boat navy.png
 rowboat.tscn::PackedScene::4264418246690130011::1710185751::0::1::::<><>::res://Scripts/Rowboat.gd<>uid://8auufmeio0kn::::res://Art/Rowboat.png
 Setting.tscn::PackedScene::6268853989287258678::1710185751::0::1::::<><>::uid://bage11eoe04ud::::res://Themes/ingametheme.tres<>res://Scripts/Setting.gd<>uid://cf8w3t5vni62p::::res://Themes/Freebooter-6yn1.ttf<>uid://b4otd7u7txnbq::::res://Art/Cannonball.png
 water.tscn::PackedScene::4825855991726630337::1710185751::0::1::::<><>::
-::res://Scripts/::1710185751
+::res://Scripts/::1710186633
 autoload.gd::GDScript::-1::1710185751::0::1::::<>Node<>::
-bomber.gd::GDScript::-1::1710185751::0::1::::<>CharacterBody2D<>::
-boom.gd::GDScript::-1::1710185751::0::1::::<>Area2D<>::
+bomber.gd::GDScript::-1::1710187388::0::1::::<>CharacterBody2D<>::
+boom.gd::GDScript::-1::1710185806::0::1::::<>Area2D<>::
 Camera2D.gd::GDScript::-1::1710185751::0::1::::<>Camera2D<>::
 cannonball.gd::GDScript::-1::1710185751::0::1::::<>RigidBody2D<>::
 CharacterBody2D.gd::GDScript::-1::1710185751::0::1::::<>CharacterBody2D<>::
 coin.gd::GDScript::-1::1710185751::0::1::::<>Area2D<>::
 Control.gd::GDScript::-1::1710185751::0::1::::<>RefCounted<>::
-enemygalleon.gd::GDScript::-1::1710185751::0::1::::<>CharacterBody2D<>::
-game.gd::GDScript::-1::1710185751::0::1::::<>Node<>::
+enemygalleon.gd::GDScript::-1::1710187407::0::1::::<>CharacterBody2D<>::
+game.gd::GDScript::-1::1710186633::0::1::::<>Node<>::
 Menu.gd::GDScript::-1::1710185751::0::1::::<>Control<>::
 Paused.gd::GDScript::-1::1710185751::0::1::::<>CanvasLayer<>::
-rammer.gd::GDScript::-1::1710185751::0::1::::<>CharacterBody2D<>::
+rammer.gd::GDScript::-1::1710186255::0::1::::<>CharacterBody2D<>::
 Rowboat.gd::GDScript::-1::1710185751::0::1::::<>CharacterBody2D<>::
 sail boat pirate.png::CompressedTexture2D::468032774101585334::1710185751::1710185751::1::::<><>::
 Setting.gd::GDScript::-1::1710185751::0::1::::<>Control<>::

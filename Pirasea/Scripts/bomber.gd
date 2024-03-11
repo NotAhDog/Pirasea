@@ -54,7 +54,3 @@ func _on_area_2d_body_entered(body):
 
 func _on_timer_timeout():
 	show()
-
-
-func _on_spawn_timer_timeout():
-	pass # Replace with function body.
