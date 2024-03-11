@@ -7,6 +7,8 @@
 script = ExtResource("1_1sf6n")
 
 [node name="MUSIC" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 stream = ExtResource("2_br0g5")
 autoplay = true
+max_distance = 1e+18
 bus = &"Music"

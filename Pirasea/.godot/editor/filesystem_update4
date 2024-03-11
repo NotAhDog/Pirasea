@@ -1,7 +1,10 @@
+res://Scenes/autoload.tscn
 res://Scenes/Menu.tscn
 res://Scenes/main.tscn
 res://Scenes/Setting.tscn
-res://Scenes/autoload.tscn
-res://Scenes/galleon.tscn
-res://default_bus_layout.tres
 res://Scenes/MAIN MENU SLIDER.gd
+res://Scenes/HSliderMAIN.gd
+res://Scenes/MUSIC SLIDER.gd
+res://Scenes/SFX SLIDER.gd
+res://default_bus_layout.tres
+res://Scripts/autoload.gd
