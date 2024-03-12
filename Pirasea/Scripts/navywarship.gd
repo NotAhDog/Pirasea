@@ -21,10 +21,12 @@ func _physics_process(delta):
 		$Sprite2D.rotation = atan(velocity[1]/velocity[0]) + 1.5708
 		$CollisionPolygon2D.rotation = atan(velocity[1]/velocity[0]) 
 		$Area2D.rotation = atan(velocity[1]/velocity[0]) 
+		$SpawnHandler.rotation = atan(velocity[1]/velocity[0]) 
 	else: 
 		$Sprite2D.rotation = atan(velocity[1]/velocity[0]) + 3.14159 + 1.5708
 		$CollisionPolygon2D.rotation = atan(velocity[1]/velocity[0]) + 3.14159
 		$Area2D.rotation = atan(velocity[1]/velocity[0]) + 3.14159
+		$SpawnHandler.rotation = atan(velocity[1]/velocity[0]) + 3.14159
 	
 func _make_path() -> void:
 	nav_agent.target_position = get_node("/root/Main/Player").global_position
@@ -53,14 +55,18 @@ func _on_timer_timeout():
 func _on_galleon_timeout():
 	var galleoninstance = enemygalleon.instantiate()
 	get_node("/root/Main").add_child(galleoninstance)
-	galleoninstance.global_position = self.global_position
+	galleoninstance.global_position = _random_spawn()
 
 func _on_rammer_timeout():
-	pass # Replace with function body.
+	var rammerinstance = enemyrammer.instantiate()
+	get_node("/root/Main").add_child(rammerinstance)
+	rammerinstance.global_position = _random_spawn()
 	
 func _random_spawn():
-	var spawnside = randi_range(1, 4)
+	var spawnside = randi_range(1, 2)
 	var spawn = Vector2(0.0, 0.0)
 	if spawnside == 1:
-		spawn = self.global_position
-		spawn.y -= 200
+		spawn = $SpawnHandler/Left.global_position
+	if spawnside == 2:
+		spawn = $SpawnHandler/Right.global_position
+	return spawn

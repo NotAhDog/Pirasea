@@ -21,6 +21,12 @@ polygon = PackedVector2Array(196, -7, 196, 7, 189, 14, 168, 21, 161, 28, 133, 49
 
 [node name="SpawnHandler" type="Node2D" parent="."]
 
+[node name="Left" type="Node2D" parent="SpawnHandler"]
+position = Vector2(0, -400)
+
+[node name="Right" type="Node2D" parent="SpawnHandler"]
+position = Vector2(0, 400)
+
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 0.25
 autostart = true
@@ -32,8 +38,11 @@ autostart = true
 [node name="Cannon" type="Timer" parent="."]
 
 [node name="Galleon" type="Timer" parent="."]
+wait_time = 3.0
 
 [node name="Rammer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 target_desired_distance = 1.0

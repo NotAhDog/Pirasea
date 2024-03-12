@@ -14,6 +14,7 @@ var knockback = false
 var iframes = false
 var unlockable = ["ThreeMusketeers", "TrainedCrew", "ExperincedCrew", "EliteCrew"]
 var cards_selected = []
+# WHEN CHANGING VARIABLES, CHANGE IN DAMAGE FUNCTION AS WELL
 
 func damaged(body):
 	if iframes == false:
@@ -24,9 +25,19 @@ func damaged(body):
 			get_node("/root/Main/Player/Camera2D/UI/HealthBar").value = float(player_health) / player_max_health*100
 			if player_health <= 0:
 				get_tree().reload_current_scene()
-				player_health = 3
 				player_max_health = 3
+				player_health = 3
 				player_money = 0
+				total_collected_money = 0
+				player_speed = 50
+				player_turn_speed = 25
+				cannon_ball_speed = 300
+				cannon_ball_amount = 1
+				double_drop_chance = 0
+				knockback = false
+				iframes = false
+				unlockable = ["ThreeMusketeers", "TrainedCrew", "ExperincedCrew", "EliteCrew"]
+				cards_selected = []
 			elif "Player" not in str(body):
 				knockback = true
 				await get_tree().create_timer(2).timeout

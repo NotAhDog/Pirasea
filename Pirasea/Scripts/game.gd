@@ -6,6 +6,7 @@ var enemyrammer = preload("res://Scenes/rammer.tscn")
 var pirategalleon = preload("res://Scenes/pirate_galleon.tscn")
 var piraterammer = preload("res://Scenes/pirate_rammer.tscn")
 var piratebomber = preload("res://Scenes/pirate_boomer.tscn")
+var navywarship = preload("res://Scenes/navywarship.tscn")
 var cannonballxv = 0
 var cannonballyv = 0
 var island0 = preload("res://Scenes/water.tscn")
@@ -110,13 +111,14 @@ func _on_progression_timeout():
 	print("Progression Level: " + str(progressionLevel))
 	if progressionLevel == 1:
 		$Galleon.wait_time = 4
-	if progressionLevel > 2 and progressionLevel <= 6:
-		$Galleon.wait_time -= 0.5
-		$Rammer.wait_time -= 0.5
-	if progressionLevel == 2:
+	if progressionLevel > 2 and progressionLevel <= 10:
+		$Galleon.wait_time -= 0.25
+	if progressionLevel > 4 and progressionLevel <= 10:
+		$Rammer.wait_time -= 0.25
+	if progressionLevel == 4:
 		$Rammer.start(0)
-	#At this point, Rammers spawn every 5 seconds and Galleons 2 seconds
-	if progressionLevel == 1:
+	#At the 5 minute mark, Rammers spawn every 5.5 seconds and Galleons 2 seconds
+	if progressionLevel == 20:
 		for x in range(4):
 			print("Process")
 			var fleet = pirategalleon.instantiate()
@@ -132,3 +134,7 @@ func _on_progression_timeout():
 			var fleet = piratebomber.instantiate()
 			self.add_child(fleet)
 			fleet.position = AutoloadScript._choose_random_spawn()
+	if progressionLevel == 10:
+		var warship = navywarship.instantiate()
+		self.add_child(warship)
+		warship.position = AutoloadScript._choose_random_spawn()
