@@ -1,9 +1,11 @@
-res://Scenes/main.tscn
-res://Scripts/boom.gd
-res://Scripts/autoload.gd
-res://Scripts/game.gd
-res://Scripts/Shop.gd
 res://Scenes/Menu.tscn
+res://Scripts/boom.gd
+res://Scenes/main.tscn
 res://Scenes/autoload.tscn
 res://Scenes/island_3.tscn
-res://Scripts/Paused.gd
+res://Scenes/pirate_rammer.tscn
+res://Scenes/pirate_boomer.tscn
+res://Scenes/pirate_galleon.tscn
+res://Scripts/autoload.gd
+res://Scenes/galleon.tscn
+res://Scripts/game.gd

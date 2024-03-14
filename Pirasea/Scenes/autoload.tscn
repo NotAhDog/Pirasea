@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bffahu2c8noua"]
 
 [ext_resource type="Script" path="res://Scripts/autoload.gd" id="1_1sf6n"]
-[ext_resource type="AudioStream" uid="uid://d06vcmmjg8lo8" path="res://Audio/More traditional bacground.mp3" id="2_br0g5"]
+[ext_resource type="AudioStream" uid="uid://cvlovtjn7qpw3" path="res://Audio/More traditional bacground.mp3" id="2_br0g5"]
 
 [node name="Autoload" type="Node"]
 script = ExtResource("1_1sf6n")

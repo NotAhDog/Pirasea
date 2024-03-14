@@ -13,6 +13,10 @@ var island0 = preload("res://Scenes/water.tscn")
 var island1 = preload("res://Scenes/island_1.tscn")
 var island2 = preload("res://Scenes/island_2.tscn")
 var island3 = preload("res://Scenes/island_3.tscn")
+var island0amount = 0
+var island1amount = 0
+var island2amount = 0
+var island3amount = 0
 var progressionLevel = 0
 
 func _ready():
@@ -22,16 +26,25 @@ func _ready():
 		for x in range(6):
 			var xposis = 1000 + (x * 2000)
 			_spawn_island(randi_range(0,4), xposis, yposis)
-			
+	print("Water: " + str(island0amount))
+	print("Island 1: " + str(island1amount))
+	print("Island 2: " + str(island2amount))
+	print("Shops: " + str(island3amount))
+
 func _spawn_island(island, x, y):
 	var islandinstance = island0.instantiate() 
 	var randdirection = [0.0, 90.0, 180.0, 270.0]
-	if island == 1: 
+	if island == 0:
+		island0amount += 1
+	elif island == 1: 
 		islandinstance = island1.instantiate() 
-	if island == 2: 
+		island1amount += 1
+	elif island == 2: 
 		islandinstance = island2.instantiate() 
-	if island == 3: 
+		island2amount += 1
+	elif island == 3: 
 		islandinstance = island3.instantiate() 
+		island3amount += 1
 	add_child(islandinstance)
 	islandinstance.position.x = x
 	islandinstance.position.y = y

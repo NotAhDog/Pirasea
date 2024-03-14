@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://ch7v8bbv0k8ux" path="res://Art/SW.png" id="18_ufk1i"]
 [ext_resource type="Texture2D" uid="uid://y4yj3g550nag" path="res://Art/DT.png" id="19_jxryy"]
 [ext_resource type="Script" path="res://Scripts/DeadScreen.gd" id="20_5evh7"]
-[ext_resource type="Texture2D" uid="uid://ctiuclxe73tm0" path="res://Art/ManImDead(screen)BETTER.png" id="20_8rvb1"]
+[ext_resource type="Texture2D" uid="uid://dfy0cr0s3epjg" path="res://Art/ManImDead(screen)BETTER.png" id="20_8rvb1"]
 [ext_resource type="Texture2D" uid="uid://cucsy80inrsqu" path="res://Art/TM.png" id="20_sgejb"]
 [ext_resource type="Texture2D" uid="uid://cqqs62c6nuyn1" path="res://Art/C.png" id="21_dlfh2"]
 [ext_resource type="AudioStream" uid="uid://l5htagc5evrf" path="res://Audio/ocean-sea-soft-waves-121349.mp3" id="22_3yny4"]
@@ -1320,12 +1320,12 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_caexn")
 theme_override_styles/focus = SubResource("StyleBoxFlat_caexn")
 metadata/_edit_use_anchors_ = true
 
-[node name="BobTheBuilder" type="TextureRect" parent="Shop/Cards"]
+[node name="Repair" type="TextureRect" parent="Shop/Cards"]
 visible = false
 layout_mode = 2
 texture = ExtResource("13_4witc")
 
-[node name="Label" type="Label" parent="Shop/Cards/BobTheBuilder"]
+[node name="Label" type="Label" parent="Shop/Cards/Repair"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -1344,7 +1344,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Description" type="Label" parent="Shop/Cards/BobTheBuilder"]
+[node name="Description" type="Label" parent="Shop/Cards/Repair"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.4375
@@ -1364,7 +1364,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Price" type="HBoxContainer" parent="Shop/Cards/BobTheBuilder"]
+[node name="Price" type="HBoxContainer" parent="Shop/Cards/Repair"]
 z_index = 1
 layout_mode = 2
 offset_left = 13.0
@@ -1374,12 +1374,12 @@ offset_bottom = 179.0
 scale = Vector2(0.2, 0.2)
 alignment = 1
 
-[node name="Coin" type="TextureRect" parent="Shop/Cards/BobTheBuilder/Price"]
+[node name="Coin" type="TextureRect" parent="Shop/Cards/Repair/Price"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("13_f3stg")
 
-[node name="Cost" type="Label" parent="Shop/Cards/BobTheBuilder/Price"]
+[node name="Cost" type="Label" parent="Shop/Cards/Repair/Price"]
 layout_mode = 2
 theme = ExtResource("7_lo45m")
 theme_override_font_sizes/font_size = 64
@@ -1388,7 +1388,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="BobTheBuilderButton" type="Button" parent="Shop/Cards/BobTheBuilder"]
+[node name="BobTheBuilderButton" type="Button" parent="Shop/Cards/Repair"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -1576,6 +1576,13 @@ autoplay = true
 max_distance = 9.22337e+18
 bus = &"SFX"
 
+[node name="Barrier" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Barrier" type="CollisionPolygon2D" parent="Barrier"]
+polygon = PackedVector2Array(0, 0, 0, -151, 12370, -157, 12370, 12291, -220, 12290, -171, -147, 0, -151, 0, 12032, 12032, 12032, 12032, 0)
+
 [connection signal="pressed" from="PauseMenu/Board/RESUME" to="PauseMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenu/Board/SETTINGS" to="PauseMenu" method="_on_settings_pressed"]
 [connection signal="pressed" from="PauseMenu/Board/MAIN MENU" to="PauseMenu" method="_on_main_menu_pressed"]
@@ -1597,7 +1604,7 @@ bus = &"SFX"
 [connection signal="pressed" from="Shop/Cards/WealthierEnemies/WealthierEnemiesButton" to="Shop" method="_on_wealthier_enemies_button_pressed"]
 [connection signal="pressed" from="Shop/Cards/ExperincedCrew/ExperincedCrewButton" to="Shop" method="_on_experinced_crew_button_pressed"]
 [connection signal="pressed" from="Shop/Cards/EliteCrew/EliteCrewButton" to="Shop" method="_on_elite_crew_button_pressed"]
-[connection signal="pressed" from="Shop/Cards/BobTheBuilder/BobTheBuilderButton" to="Shop" method="_on_bob_the_builder_button_pressed"]
+[connection signal="pressed" from="Shop/Cards/Repair/BobTheBuilderButton" to="Shop" method="_on_bob_the_builder_button_pressed"]
 [connection signal="visibility_changed" from="DeadScreen" to="DeadScreen" method="_on_visibility_changed"]
 [connection signal="pressed" from="DeadScreen/Dead/Restart" to="DeadScreen" method="_on_restart_pressed"]
 [connection signal="pressed" from="DeadScreen/Dead/Main Menu" to="DeadScreen" method="_on_main_menu_pressed"]
