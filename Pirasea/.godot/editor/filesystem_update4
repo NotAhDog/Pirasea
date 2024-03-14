@@ -1,13 +1,13 @@
-res://Scenes/navywarship.tscn
+res://Scenes/coin.tscn
 res://Scripts/boom.gd
-res://Scripts/navywarship.gd
-res://Scenes/Menu.tscn
 res://Scenes/main.tscn
+res://Scripts/Shop.gd
+res://Scenes/Menu.tscn
 res://Scenes/galleon.tscn
 res://Scenes/island_3.tscn
 res://Scenes/enemygalleon.tscn
+res://Scenes/navywarship.tscn
 res://Scenes/rammer.tscn
 res://Scenes/bomber.tscn
 res://Scripts/game.gd
 res://Scripts/rammer.gd
-res://Scripts/autoload.gd

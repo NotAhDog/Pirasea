@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 175
+var speed = 150
 var coin = preload("res://Scenes/coin.tscn")
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 

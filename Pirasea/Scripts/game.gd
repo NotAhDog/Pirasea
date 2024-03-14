@@ -108,17 +108,21 @@ func _on_rammer_timeout():
 
 func _on_progression_timeout():
 	progressionLevel += 1
-	print("Progression Level: " + str(progressionLevel))
 	if progressionLevel == 1:
 		$Galleon.wait_time = 4
 	if progressionLevel > 2 and progressionLevel <= 10:
 		$Galleon.wait_time -= 0.25
-	if progressionLevel > 4 and progressionLevel <= 10:
-		$Rammer.wait_time -= 0.25
+	if progressionLevel > 4 and progressionLevel <= 13:
+		$Rammer.wait_time -= 1/3
 	if progressionLevel == 4:
 		$Rammer.start(0)
-	#At the 5 minute mark, Rammers spawn every 5.5 seconds and Galleons 2 seconds
-	if progressionLevel == 20:
+	if progressionLevel == 8:
+		$Bomber.start(0)
+	if progressionLevel > 8 and progressionLevel <= 14:
+		$Rammer.wait_time -= 1/3
+	#At the 5 minute mark, Rammers spawn every 8 seconds and Galleons 2 seconds
+	#At the 7 minutes mark, rammers are spawning ever 6 2/3 seconds and Bombers every 6 seconds
+	if progressionLevel == 10:
 		for x in range(4):
 			print("Process")
 			var fleet = pirategalleon.instantiate()
@@ -134,7 +138,12 @@ func _on_progression_timeout():
 			var fleet = piratebomber.instantiate()
 			self.add_child(fleet)
 			fleet.position = AutoloadScript._choose_random_spawn()
-	if progressionLevel == 10:
+	if progressionLevel == 20:
 		var warship = navywarship.instantiate()
 		self.add_child(warship)
 		warship.position = AutoloadScript._choose_random_spawn()
+	print("Progression Level: " + str(progressionLevel))
+	print("Galleon " + str($Galleon.wait_time))
+	print("Rammer " + str($Rammer.wait_time))
+	print("Bomber " + str($Bomber.wait_time))
+	
