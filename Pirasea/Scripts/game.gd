@@ -106,7 +106,6 @@ func _on_rammer_timeout():
 	add_child(enemyrammerinstance)
 	enemyrammerinstance.position = AutoloadScript._choose_random_spawn()
 
-<<<<<<< HEAD
 func _on_progression_timeout():
 	progressionLevel += 1
 	if progressionLevel == 1:
@@ -125,17 +124,14 @@ func _on_progression_timeout():
 	#At the 7 minutes mark, rammers are spawning ever 6 2/3 seconds and Bombers every 6 seconds
 	if progressionLevel == 10:
 		for x in range(4):
-			print("Process")
 			var fleet = pirategalleon.instantiate()
 			self.add_child(fleet)
 			fleet.position = AutoloadScript._choose_random_spawn()
 		for x in range(4):
-			print("Process")
 			var fleet = piraterammer.instantiate()
 			self.add_child(fleet)
 			fleet.position = AutoloadScript._choose_random_spawn()
 		for x in range(4):
-			print("Process")
 			var fleet = piratebomber.instantiate()
 			self.add_child(fleet)
 			fleet.position = AutoloadScript._choose_random_spawn()
@@ -148,6 +144,3 @@ func _on_progression_timeout():
 	print("Rammer " + str($Rammer.wait_time))
 	print("Bomber " + str($Bomber.wait_time))
 	
-=======
-
->>>>>>> origin/Menu

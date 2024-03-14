@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=28 format=3 uid="uid://dadc2u4m8itxp"]
-=======
-[gd_scene load_steps=48 format=3 uid="uid://dadc2u4m8itxp"]
->>>>>>> origin/Menu
+[gd_scene load_steps=47 format=3 uid="uid://dadc2u4m8itxp"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_m3yls"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="2_i2gmc"]
@@ -12,26 +8,24 @@
 [ext_resource type="PackedScene" uid="uid://c34ipo6uw0vw7" path="res://Scenes/galleon.tscn" id="4_h56da"]
 [ext_resource type="FontFile" uid="uid://cf8w3t5vni62p" path="res://Themes/Freebooter-6yn1.ttf" id="5_obd52"]
 [ext_resource type="Theme" uid="uid://bage11eoe04ud" path="res://Themes/ingametheme.tres" id="7_lo45m"]
-[ext_resource type="Texture2D" uid="uid://dtct1g3qieuk3" path="res://Art/Pirasea Gold Coin.png" id="7_xydeu"]
-[ext_resource type="Texture2D" uid="uid://ccxmnufn5e7ud" path="res://Art/Coin bag.png" id="8_ho6m7"]
 [ext_resource type="Texture2D" uid="uid://c4xyf3wo42epi" path="res://Art/Health Bar.png" id="9_3norj"]
 [ext_resource type="Texture2D" uid="uid://c8dd7yb2xvtyr" path="res://Art/CrewAttackUpgrade.png" id="13_4witc"]
-[ext_resource type="Texture2D" uid="uid://b4ec83frku084" path="res://Art/Coin bag.png" id="13_f3stg"]
+[ext_resource type="Texture2D" uid="uid://dwmlpvdiyeq8p" path="res://Art/Coin bag.png" id="13_f3stg"]
 [ext_resource type="Texture2D" uid="uid://bkqmu4n5c1s1d" path="res://Art/BP.png" id="14_6hbjp"]
 [ext_resource type="Script" path="res://Scripts/Shop.gd" id="14_7huxb"]
 [ext_resource type="Texture2D" uid="uid://bf3qlcvnn7wsu" path="res://Art/S.png" id="16_wruoe"]
 [ext_resource type="Texture2D" uid="uid://eaml17arhk6j" path="res://Art/R.png" id="17_hx8ky"]
 [ext_resource type="Texture2D" uid="uid://ch7v8bbv0k8ux" path="res://Art/SW.png" id="18_ufk1i"]
 [ext_resource type="Texture2D" uid="uid://y4yj3g550nag" path="res://Art/DT.png" id="19_jxryy"]
-[ext_resource type="Script" path="res://Scenes/DeadScreen.gd" id="20_5evh7"]
+[ext_resource type="Script" path="res://Scripts/DeadScreen.gd" id="20_5evh7"]
 [ext_resource type="Texture2D" uid="uid://ctiuclxe73tm0" path="res://Art/ManImDead(screen)BETTER.png" id="20_8rvb1"]
 [ext_resource type="Texture2D" uid="uid://cucsy80inrsqu" path="res://Art/TM.png" id="20_sgejb"]
 [ext_resource type="Texture2D" uid="uid://cqqs62c6nuyn1" path="res://Art/C.png" id="21_dlfh2"]
 [ext_resource type="AudioStream" uid="uid://l5htagc5evrf" path="res://Audio/ocean-sea-soft-waves-121349.mp3" id="22_3yny4"]
-[ext_resource type="Script" path="res://Scenes/PopUpSettings.gd" id="22_g7frg"]
-[ext_resource type="Script" path="res://Scenes/MAIN MENU SLIDER.gd" id="23_y2ajh"]
-[ext_resource type="Script" path="res://Scenes/SFX SLIDER.gd" id="24_cy5by"]
-[ext_resource type="Script" path="res://Scenes/MUSIC SLIDER.gd" id="25_u1klt"]
+[ext_resource type="Script" path="res://Scripts/PopUpSettings.gd" id="22_g7frg"]
+[ext_resource type="Script" path="res://Scripts/MAIN MENU SLIDER.gd" id="23_y2ajh"]
+[ext_resource type="Script" path="res://Scripts/SFX SLIDER.gd" id="24_cy5by"]
+[ext_resource type="Script" path="res://Scripts/MUSIC SLIDER.gd" id="25_u1klt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1y6k"]
 atlas = ExtResource("3_1u3cd")
@@ -294,7 +288,7 @@ text = "Money: 0"
 
 [node name="Coin" type="Sprite2D" parent="Player/Camera2D/UI"]
 position = Vector2(49.5, 78.5)
-texture = ExtResource("8_ho6m7")
+texture = ExtResource("13_f3stg")
 
 [node name="HealthBar" type="ProgressBar" parent="Player/Camera2D/UI"]
 offset_left = 72.0
@@ -321,7 +315,6 @@ wait_time = 5.0
 autostart = true
 
 [node name="Rammer" type="Timer" parent="."]
-<<<<<<< HEAD
 wait_time = 10.0
 
 [node name="Bomber" type="Timer" parent="."]
@@ -329,13 +322,11 @@ wait_time = 8.0
 
 [node name="Progression" type="Timer" parent="."]
 wait_time = 30.0
-=======
-wait_time = 7.0
->>>>>>> origin/Menu
 autostart = true
 
 [node name="Shop" type="CanvasLayer" parent="."]
 process_mode = 3
+visible = false
 script = ExtResource("14_7huxb")
 
 [node name="Cards" type="HBoxContainer" parent="Shop"]
@@ -1329,13 +1320,12 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_caexn")
 theme_override_styles/focus = SubResource("StyleBoxFlat_caexn")
 metadata/_edit_use_anchors_ = true
 
-<<<<<<< HEAD
-[node name="Repair" type="TextureRect" parent="Shop/Cards"]
+[node name="BobTheBuilder" type="TextureRect" parent="Shop/Cards"]
 visible = false
 layout_mode = 2
-texture = ExtResource("18_ufk1i")
+texture = ExtResource("13_4witc")
 
-[node name="Label" type="Label" parent="Shop/Cards/Repair"]
+[node name="Label" type="Label" parent="Shop/Cards/BobTheBuilder"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -1354,27 +1344,27 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Description" type="Label" parent="Shop/Cards/Repair"]
+[node name="Description" type="Label" parent="Shop/Cards/BobTheBuilder"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.565104
-anchor_right = 0.5
-anchor_bottom = 0.565104
+anchor_left = 0.4375
+anchor_top = 0.5625
+anchor_right = 1.0625
+anchor_bottom = 0.5625
 offset_left = -20.0
 offset_top = 6.0
 offset_right = 180.0
 offset_bottom = 39.0
 scale = Vector2(0.2, 0.2)
 theme = ExtResource("7_lo45m")
-theme_override_font_sizes/font_size = 32
-text = "Can he fix it!
+theme_override_font_sizes/font_size = 25
+text = "Can he fix it?
 YES HE CAN!"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Price" type="HBoxContainer" parent="Shop/Cards/Repair"]
+[node name="Price" type="HBoxContainer" parent="Shop/Cards/BobTheBuilder"]
 z_index = 1
 layout_mode = 2
 offset_left = 13.0
@@ -1384,27 +1374,27 @@ offset_bottom = 179.0
 scale = Vector2(0.2, 0.2)
 alignment = 1
 
-[node name="Coin" type="TextureRect" parent="Shop/Cards/Repair/Price"]
+[node name="Coin" type="TextureRect" parent="Shop/Cards/BobTheBuilder/Price"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("7_xydeu")
+texture = ExtResource("13_f3stg")
 
-[node name="Cost" type="Label" parent="Shop/Cards/Repair/Price"]
+[node name="Cost" type="Label" parent="Shop/Cards/BobTheBuilder/Price"]
 layout_mode = 2
 theme = ExtResource("7_lo45m")
 theme_override_font_sizes/font_size = 64
-text = "6"
+text = "10"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="BobTheBuilderButton" type="Button" parent="Shop/Cards/Repair"]
+[node name="BobTheBuilderButton" type="Button" parent="Shop/Cards/BobTheBuilder"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.500504
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.500504
+anchor_bottom = 0.5
 offset_left = -19.0
 offset_top = 35.0
 offset_right = 19.0
@@ -1418,7 +1408,6 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_caexn")
 theme_override_styles/focus = SubResource("StyleBoxFlat_caexn")
 metadata/_edit_use_anchors_ = true
 
-=======
 [node name="DeadScreen" type="CanvasLayer" parent="."]
 process_mode = 3
 visible = false
@@ -1591,7 +1580,6 @@ bus = &"SFX"
 [connection signal="pressed" from="PauseMenu/Board/SETTINGS" to="PauseMenu" method="_on_settings_pressed"]
 [connection signal="pressed" from="PauseMenu/Board/MAIN MENU" to="PauseMenu" method="_on_main_menu_pressed"]
 [connection signal="pressed" from="PauseMenu/Board/QUIT" to="PauseMenu" method="_on_quit_pressed"]
->>>>>>> origin/Menu
 [connection signal="timeout" from="Cannonball" to="." method="_on_cannonball_timeout"]
 [connection signal="timeout" from="Galleon" to="." method="_on_enemy_galleon_timeout"]
 [connection signal="timeout" from="Rammer" to="." method="_on_rammer_timeout"]
@@ -1609,11 +1597,8 @@ bus = &"SFX"
 [connection signal="pressed" from="Shop/Cards/WealthierEnemies/WealthierEnemiesButton" to="Shop" method="_on_wealthier_enemies_button_pressed"]
 [connection signal="pressed" from="Shop/Cards/ExperincedCrew/ExperincedCrewButton" to="Shop" method="_on_experinced_crew_button_pressed"]
 [connection signal="pressed" from="Shop/Cards/EliteCrew/EliteCrewButton" to="Shop" method="_on_elite_crew_button_pressed"]
-<<<<<<< HEAD
-[connection signal="pressed" from="Shop/Cards/Repair/BobTheBuilderButton" to="Shop" method="_on_bob_the_builder_button_pressed"]
-=======
+[connection signal="pressed" from="Shop/Cards/BobTheBuilder/BobTheBuilderButton" to="Shop" method="_on_bob_the_builder_button_pressed"]
 [connection signal="visibility_changed" from="DeadScreen" to="DeadScreen" method="_on_visibility_changed"]
 [connection signal="pressed" from="DeadScreen/Dead/Restart" to="DeadScreen" method="_on_restart_pressed"]
 [connection signal="pressed" from="DeadScreen/Dead/Main Menu" to="DeadScreen" method="_on_main_menu_pressed"]
 [connection signal="pressed" from="PopUpSettings/MarginContainer/RESUMEButton" to="PopUpSettings" method="_on_resume_button_pressed"]
->>>>>>> origin/Menu

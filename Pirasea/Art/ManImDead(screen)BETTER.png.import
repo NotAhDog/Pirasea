@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctiuclxe73tm0"
-path="res://.godot/imported/ManImDead(screen)BETTER.png-2c17f8300666c4149f3b06ff84cbdcd7.ctex"
+uid="uid://dfy0cr0s3epjg"
+path="res://.godot/imported/ManImDead(screen)BETTER.png-d81534d40610547ddede1281490ca700.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/ManImDead(screen)BETTER.png"
-dest_files=["res://.godot/imported/ManImDead(screen)BETTER.png-2c17f8300666c4149f3b06ff84cbdcd7.ctex"]
+source_file="res://Scenes/ManImDead(screen)BETTER.png"
+dest_files=["res://.godot/imported/ManImDead(screen)BETTER.png-d81534d40610547ddede1281490ca700.ctex"]
 
 [params]
 

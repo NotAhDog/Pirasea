@@ -1,18 +1,9 @@
-res://Scenes/coin.tscn
-res://Scripts/boom.gd
 res://Scenes/main.tscn
-<<<<<<< HEAD
+res://Scripts/boom.gd
+res://Scripts/autoload.gd
+res://Scripts/game.gd
 res://Scripts/Shop.gd
 res://Scenes/Menu.tscn
-res://Scenes/galleon.tscn
-res://Scenes/island_3.tscn
-res://Scenes/enemygalleon.tscn
-res://Scenes/navywarship.tscn
-res://Scenes/rammer.tscn
-res://Scenes/bomber.tscn
-res://Scripts/game.gd
-res://Scripts/rammer.gd
-=======
-res://Scenes/Setting.tscn
 res://Scenes/autoload.tscn
->>>>>>> origin/Menu
+res://Scenes/island_3.tscn
+res://Scripts/Paused.gd

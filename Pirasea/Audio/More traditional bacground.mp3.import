@@ -2,13 +2,13 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://d06vcmmjg8lo8"
-path="res://.godot/imported/More traditional bacground.mp3-8b6c710857807176b551f7e3743e6956.mp3str"
+uid="uid://cvlovtjn7qpw3"
+path="res://.godot/imported/More traditional bacground.mp3-7f1472804e5727ba1af538fa781cdb88.mp3str"
 
 [deps]
 
-source_file="res://Audio/More traditional bacground.mp3"
-dest_files=["res://.godot/imported/More traditional bacground.mp3-8b6c710857807176b551f7e3743e6956.mp3str"]
+source_file="res://Scenes/More traditional bacground.mp3"
+dest_files=["res://.godot/imported/More traditional bacground.mp3-7f1472804e5727ba1af538fa781cdb88.mp3str"]
 
 [params]
 
