@@ -1,6 +1,7 @@
 res://Scenes/coin.tscn
 res://Scripts/boom.gd
 res://Scenes/main.tscn
+<<<<<<< HEAD
 res://Scripts/Shop.gd
 res://Scenes/Menu.tscn
 res://Scenes/galleon.tscn
@@ -11,3 +12,7 @@ res://Scenes/rammer.tscn
 res://Scenes/bomber.tscn
 res://Scripts/game.gd
 res://Scripts/rammer.gd
+=======
+res://Scenes/Setting.tscn
+res://Scenes/autoload.tscn
+>>>>>>> origin/Menu

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Node2D
 Timer
 CollisionPolygon2D
@@ -12,3 +13,19 @@ HBoxContainer
 ColorRect
 NavigationRegion2D
 NavigationObstacle2D
+=======
+AudioStreamPlayer2D
+HBoxContainer
+Button
+VBoxContainer
+HSlider
+Label
+MarginContainer
+ColorRect
+CanvasLayer
+Popup
+AnimatedSprite2D
+TextureRect
+Node2D
+PanelContainer
+>>>>>>> origin/Menu

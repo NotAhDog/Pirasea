@@ -17,6 +17,7 @@ var cards_selected = []
 # WHEN CHANGING VARIABLES, CHANGE IN DAMAGE FUNCTION AS WELL
 
 func damaged(body):
+<<<<<<< HEAD
 	if iframes == false:
 		if "boom" in str(body).to_lower() or "body" in str(body).to_lower():
 			print("Hit by: " + str(body) + ", at: " + str(Time.get_ticks_msec()))
@@ -44,6 +45,20 @@ func damaged(body):
 				knockback = false
 			await get_tree().create_timer(1).timeout
 			iframes = false
+=======
+	player_health -= 1
+	get_node("/root/Main/Player/Camera2D/UI/HealthBar").value = float(player_health) / player_max_health*100
+	if player_health <= 0:
+		get_node("/root/Main/DeadScreen").visible = true
+		#on restart pressed reset stats \/
+		player_health = 3
+		player_max_health = 3
+		player_money = 0
+	elif "Player" not in str(body):
+		knockback = true
+		await get_tree().create_timer(1).timeout
+		knockback = false
+>>>>>>> origin/Menu
 
 func _choose_random_spawn():
 	var screen_side_spawn = randi_range(1,4)
@@ -62,8 +77,3 @@ func _choose_random_spawn():
 		enemyspawn.y += randi_range(-2000,2000)
 	return enemyspawn
 
-func _full_screen(toggled_on):
-	if toggled_on == true:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	else:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)

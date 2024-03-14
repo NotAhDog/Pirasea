@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://ccxmnufn5e7ud"
+=======
+uid="uid://b4ec83frku084"
+>>>>>>> origin/Menu
 path="res://.godot/imported/Coin bag.png-214998d4320e44db0c8f27b01f699f65.ctex"
 metadata={
 "vram_texture": false

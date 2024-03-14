@@ -106,6 +106,7 @@ func _on_rammer_timeout():
 	add_child(enemyrammerinstance)
 	enemyrammerinstance.position = AutoloadScript._choose_random_spawn()
 
+<<<<<<< HEAD
 func _on_progression_timeout():
 	progressionLevel += 1
 	if progressionLevel == 1:
@@ -147,3 +148,6 @@ func _on_progression_timeout():
 	print("Rammer " + str($Rammer.wait_time))
 	print("Bomber " + str($Bomber.wait_time))
 	
+=======
+
+>>>>>>> origin/Menu
