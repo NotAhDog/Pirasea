@@ -1,10 +1,25 @@
+<<<<<<< Updated upstream
+=======
+NavigationRegion2D
+CollisionPolygon2D
+StaticBody2D
+CollisionShape2D
+Sprite2D
+Node2D
+Timer
+CharacterBody2D
+Area2D
+>>>>>>> Stashed changes
 MarginContainer
 Button
 HBoxContainer
 Timer
 ColorRect
+<<<<<<< Updated upstream
 NavigationRegion2D
 StaticBody2D
+=======
+>>>>>>> Stashed changes
 NavigationObstacle2D
 NavigationAgent2D
 CharacterBody2D

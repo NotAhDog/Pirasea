@@ -1,3 +1,14 @@
 res://Scenes/Menu.tscn
 res://Scenes/main.tscn
+<<<<<<< Updated upstream
 res://Scripts/ShopArea.gd
+=======
+res://Scripts/boom.gd
+res://Scenes/island_4.tscn
+res://Scenes/island_1.tscn
+res://Scripts/game.gd
+res://Scenes/island_5.tscn
+res://Scenes/island_6.tscn
+res://Scenes/island_7.tscn
+res://Scenes/rocks.tscn
+>>>>>>> Stashed changes

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://vosaphjfpj3a"]
+
+[ext_resource type="Texture2D" uid="uid://d2p20usjxheea" path="res://Art/island5better.png" id="1_ept18"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ulj0q"]
+vertices = PackedVector2Array(455, 679, 455, 678, 460, 695, 187, 996, 473, 710, 525, 734, 1289, 999, 558, 690, 626, 717, 172, 979, 410, 574, 419, 468, 423, 509, 180, -155, 413, 410, 433, 372, 536, 217, 527, 251, 469, 138, 481, 69, 599, 12, 1271, -158, 717, 18, 821, 48, 897, 17, 987, 13, 1091, 73, 1130, 157, 1143, 262, 1111, 335, 1068, 428, 1088, 509, 1077, 594, 1035, 637, 824, 656, 730, 724, 588, 685)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5), PackedInt32Array(6, 3, 5), PackedInt32Array(6, 5, 7, 8), PackedInt32Array(0, 2, 9, 10), PackedInt32Array(11, 12, 10, 9, 13, 14), PackedInt32Array(15, 14, 13), PackedInt32Array(16, 17, 15, 13, 18), PackedInt32Array(19, 18, 13), PackedInt32Array(20, 19, 13), PackedInt32Array(20, 13, 21, 22), PackedInt32Array(23, 22, 21, 24), PackedInt32Array(25, 24, 21), PackedInt32Array(26, 25, 21), PackedInt32Array(27, 26, 21), PackedInt32Array(27, 21, 6, 28), PackedInt32Array(29, 28, 6), PackedInt32Array(30, 29, 6, 31), PackedInt32Array(32, 31, 6), PackedInt32Array(33, 32, 6), PackedInt32Array(34, 33, 6, 35), PackedInt32Array(7, 36, 8), PackedInt32Array(35, 6, 8)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(472, 698, 162, 1003, 171, -165, 1281, -169, 1300, 1010, 164, 1006, 471, 699, 522, 722, 553, 681, 591, 675, 630, 707, 727, 714, 821, 647, 1030, 627, 1068, 589, 1078, 510, 1058, 428, 1102, 331, 1133, 261, 1120, 160, 1083, 80, 985, 23, 899, 27, 821, 59, 715, 28, 601, 22, 490, 76, 480, 135, 548, 216, 537, 255, 441, 377, 423, 412, 429, 467, 433, 511, 420, 573, 464, 675)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Island5Better" type="Sprite2D" parent="."]
+position = Vector2(769, 370)
+scale = Vector2(11.9062, 11.9062)
+texture = ExtResource("1_ept18")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(483, 143, 483, 85, 603, 24, 710, 25, 804, 37, 804, 49, 852, 48, 852, 37, 900, 25, 983, 25, 1042, 48, 1102, 108, 1126, 203, 1126, 286, 1078, 382, 1055, 395, 1055, 440, 1066, 441, 1078, 465, 1079, 524, 1055, 620, 1030, 632, 828, 644, 721, 715, 627, 715, 585, 673, 577.146, 678.891, 556, 681, 555, 703, 529, 715, 495, 715, 448, 655, 425, 573, 424, 539, 438, 505, 424, 454, 424, 407, 472, 336, 507, 288, 554, 241, 544, 216)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_ulj0q")

@@ -986,6 +986,275 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_caexn")
 theme_override_styles/focus = SubResource("StyleBoxFlat_caexn")
 metadata/_edit_use_anchors_ = true
 
+<<<<<<< Updated upstream
+=======
+[node name="Repair" type="TextureRect" parent="Shop/Cards"]
+visible = false
+layout_mode = 2
+texture = ExtResource("13_4witc")
+
+[node name="Label" type="Label" parent="Shop/Cards/Repair"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.516129
+anchor_right = 0.5
+anchor_bottom = 0.516129
+offset_left = -20.0
+offset_top = 6.0
+offset_right = 180.0
+offset_bottom = 39.0
+scale = Vector2(0.2, 0.2)
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 32
+text = "Bob The Builder!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Description" type="Label" parent="Shop/Cards/Repair"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4375
+anchor_top = 0.5625
+anchor_right = 1.0625
+anchor_bottom = 0.5625
+offset_left = -20.0
+offset_top = 6.0
+offset_right = 180.0
+offset_bottom = 39.0
+scale = Vector2(0.2, 0.2)
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 25
+text = "Can he fix it?
+YES HE CAN!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Price" type="HBoxContainer" parent="Shop/Cards/Repair"]
+z_index = 1
+layout_mode = 2
+offset_left = 13.0
+offset_top = 99.0
+offset_right = 203.0
+offset_bottom = 179.0
+scale = Vector2(0.2, 0.2)
+alignment = 1
+
+[node name="Coin" type="TextureRect" parent="Shop/Cards/Repair/Price"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("13_f3stg")
+
+[node name="Cost" type="Label" parent="Shop/Cards/Repair/Price"]
+layout_mode = 2
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 64
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BobTheBuilderButton" type="Button" parent="Shop/Cards/Repair"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = 35.0
+offset_right = 19.0
+offset_bottom = 51.0
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_caexn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7fjf2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_caexn")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_caexn")
+theme_override_styles/focus = SubResource("StyleBoxFlat_caexn")
+metadata/_edit_use_anchors_ = true
+
+[node name="DeadScreen" type="CanvasLayer" parent="."]
+process_mode = 3
+visible = false
+script = ExtResource("20_5evh7")
+
+[node name="Dead" type="AnimatedSprite2D" parent="DeadScreen"]
+position = Vector2(576, 324)
+scale = Vector2(4.04832, 4.04832)
+sprite_frames = SubResource("SpriteFrames_qu4u3")
+
+[node name="Restart" type="Button" parent="DeadScreen/Dead"]
+offset_left = -61.0
+offset_top = 35.0
+offset_right = 351.0
+offset_bottom = 183.0
+scale = Vector2(0.121, 0.121)
+theme = ExtResource("7_lo45m")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_obd52")
+theme_override_font_sizes/font_size = 89
+theme_override_styles/normal = SubResource("StyleBoxFlat_gtivv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d1gtq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jtvtv")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_3r1i8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3sw3f")
+text = "RESTART"
+
+[node name="Main Menu" type="Button" parent="DeadScreen/Dead"]
+offset_left = 11.0
+offset_top = 35.0
+offset_right = 424.0
+offset_bottom = 183.0
+scale = Vector2(0.121, 0.121)
+theme = ExtResource("7_lo45m")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_obd52")
+theme_override_font_sizes/font_size = 89
+theme_override_styles/normal = SubResource("StyleBoxFlat_gtivv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d1gtq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jtvtv")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_3r1i8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3sw3f")
+text = "MENU"
+
+[node name="PopUpSettings" type="CanvasLayer" parent="."]
+process_mode = 3
+visible = false
+script = ExtResource("22_g7frg")
+
+[node name="ColorRect" type="ColorRect" parent="PopUpSettings"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -342.5
+offset_top = -291.5
+offset_right = 342.5
+offset_bottom = 291.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.678431, 0.466667, 0.341176, 0.745098)
+
+[node name="MarginContainer" type="MarginContainer" parent="PopUpSettings"]
+offset_left = 235.0
+offset_top = 33.0
+offset_right = 919.0
+offset_bottom = 614.0
+
+[node name="Label" type="Label" parent="PopUpSettings/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("7_lo45m")
+theme_override_fonts/font = ExtResource("5_obd52")
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PopUpSettings/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopUpSettings/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+alignment = 1
+
+[node name="MAINVOLUME" type="Label" parent="PopUpSettings/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("7_lo45m")
+text = "MAIN VOLUME"
+vertical_alignment = 1
+
+[node name="SFXVOLUME" type="Label" parent="PopUpSettings/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("7_lo45m")
+text = "SFX VOLUME"
+
+[node name="MUSICVOLUME" type="Label" parent="PopUpSettings/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("7_lo45m")
+text = "MUSIC VOLUME"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PopUpSettings/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HSliderMAIN" type="HSlider" parent="PopUpSettings/MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("23_y2ajh")
+bus_name = "Master"
+
+[node name="HSliderSFX" type="HSlider" parent="PopUpSettings/MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("24_cy5by")
+bus_name = "SFX"
+
+[node name="HSliderMUSIC" type="HSlider" parent="PopUpSettings/MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("25_u1klt")
+bus_name = "Music"
+
+[node name="RESUMEButton" type="Button" parent="PopUpSettings/MarginContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("7_lo45m")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ngdpc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xrtsq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yp41j")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_0bmtd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7eir2")
+text = "RESUME"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_3yny4")
+volume_db = 15.0
+autoplay = true
+max_distance = 9.22337e+18
+
+[node name="Barrier" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Barrier" type="CollisionPolygon2D" parent="Barrier"]
+polygon = PackedVector2Array(0, 0, 0, -151, 12370, -157, 12370, 12291, -220, 12290, -171, -147, 0, -151, 0, 12032, 12032, 12032, 12032, 0)
+
+[connection signal="pressed" from="PauseMenu/Board/RESUME" to="PauseMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseMenu/Board/SETTINGS" to="PauseMenu" method="_on_settings_pressed"]
+[connection signal="pressed" from="PauseMenu/Board/MAIN MENU" to="PauseMenu" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="PauseMenu/Board/QUIT" to="PauseMenu" method="_on_quit_pressed"]
+>>>>>>> Stashed changes
 [connection signal="timeout" from="Cannonball" to="." method="_on_cannonball_timeout"]
 [connection signal="timeout" from="Galleon" to="." method="_on_enemy_galleon_timeout"]
 [connection signal="timeout" from="Rammer" to="." method="_on_rammer_timeout"]

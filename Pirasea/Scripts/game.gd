@@ -9,6 +9,23 @@ var island0 = preload("res://Scenes/water.tscn")
 var island1 = preload("res://Scenes/island_1.tscn")
 var island2 = preload("res://Scenes/island_2.tscn")
 var island3 = preload("res://Scenes/island_3.tscn")
+<<<<<<< Updated upstream
+=======
+var island4 = preload("res://Scenes/island_4.tscn")
+var island5 = preload("res://Scenes/island_5.tscn")
+var island6 = preload("res://Scenes/island_6.tscn")
+var island7 = preload("res://Scenes/island_7.tscn")
+var island0amount = 0
+var island1amount = 0
+var island2amount = 0
+var island3amount = 0
+var island4amount = 0
+var island5amount = 0
+var island6amount = 0
+var island7amount = 0
+var rocksamount = 0
+var progressionLevel = 0
+>>>>>>> Stashed changes
 
 func _ready():
 	AutoloadScript.player_health += 1
@@ -16,8 +33,21 @@ func _ready():
 		var yposis = 1000 + (i * 2000)
 		for x in range(6):
 			var xposis = 1000 + (x * 2000)
+<<<<<<< Updated upstream
 			_spawn_island(randi_range(0,4), xposis, yposis)
 			
+=======
+			_spawn_island(randi_range(0,8), xposis, yposis)
+	print("Water: " + str(island0amount))
+	print("Island 1: " + str(island1amount))
+	print("Island 2: " + str(island2amount))
+	print("Shops: " + str(island3amount))
+	print ("Island 4: " + str(island4amount))
+	print ("Island 5: " + str(island5amount))
+	print ("Island 6: " + str(island6amount))
+	print ("Island 7: " + str(island7amount))
+
+>>>>>>> Stashed changes
 func _spawn_island(island, x, y):
 	var islandinstance = island0.instantiate() 
 	var randdirection = [0.0, 90.0, 180.0, 270.0]
@@ -27,6 +57,22 @@ func _spawn_island(island, x, y):
 		islandinstance = island2.instantiate() 
 	if island == 3: 
 		islandinstance = island3.instantiate() 
+<<<<<<< Updated upstream
+=======
+		island3amount += 1
+	elif island == 4: 
+		islandinstance = island4.instantiate() 
+		island4amount += 1
+	elif island == 5: 
+		islandinstance = island5.instantiate() 
+		island5amount += 1
+	elif island == 6: 
+		islandinstance = island6.instantiate() 
+		island6amount += 1
+	elif island == 7: 
+		islandinstance = island7.instantiate() 
+		island7amount += 1
+>>>>>>> Stashed changes
 	add_child(islandinstance)
 	islandinstance.position.x = x
 	islandinstance.position.y = y

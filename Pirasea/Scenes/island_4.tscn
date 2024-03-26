@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://mbr13ej2ubse"]
+
+[ext_resource type="Texture2D" uid="uid://vgmyqq0tndtm" path="res://Art/island4best.png" id="1_4ubpa"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_tnys0"]
+vertices = PackedVector2Array(459, 757, 457, 757, 665, 747, 1015, 970, 18, 951, 124, 791, 210, 801, 269, 745, 325, 783, 753, 688, 831, 573, 1009, -147, 856, 360, 824, 132, 759, 67, 33, 689, 107, 781, 9, 927, 7, -174, 31, 442, 88, 205, 139, 121, 211, 48, 288, 11, 434, -7, 618, 17)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(6, 7, 8), PackedInt32Array(3, 6, 8), PackedInt32Array(3, 8, 0, 2), PackedInt32Array(3, 2, 9), PackedInt32Array(3, 9, 10), PackedInt32Array(11, 3, 10, 12), PackedInt32Array(11, 12, 13), PackedInt32Array(11, 13, 14), PackedInt32Array(15, 16, 17), PackedInt32Array(15, 17, 18, 19), PackedInt32Array(20, 19, 18), PackedInt32Array(21, 20, 18), PackedInt32Array(22, 21, 18), PackedInt32Array(23, 22, 18), PackedInt32Array(23, 18, 11, 24), PackedInt32Array(25, 24, 11), PackedInt32Array(25, 11, 14)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(120, 781, 0, 960, -3, -185, 1019, -157, 1026, 981, 0, 961, 120, 781, 207, 791, 269, 733, 327, 772, 457, 747, 662, 737, 746, 681, 821, 569, 846, 360, 815, 137, 754, 76, 616, 27, 434, 3, 296, 17, 217, 56, 147, 127, 97, 209, 41, 443, 43, 685)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Island4Best" type="Sprite2D" parent="."]
+position = Vector2(435, 430)
+scale = Vector2(13.8438, 13.8438)
+texture = ExtResource("1_4ubpa")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(1, 1)
+polygon = PackedVector2Array(213, 56, 352, 14, 545, 14, 753, 83, 807, 166, 822, 235, 836, 345, 835, 428, 808, 580, 766, 636, 739, 636, 739, 692, 685, 736, 602, 736, 587, 707, 518, 707, 477, 748, 435, 748, 435, 735, 394, 734, 394, 762, 325, 762, 310, 748, 270, 734, 255, 734, 199, 775, 129, 776, 74, 733, 46, 636, 47, 513, 74, 360, 102, 221, 144, 152)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_tnys0")

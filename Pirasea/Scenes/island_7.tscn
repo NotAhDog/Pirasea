@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp40af1sbmjpq"]
+
+[ext_resource type="Texture2D" uid="uid://c5oow8mxkq48s" path="res://Art/island7better.png" id="1_q53ot"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_gphjn"]
+vertices = PackedVector2Array(458, 617, 574, 658, -18, 1226, 1, 1242, 598, 675, 777, 798, 1788, 1224, 1026, 690, 1151, 690, 1314, 709, 1752, -673, 1372, 479, 1125, -239, 1057, -184, 941, -249, 588, 98, 689, 204, 645, 311, 451, 321, 381, -91, 411, 493, -26, -671, 406, -232, 1325, -216, 1295, 337, 1388, 144)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5), PackedInt32Array(6, 3, 5, 7, 8, 9), PackedInt32Array(10, 6, 9, 11), PackedInt32Array(12, 13, 14), PackedInt32Array(15, 16, 17, 18, 19), PackedInt32Array(20, 0, 2), PackedInt32Array(18, 20, 2, 21, 19), PackedInt32Array(22, 19, 21), PackedInt32Array(22, 21, 10, 14), PackedInt32Array(12, 14, 10), PackedInt32Array(23, 12, 10), PackedInt32Array(11, 24, 25), PackedInt32Array(10, 11, 25), PackedInt32Array(10, 25, 23)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(593, 655, -28, 1250, -37, -681, 1762, -684, 1799, 1234, -24, 1253, 598, 663, 778, 787, 1024, 680, 1152, 680, 1306, 698, 1361, 480, 1284, 338, 1378, 143, 1316, -207, 1128, -229, 1058, -172, 939, -239, 414, -222, 392, -95, 595, 91, 701, 202, 652, 321, 459, 331, 421, 492, 466, 609)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Island7Better" type="Sprite2D" parent="."]
+position = Vector2(885, 320)
+scale = Vector2(18.5312, 18.5312)
+texture = ExtResource("1_q53ot")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(551, 321, 645, 303, 700, 265, 702, 190, 682, 152, 588, 98, 515, 60, 422, -33, 404, -69, 403, -145, 422, -198, 478, -235, 977, -236, 1034, -181, 1107, -181, 1145, -217, 1310, -217, 1348, -105, 1366, 42, 1367, 172, 1311, 264, 1256, 303, 1256, 375, 1329, 432, 1348, 487, 1348, 579, 1328, 652, 1311, 670, 1274, 690, 1107, 691, 1070, 672, 1032, 671, 1015, 692, 884, 746, 811, 765, 719, 765, 626, 654, 514, 635, 459, 616, 440, 579, 422, 485, 422, 451, 441, 377, 459, 338)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_gphjn")
