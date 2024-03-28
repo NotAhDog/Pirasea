@@ -24,7 +24,7 @@ func damaged(body):
 			iframes = true
 			get_node("/root/Main/Player/Camera2D/UI/HealthBar").value = float(player_health) / player_max_health*100
 			if player_health <= 0:
-				get_tree().reload_current_scene()
+				get_node("/root/Main/DeadScreen").visible = true
 				_reset_stats()
 			elif "Player" not in str(body):
 				knockback = true

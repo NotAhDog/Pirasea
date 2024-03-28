@@ -33,7 +33,7 @@ func _ready():
 		var yposis = 1000 + (i * 2000)
 		for x in range(6):
 			var xposis = 1000 + (x * 2000)
-			_spawn_island(randi_range(1,7), xposis, yposis)
+			_spawn_island(randi_range(1,9), xposis, yposis)
 	print("Water: " + str(island0amount))
 	print("Island 1: " + str(island1amount))
 	print("Island 2: " + str(island2amount))

@@ -13,3 +13,4 @@ res://Scenes/island_5.tscn
 res://Scenes/island_6.tscn
 res://Scenes/island_7.tscn
 res://Scenes/rocks.tscn
+res://Scripts/autoload.gd
