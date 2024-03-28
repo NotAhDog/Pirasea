@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn4lh4f5hkjy3"]
+
+[ext_resource type="Texture2D" uid="uid://dk8sr625efac8" path="res://Art/island4best.png" id="1_r2vm0"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ldu85"]
+vertices = PackedVector2Array(500, -500, 500, 500, 210, -35, 158, -187, 149, 146, -500, 500, -167, 146, -500, -500, -207, -65, -105, -202)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 2, 1), PackedInt32Array(4, 1, 5, 6), PackedInt32Array(6, 5, 7, 8), PackedInt32Array(7, 0, 3, 9), PackedInt32Array(8, 7, 9)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-158, 147, -510, 147, -511, -511, 511, -510, 510, 511, -511, 510, -510, 138, 142, 136, 199, -35, 151, -177, -100, -192, -196, -63)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[node name="island_4" type="StaticBody2D"]
+position = Vector2(500, 500)
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(6, 6)
+texture = ExtResource("1_r2vm0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-152, 129, -160, -1, -127, -115, -43, -172, 60, -171, 146, -130, 169, -2, 140, 85, 107, 120)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_ldu85")

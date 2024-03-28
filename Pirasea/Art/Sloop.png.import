@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br7ex8x2pya3c"
-path="res://.godot/imported/Sloop.png-f45f9bc8992d8344512c2e880b88a7f5.ctex"
+uid="uid://ckytbyw4vxorb"
+path="res://.godot/imported/Sloop.png-ba9c9d2f5a706c0646dbff8f34b828f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Sloop.png"
-dest_files=["res://.godot/imported/Sloop.png-f45f9bc8992d8344512c2e880b88a7f5.ctex"]
+source_file="res://Scripts/Sloop.png"
+dest_files=["res://.godot/imported/Sloop.png-ba9c9d2f5a706c0646dbff8f34b828f2.ctex"]
 
 [params]
 

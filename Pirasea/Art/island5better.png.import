@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gwyowydniixy"
-path="res://.godot/imported/sail boat pirate.png-dd279bc43455b8cd05df8697f72ce942.ctex"
+uid="uid://8crj71ton52j"
+path="res://.godot/imported/island5better.png-35e785a594793ee4888013e8fd7804ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scripts/sail boat pirate.png"
-dest_files=["res://.godot/imported/sail boat pirate.png-dd279bc43455b8cd05df8697f72ce942.ctex"]
+source_file="res://Art/island5better.png"
+dest_files=["res://.godot/imported/island5better.png-35e785a594793ee4888013e8fd7804ab.ctex"]
 
 [params]
 

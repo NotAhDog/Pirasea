@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhu6hvxvu6ou7"]
+
+[ext_resource type="Texture2D" uid="uid://duhhbso6kg7vw" path="res://Art/Rocks.png" id="1_hqtbo"]
+
+[node name="island_4" type="StaticBody2D"]
+position = Vector2(500, 500)
+scale = Vector2(2, 2)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(6, 6)
+texture = ExtResource("1_hqtbo")

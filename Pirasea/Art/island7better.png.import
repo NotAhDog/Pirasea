@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckytbyw4vxorb"
-path="res://.godot/imported/Sloop.png-ba9c9d2f5a706c0646dbff8f34b828f2.ctex"
+uid="uid://dtufg8pjwgqy5"
+path="res://.godot/imported/island7better.png-7f6f990f9c6022aae63be672862a7842.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scripts/Sloop.png"
-dest_files=["res://.godot/imported/Sloop.png-ba9c9d2f5a706c0646dbff8f34b828f2.ctex"]
+source_file="res://Art/island7better.png"
+dest_files=["res://.godot/imported/island7better.png-7f6f990f9c6022aae63be672862a7842.ctex"]
 
 [params]
 

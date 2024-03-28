@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://b7t2p584332yl" path="res://Art/Island 1.png" id="1_6xl6k"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mogj5"]
-vertices = PackedVector2Array(283, -9, 500, -500, 500, 500, 229, 81, 170, -162, 50, 238, -500, 500, -188, 148, -283, 40, -500, -500, -270, -15, -120, -217, 27, -259)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 0, 2), PackedInt32Array(1, 0, 4), PackedInt32Array(5, 3, 2), PackedInt32Array(5, 2, 6, 7), PackedInt32Array(8, 7, 6), PackedInt32Array(8, 6, 9, 10), PackedInt32Array(11, 10, 9), PackedInt32Array(11, 9, 1, 12), PackedInt32Array(12, 1, 4)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-182, 140, -511, 520, -510, -511, 510, -510, 511, 511, -523, 510, -182, 140, 48, 227, 221, 75, 271, -8, 163, -155, 25, -248, -114, -208, -261, -11, -272, 37)])
+vertices = PackedVector2Array(283, -9, 500, -500, 500, 500, 229, 82, 170, -162, 172, 124, 50, 240, 94, 190, 27, -259, -500, -500, -120, -217, -270, -15, -500, 500, -283, 40, -185, 152, -41, 189, -109, 116, 112, 137, 88, 164)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 0, 2), PackedInt32Array(1, 0, 4), PackedInt32Array(5, 3, 2, 6, 7), PackedInt32Array(1, 4, 8), PackedInt32Array(9, 1, 8, 10), PackedInt32Array(9, 10, 11), PackedInt32Array(12, 9, 11, 13), PackedInt32Array(12, 13, 14), PackedInt32Array(2, 12, 14, 15, 6), PackedInt32Array(14, 16, 15), PackedInt32Array(17, 5, 7, 18)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-182, 140, -511, 520, -510, -511, 510, -510, 511, 511, -523, 510, -182, 140, -106.5, 103.5, -34.5, 181, 48, 227, 82.5, 186.5, 78, 162, 108, 128, 167.5, 115, 221, 75, 271, -8, 163, -155, 25, -248, -114, -208, -261, -11, -272, 37)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="StaticBody2D" type="StaticBody2D"]
