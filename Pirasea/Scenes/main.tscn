@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dadc2u4m8itxp"]
+[gd_scene load_steps=48 format=3 uid="uid://dadc2u4m8itxp"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_m3yls"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="2_i2gmc"]
@@ -9,7 +9,7 @@
 [ext_resource type="FontFile" uid="uid://cf8w3t5vni62p" path="res://Themes/Freebooter-6yn1.ttf" id="5_obd52"]
 [ext_resource type="Theme" uid="uid://bage11eoe04ud" path="res://Themes/ingametheme.tres" id="7_lo45m"]
 [ext_resource type="Texture2D" uid="uid://c4xyf3wo42epi" path="res://Art/Health Bar.png" id="9_3norj"]
-[ext_resource type="Texture2D" uid="uid://c8dd7yb2xvtyr" path="res://Art/CrewAttackUpgrade.png" id="13_4witc"]
+[ext_resource type="Texture2D" uid="uid://c81ol31kbyrn2" path="res://Art/CrewAttackUpgrade.png" id="13_4witc"]
 [ext_resource type="Texture2D" uid="uid://dwmlpvdiyeq8p" path="res://Art/Coin bag.png" id="13_f3stg"]
 [ext_resource type="Texture2D" uid="uid://bkqmu4n5c1s1d" path="res://Art/BP.png" id="14_6hbjp"]
 [ext_resource type="Script" path="res://Scripts/Shop.gd" id="14_7huxb"]
@@ -26,6 +26,7 @@
 [ext_resource type="Script" path="res://Scripts/MAIN MENU SLIDER.gd" id="23_y2ajh"]
 [ext_resource type="Script" path="res://Scripts/SFX SLIDER.gd" id="24_cy5by"]
 [ext_resource type="Script" path="res://Scripts/MUSIC SLIDER.gd" id="25_u1klt"]
+[ext_resource type="PackedScene" uid="uid://c1d2q41fcmkuf" path="res://Scenes/ghostship.tscn" id="27_sq6xn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1y6k"]
 atlas = ExtResource("3_1u3cd")
@@ -1582,6 +1583,9 @@ collision_mask = 2
 
 [node name="Barrier" type="CollisionPolygon2D" parent="Barrier"]
 polygon = PackedVector2Array(0, 0, 0, -151, 12370, -157, 12370, 12291, -220, 12290, -171, -147, 0, -151, 0, 12032, 12032, 12032, 12032, 0)
+
+[node name="Enemy" parent="." instance=ExtResource("27_sq6xn")]
+position = Vector2(5983, 5230)
 
 [connection signal="pressed" from="PauseMenu/Board/RESUME" to="PauseMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenu/Board/SETTINGS" to="PauseMenu" method="_on_settings_pressed"]
