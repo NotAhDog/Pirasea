@@ -1,3 +1,4 @@
+Label
 ColorRect
 NavigationRegion2D
 CollisionPolygon2D
@@ -11,4 +12,3 @@ CollisionShape2D
 MarginContainer
 Button
 HBoxContainer
-NavigationObstacle2D

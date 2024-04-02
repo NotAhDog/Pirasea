@@ -4,6 +4,7 @@ func _unhandled_key_input(event):
 	if Input.is_action_pressed("pause") and self.visible == false:
 		get_tree().paused = true #if the shop is set to visible it won't work first time the menu is opened
 		get_node("/root/Main/Shop").visible = false
+		get_node("/root/Main/PopUpSettings").visible = false
 		show()
 	elif Input.is_action_pressed("pause") and self.visible == true:
 		hide()

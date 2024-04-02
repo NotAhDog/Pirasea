@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dxk1ihc1pkyho"]
 
 [ext_resource type="Script" path="res://Scripts/bomber.gd" id="1_5ke40"]
-[ext_resource type="Texture2D" uid="uid://br7ex8x2pya3c" path="res://Art/Sloop.png" id="2_dlnux"]
+[ext_resource type="Texture2D" uid="uid://ckytbyw4vxorb" path="res://Art/Sloop.png" id="2_dlnux"]
 
 [node name="PirateBoomer" type="CharacterBody2D"]
 script = ExtResource("1_5ke40")

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gwyowydniixy"
-path="res://.godot/imported/sail boat pirate.png-dd279bc43455b8cd05df8697f72ce942.ctex"
+path="res://.godot/imported/sail boat pirate.png-3fde4f0cea5a2b3b86de2f24c8f4627e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scripts/sail boat pirate.png"
-dest_files=["res://.godot/imported/sail boat pirate.png-dd279bc43455b8cd05df8697f72ce942.ctex"]
+source_file="res://Art/sail boat pirate.png"
+dest_files=["res://.godot/imported/sail boat pirate.png-3fde4f0cea5a2b3b86de2f24c8f4627e.ctex"]
 
 [params]
 

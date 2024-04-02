@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://wbolek1142su"]
 
 [ext_resource type="Script" path="res://Scripts/rammer.gd" id="1_c5kdm"]
-[ext_resource type="Texture2D" uid="uid://3t61lqpc7bab" path="res://Art/sail boat pirate.png" id="2_nlf6f"]
+[ext_resource type="Texture2D" uid="uid://gwyowydniixy" path="res://Art/sail boat pirate.png" id="2_nlf6f"]
 
 [node name="PirateRammer" type="CharacterBody2D"]
 script = ExtResource("1_c5kdm")
