@@ -12,6 +12,6 @@ func _on_body_entered(body):
 
 func _on_body_entered2(body):
 	if "player" in str(body).to_lower():
-		AutoloadScript.player_total_money + 1
-		get_node("../DeadScreen/Stats/StatsLabel/MoneyLabel").text = "Total Money Collected: " + str(AutoloadScript.player_money)
+		AutoloadScript.player_total_money += 1
+		get_node("../DeadScreen/Stats/StatsLabel/MoneyLabel").text = "Total Money Collected: " + str(AutoloadScript.player_total_money)
 
