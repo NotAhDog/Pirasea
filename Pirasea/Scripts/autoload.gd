@@ -6,6 +6,7 @@ var player_health = 3
 var player_money = 0
 var player_total_money = 0
 var total_collected_money = 0
+var total_kills = 0
 var player_speed = 50
 var player_turn_speed = 25
 var cannon_ball_speed = 300
@@ -40,6 +41,7 @@ func _reset_stats():
 	player_money = 0
 	player_total_money = 0
 	total_collected_money = 0
+	total_kills = 0
 	player_speed = 50
 	player_turn_speed = 25
 	cannon_ball_speed = 300
