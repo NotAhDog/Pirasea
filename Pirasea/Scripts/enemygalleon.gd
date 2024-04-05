@@ -14,14 +14,24 @@ func _physics_process(delta):
 	if AutoloadScript.knockback == false: velocity = dir * speed
 	if AutoloadScript.knockback == true: velocity = -(dir * speed)*1.5
 	move_and_slide()
-	if velocity[0] > 0: 
-		$Sprite2D.rotation = atan(velocity[1]/velocity[0]) + 1.5708
-		$CollisionPolygon2D.rotation = atan(velocity[1]/velocity[0]) 
-		$Area2D.rotation = atan(velocity[1]/velocity[0]) 
-	else: 
-		$Sprite2D.rotation = atan(velocity[1]/velocity[0]) + 3.14159 + 1.5708
-		$CollisionPolygon2D.rotation = atan(velocity[1]/velocity[0]) + 3.14159
-		$Area2D.rotation = atan(velocity[1]/velocity[0]) + 3.14159
+	if AutoloadScript.knockback == false:
+		if velocity[0] > 0: 
+			$Sprite2D.rotation = atan(velocity[1]/velocity[0]) + 1.5708
+			$CollisionPolygon2D.rotation = atan(velocity[1]/velocity[0]) 
+			$Area2D.rotation = atan(velocity[1]/velocity[0]) 
+		else: 
+			$Sprite2D.rotation = atan(velocity[1]/velocity[0]) + 3.14159 + 1.5708
+			$CollisionPolygon2D.rotation = atan(velocity[1]/velocity[0]) + 3.14159
+			$Area2D.rotation = atan(velocity[1]/velocity[0]) + 3.14159
+	else:
+		if velocity[0] > 0: 
+			$Sprite2D.rotation = atan(velocity[1]/velocity[0]) + 1.5708 + 3.14159
+			$CollisionPolygon2D.rotation = atan(velocity[1]/velocity[0]) + 3.14159
+			$Area2D.rotation = atan(velocity[1]/velocity[0])  + 3.14159
+		else: 
+			$Sprite2D.rotation = atan(velocity[1]/velocity[0]) + 1.5708
+			$CollisionPolygon2D.rotation = atan(velocity[1]/velocity[0])
+			$Area2D.rotation = atan(velocity[1]/velocity[0])
 	
 func _make_path() -> void:
 	nav_agent.target_position = get_node("/root/Main/Player").global_position

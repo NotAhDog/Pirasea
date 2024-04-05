@@ -3,10 +3,12 @@ extends Node
 var cannonball = preload("res://Scenes/cannonball.tscn")
 var enemygalleon = preload("res://Scenes/enemygalleon.tscn")
 var enemyrammer = preload("res://Scenes/rammer.tscn")
+var enemybomber = preload("res://Scenes/bomber.tscn")
 var pirategalleon = preload("res://Scenes/pirate_galleon.tscn")
 var piraterammer = preload("res://Scenes/pirate_rammer.tscn")
 var piratebomber = preload("res://Scenes/pirate_boomer.tscn")
 var navywarship = preload("res://Scenes/navywarship.tscn")
+var ghostship = preload("res://Scenes/ghostship.tscn")
 var cannonballxv = 0
 var cannonballyv = 0
 var island0 = preload("res://Scenes/water.tscn")
@@ -155,6 +157,16 @@ func _on_progression_timeout():
 		$Rammer.wait_time -= 1/3
 	#At the 5 minute mark, Rammers spawn every 8 seconds and Galleons 2 seconds
 	#At the 7 minutes mark, rammers are spawning ever 6 2/3 seconds and Bombers every 6 seconds
+	if progressionLevel == 20:
+		$PirateRammer.start(0)
+		$Rammer.paused = true
+	elif progressionLevel == 22:
+		$PirateGalleon.start(0)
+		$Galleon.paused = true
+	elif progressionLevel == 24:
+		$PirateBomber.start(0)
+		$Bomber.paused = true
+	#BOSS FIGHTS
 	if progressionLevel == 10:
 		for x in range(4):
 			var fleet = pirategalleon.instantiate()
@@ -168,12 +180,39 @@ func _on_progression_timeout():
 			var fleet = piratebomber.instantiate()
 			self.add_child(fleet)
 			fleet.position = AutoloadScript._choose_random_spawn()
-	if progressionLevel == 20:
+	elif progressionLevel == 20:
 		var warship = navywarship.instantiate()
 		self.add_child(warship)
 		warship.position = AutoloadScript._choose_random_spawn()
+	elif progressionLevel == 30:
+		var ghostship = ghostship.instantiate()
+		self.add_child(ghostship)
+		ghostship.position = AutoloadScript._choose_random_spawn()
+	#DEBUG
 	print("Progression Level: " + str(progressionLevel))
 	print("Galleon " + str($Galleon.wait_time))
 	print("Rammer " + str($Rammer.wait_time))
 	print("Bomber " + str($Bomber.wait_time))
-	
+	print("Pirate Galleon " + str($PirateGalleon.wait_time))
+	print("Pirate Rammer " + str($PirateRammer.wait_time))
+	print("Pirate Bomber " + str($PirateBomber.wait_time))
+
+func _on_pirate_bomber_timeout():
+	var ship = piratebomber.instantiate()
+	add_child(ship)
+	ship.position = AutoloadScript._choose_random_spawn()
+
+func _on_pirate_galleon_timeout():
+	var ship = pirategalleon.instantiate()
+	add_child(ship)
+	ship.position = AutoloadScript._choose_random_spawn()
+
+func _on_pirate_rammer_timeout():
+	var ship = piraterammer.instantiate()
+	add_child(ship)
+	ship.position = AutoloadScript._choose_random_spawn()
+
+func _on_bomber_timeout():
+	var ship = enemybomber.instantiate()
+	add_child(ship)
+	ship.position = AutoloadScript._choose_random_spawn()

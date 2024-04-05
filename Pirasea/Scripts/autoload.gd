@@ -18,9 +18,9 @@ var cards_selected = []
 
 func damaged(body):
 	if iframes == false:
-		if "boom" in str(body).to_lower() or "body" in str(body).to_lower():
+		if "boom" in str(body).to_lower() or "body" in str(body).to_lower() or "harpoon" in str(body).to_lower():
 			print("Hit by: " + str(body) + ", at: " + str(Time.get_ticks_msec()))
-			player_health -= 1
+			player_health -= 1 
 			iframes = true
 			get_node("/root/Main/Player/Camera2D/UI/HealthBar").value = float(player_health) / player_max_health*100
 			if player_health <= 0:
