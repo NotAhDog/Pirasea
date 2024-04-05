@@ -1410,6 +1410,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="DeadScreen" type="CanvasLayer" parent="."]
 process_mode = 3
+visible = false
 script = ExtResource("20_5evh7")
 
 [node name="Dead" type="AnimatedSprite2D" parent="DeadScreen"]
