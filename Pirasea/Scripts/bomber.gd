@@ -37,7 +37,6 @@ func _make_path() -> void:
 	nav_agent.target_position = get_node("/root/Main/Player").global_position
 
 func _on_nav_timeout():
-	print("O")
 	_make_path() 
 
 func _on_area_2d_area_entered(area):
