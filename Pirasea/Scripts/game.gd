@@ -60,10 +60,10 @@ func _spawn_island(island, x, y):
 		elif island == 2: 
 			islandinstance = island2.instantiate() 
 			island2amount += 1
-		#elif island == 3: 
-			#islandinstance = island3.instantiate() 
-			#island3amount += 1
-			#time_without_shop = 0
+		elif island == 3: 
+			islandinstance = island3.instantiate() 
+			island3amount += 1
+			time_without_shop = 0
 		elif island == 4: 
 			islandinstance = island4.instantiate() 
 			island4amount += 1
