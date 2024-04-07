@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dadc2u4m8itxp"]
+[gd_scene load_steps=48 format=3 uid="uid://dadc2u4m8itxp"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_m3yls"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="2_i2gmc"]
@@ -26,6 +26,7 @@
 [ext_resource type="Script" path="res://Scripts/MAIN MENU SLIDER.gd" id="23_y2ajh"]
 [ext_resource type="Script" path="res://Scripts/SFX SLIDER.gd" id="24_cy5by"]
 [ext_resource type="Script" path="res://Scripts/MUSIC SLIDER.gd" id="25_u1klt"]
+[ext_resource type="PackedScene" uid="uid://ccjttrcjrs2pu" path="res://Scenes/enemygalleon.tscn" id="27_54t2e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1y6k"]
 atlas = ExtResource("3_1u3cd")
@@ -1591,6 +1592,15 @@ collision_mask = 2
 
 [node name="Barrier" type="CollisionPolygon2D" parent="Barrier"]
 polygon = PackedVector2Array(0, 0, 0, -151, 12370, -157, 12370, 12291, -220, 12290, -171, -147, 0, -151, 0, 12032, 12032, 12032, 12032, 0)
+
+[node name="Enemy" parent="." instance=ExtResource("27_54t2e")]
+position = Vector2(6754, 6021)
+
+[node name="Enemy2" parent="." instance=ExtResource("27_54t2e")]
+position = Vector2(6682, 5679)
+
+[node name="Enemy3" parent="." instance=ExtResource("27_54t2e")]
+position = Vector2(6305, 5559)
 
 [connection signal="pressed" from="PauseMenu/Board/RESUME" to="PauseMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenu/Board/SETTINGS" to="PauseMenu" method="_on_settings_pressed"]

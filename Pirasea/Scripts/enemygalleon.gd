@@ -46,10 +46,12 @@ func _on_area_2d_area_entered(area):
 			for i in range(2):
 				var coininstance = coin.instantiate()
 				get_node("..").add_child(coininstance)
+				coininstance.name = "Coin"
 				coininstance.global_position = self.global_position
 		else:
 			var coininstance = coin.instantiate()
 			get_node("..").add_child(coininstance)
+			coininstance.name = "Coin"
 			coininstance.global_position = self.global_position
 		self.queue_free()
 

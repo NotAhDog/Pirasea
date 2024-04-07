@@ -1,12 +1,12 @@
 res://Scenes/main.tscn
 res://Scripts/boom.gd
+res://Scripts/autoload.gd
 res://Scenes/galleon.tscn
 res://Scenes/ghostship.tscn
-res://Scripts/ghostship.gd
-res://Scripts/autoload.gd
-res://Scripts/game.gd
 res://Scenes/bomber.tscn
-res://Scripts/bomber.gd
+res://Scenes/coin.tscn
 res://Scripts/enemygalleon.gd
+res://Scripts/bomber.gd
+res://Scripts/ghostship.gd
 res://Scripts/navywarship.gd
 res://Scripts/rammer.gd

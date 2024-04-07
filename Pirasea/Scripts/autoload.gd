@@ -17,6 +17,10 @@ var cards_selected = []
 # WHEN CHANGING VARIABLES, CHANGE IN RESET FUNCTION AS WELL
 
 func damaged(body):
+	if "coin" in str(body).to_lower():
+		player_money += 1
+		get_node("/root/Main/Player/Camera2D/UI/Money").text = "Money: " + str(player_money)
+		body.queue_free()
 	if iframes == false:
 		if "boom" in str(body).to_lower() or "body" in str(body).to_lower() or "harpoon" in str(body).to_lower():
 			print("Hit by: " + str(body) + ", at: " + str(Time.get_ticks_msec()))
