@@ -28,6 +28,7 @@ var island5amount = 0
 var island6amount = 0
 var island7amount = 0
 var progressionLevel = 0
+var time_without_shop = 0
 
 func _ready():
 	AutoloadScript.player_health += 1
@@ -40,37 +41,50 @@ func _ready():
 	print("Island 1: " + str(island1amount))
 	print("Island 2: " + str(island2amount))
 	print("Shops: " + str(island3amount))
+	print("Island 4: " + str(island4amount))
+	print("Island 5: " + str(island5amount))
+	print("Island 6: " + str(island6amount))
+	print("Island 7:" + str(island7amount))
 
 func _spawn_island(island, x, y):
 	var islandinstance = island0.instantiate() 
 	var randdirection = [0.0, 90.0, 180.0, 270.0]
-	if island == 1: 
-		islandinstance = island1.instantiate() 
-		island1amount += 1
-	elif island == 2: 
-		islandinstance = island2.instantiate() 
-		island2amount += 1
-	elif island == 3: 
+	if time_without_shop == 11:
 		islandinstance = island3.instantiate() 
 		island3amount += 1
-	elif island == 4: 
-		islandinstance = island4.instantiate() 
-		island4amount += 1
-	elif island == 5: 
-		islandinstance = island5.instantiate() 
-		island5amount += 1
-	elif island == 6: 
-		islandinstance = island6.instantiate() 
-		island6amount += 1
-	elif island == 7: 
-		islandinstance = island7.instantiate() 
-		island7amount += 1
+		time_without_shop = 0
 	else:
-		island0amount += 1
+		if island == 1: 
+			islandinstance = island1.instantiate() 
+			island1amount += 1
+		elif island == 2: 
+			islandinstance = island2.instantiate() 
+			island2amount += 1
+		#elif island == 3: 
+			#islandinstance = island3.instantiate() 
+			#island3amount += 1
+			#time_without_shop = 0
+		elif island == 4: 
+			islandinstance = island4.instantiate() 
+			island4amount += 1
+		elif island == 5: 
+			islandinstance = island5.instantiate() 
+			island5amount += 1
+		elif island == 6: 
+			islandinstance = island6.instantiate() 
+			island6amount += 1
+		elif island == 7: 
+			islandinstance = island7.instantiate() 
+			island7amount += 1
+		else:
+			island0amount += 1
 	add_child(islandinstance)
 	islandinstance.position.x = x
 	islandinstance.position.y = y
 	islandinstance.rotation = deg_to_rad(randdirection.pick_random())
+	time_without_shop += 1
+	print(time_without_shop)
+	print(islandinstance)
 		
 func _on_cannonball_timeout():
 	for i in get_node("Player/SpawnHandler").get_children():

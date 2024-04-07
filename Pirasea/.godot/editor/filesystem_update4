@@ -10,3 +10,4 @@ res://Scripts/bomber.gd
 res://Scripts/ghostship.gd
 res://Scripts/navywarship.gd
 res://Scripts/rammer.gd
+res://Scripts/game.gd
