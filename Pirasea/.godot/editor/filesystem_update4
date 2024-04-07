@@ -8,6 +8,6 @@ res://Scenes/pirate_rammer.tscn
 res://Scenes/galleon.tscn
 res://Scenes/rocks.tscn
 res://Scenes/coin.tscn
-res://Scripts/coin.gd
-res://Scripts/autoload.gd
-res://Scripts/CharacterBody2D.gd
+res://Scripts/bomber.gd
+res://Scripts/enemygalleon.gd
+res://Scripts/rammer.gd
