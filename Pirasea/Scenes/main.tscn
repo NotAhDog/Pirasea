@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dadc2u4m8itxp"]
+[gd_scene load_steps=51 format=3 uid="uid://dadc2u4m8itxp"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_m3yls"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="2_i2gmc"]
@@ -11,18 +11,23 @@
 [ext_resource type="Texture2D" uid="uid://c4xyf3wo42epi" path="res://Art/Health Bar.png" id="9_3norj"]
 [ext_resource type="Texture2D" uid="uid://c81ol31kbyrn2" path="res://Art/CrewAttackUpgrade.png" id="13_4witc"]
 [ext_resource type="Texture2D" uid="uid://dwmlpvdiyeq8p" path="res://Art/Coin bag.png" id="13_f3stg"]
+[ext_resource type="Texture2D" uid="uid://xpedvcodd4x2" path="res://Art/MoreCrewUpgrade (1).png" id="13_vb5vl"]
 [ext_resource type="Texture2D" uid="uid://bkqmu4n5c1s1d" path="res://Art/BP.png" id="14_6hbjp"]
 [ext_resource type="Script" path="res://Scripts/Shop.gd" id="14_7huxb"]
 [ext_resource type="Texture2D" uid="uid://bf3qlcvnn7wsu" path="res://Art/S.png" id="16_wruoe"]
 [ext_resource type="Texture2D" uid="uid://eaml17arhk6j" path="res://Art/R.png" id="17_hx8ky"]
 [ext_resource type="Texture2D" uid="uid://ch7v8bbv0k8ux" path="res://Art/SW.png" id="18_ufk1i"]
+[ext_resource type="Texture2D" uid="uid://d02lgwg54nb18" path="res://Art/Trained Crew.png" id="19_gos1k"]
 [ext_resource type="Texture2D" uid="uid://y4yj3g550nag" path="res://Art/DT.png" id="19_jxryy"]
 [ext_resource type="Script" path="res://Scripts/DeadScreen.gd" id="20_5evh7"]
 [ext_resource type="Texture2D" uid="uid://dfy0cr0s3epjg" path="res://Art/ManImDead(screen)BETTER.png" id="20_8rvb1"]
 [ext_resource type="Texture2D" uid="uid://cucsy80inrsqu" path="res://Art/TM.png" id="20_sgejb"]
 [ext_resource type="Texture2D" uid="uid://cqqs62c6nuyn1" path="res://Art/C.png" id="21_dlfh2"]
+[ext_resource type="Texture2D" uid="uid://dfq6ovh8agjft" path="res://Art/ExperiencedCrewUpgrade (1).png" id="21_niqw2"]
 [ext_resource type="AudioStream" uid="uid://l5htagc5evrf" path="res://Audio/ocean-sea-soft-waves-121349.mp3" id="22_3yny4"]
+[ext_resource type="Texture2D" uid="uid://c8ewdor41ho8n" path="res://Art/EliteCrewUpgrade (1).png" id="22_21wae"]
 [ext_resource type="Script" path="res://Scripts/PopUpSettings.gd" id="22_g7frg"]
+[ext_resource type="Texture2D" uid="uid://btlsdm46mt0dp" path="res://Art/RepairUpgrade (1).png" id="23_aw8ns"]
 [ext_resource type="Script" path="res://Scripts/MAIN MENU SLIDER.gd" id="23_y2ajh"]
 [ext_resource type="Script" path="res://Scripts/SFX SLIDER.gd" id="24_cy5by"]
 [ext_resource type="Script" path="res://Scripts/MUSIC SLIDER.gd" id="25_u1klt"]
@@ -335,7 +340,6 @@ autostart = true
 
 [node name="Shop" type="CanvasLayer" parent="."]
 process_mode = 3
-visible = false
 script = ExtResource("14_7huxb")
 
 [node name="Cards" type="HBoxContainer" parent="Shop"]
@@ -446,7 +450,7 @@ metadata/_edit_use_anchors_ = true
 [node name="MoreCrew" type="TextureRect" parent="Shop/Cards"]
 visible = false
 layout_mode = 2
-texture = ExtResource("13_4witc")
+texture = ExtResource("13_vb5vl")
 
 [node name="Label" type="Label" parent="Shop/Cards/MoreCrew"]
 layout_mode = 1
@@ -978,7 +982,7 @@ metadata/_edit_use_anchors_ = true
 [node name="TrainedCrew" type="TextureRect" parent="Shop/Cards"]
 visible = false
 layout_mode = 2
-texture = ExtResource("13_4witc")
+texture = ExtResource("19_gos1k")
 
 [node name="Label" type="Label" parent="Shop/Cards/TrainedCrew"]
 layout_mode = 1
@@ -1156,7 +1160,7 @@ metadata/_edit_use_anchors_ = true
 [node name="ExperincedCrew" type="TextureRect" parent="Shop/Cards"]
 visible = false
 layout_mode = 2
-texture = ExtResource("21_dlfh2")
+texture = ExtResource("21_niqw2")
 
 [node name="Label" type="Label" parent="Shop/Cards/ExperincedCrew"]
 layout_mode = 1
@@ -1244,7 +1248,7 @@ metadata/_edit_use_anchors_ = true
 [node name="EliteCrew" type="TextureRect" parent="Shop/Cards"]
 visible = false
 layout_mode = 2
-texture = ExtResource("13_4witc")
+texture = ExtResource("22_21wae")
 
 [node name="Label" type="Label" parent="Shop/Cards/EliteCrew"]
 layout_mode = 1
@@ -1299,6 +1303,7 @@ alignment = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("13_f3stg")
+stretch_mode = 3
 
 [node name="Cost" type="Label" parent="Shop/Cards/EliteCrew/Price"]
 layout_mode = 2
@@ -1332,7 +1337,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Repair" type="TextureRect" parent="Shop/Cards"]
 visible = false
 layout_mode = 2
-texture = ExtResource("13_4witc")
+texture = ExtResource("23_aw8ns")
 
 [node name="Label" type="Label" parent="Shop/Cards/Repair"]
 layout_mode = 1
@@ -1387,6 +1392,7 @@ alignment = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("13_f3stg")
+stretch_mode = 3
 
 [node name="Cost" type="Label" parent="Shop/Cards/Repair/Price"]
 layout_mode = 2
@@ -1460,6 +1466,44 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_jtvtv")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_3r1i8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_3sw3f")
 text = "MENU"
+
+[node name="Stats" type="ColorRect" parent="DeadScreen"]
+offset_left = 823.0
+offset_top = 105.0
+offset_right = 1153.0
+offset_bottom = 557.0
+color = Color(0.47451, 0.313726, 0.215686, 0.203922)
+
+[node name="StatsLabel" type="Label" parent="DeadScreen/Stats"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 324.0
+offset_bottom = 83.0
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 80
+text = "STATS"
+horizontal_alignment = 1
+
+[node name="MoneyLabel" type="Label" parent="DeadScreen/Stats/StatsLabel"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 112.0
+offset_right = 327.0
+offset_bottom = 181.0
+text = "Total Money Collected: 
+0"
+horizontal_alignment = 1
+
+[node name="Kills" type="Label" parent="DeadScreen/Stats/StatsLabel"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 200.0
+offset_right = 327.0
+offset_bottom = 269.0
+text = "Total kills(not including bosses):
+0"
+horizontal_alignment = 1
 
 [node name="PopUpSettings" type="CanvasLayer" parent="."]
 process_mode = 3
