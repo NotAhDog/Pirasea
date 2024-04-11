@@ -1,5 +1,7 @@
 res://Scenes/Menu.tscn
+res://Scripts/boom.gd
 res://Scenes/main.tscn
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 res://Scripts/ShopArea.gd
@@ -15,3 +17,15 @@ res://Scenes/rocks.tscn
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+res://Scenes/autoload.tscn
+res://Scenes/pirate_boomer.tscn
+res://Scenes/pirate_galleon.tscn
+res://Scenes/pirate_rammer.tscn
+res://Scenes/galleon.tscn
+res://Scenes/rocks.tscn
+res://Scenes/coin.tscn
+res://Scripts/bomber.gd
+res://Scripts/enemygalleon.gd
+res://Scripts/rammer.gd
+>>>>>>> origin/Ainesh-WK-10

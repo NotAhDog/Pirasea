@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dadc2u4m8itxp"]
+[gd_scene load_steps=51 format=3 uid="uid://dadc2u4m8itxp"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_m3yls"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="2_i2gmc"]
@@ -6,18 +6,30 @@
 [ext_resource type="Texture2D" uid="uid://6w2bhir5gquy" path="res://Art/Paused Menu.png" id="3_1u3cd"]
 [ext_resource type="Texture2D" uid="uid://bkms55k5jqftp" path="res://Art/oceanbetter.png" id="3_py1ig"]
 [ext_resource type="PackedScene" uid="uid://c34ipo6uw0vw7" path="res://Scenes/galleon.tscn" id="4_h56da"]
+[ext_resource type="FontFile" uid="uid://cf8w3t5vni62p" path="res://Themes/Freebooter-6yn1.ttf" id="5_obd52"]
 [ext_resource type="Theme" uid="uid://bage11eoe04ud" path="res://Themes/ingametheme.tres" id="7_lo45m"]
-[ext_resource type="Texture2D" uid="uid://dtct1g3qieuk3" path="res://Art/Pirasea Gold Coin.png" id="7_xydeu"]
 [ext_resource type="Texture2D" uid="uid://c4xyf3wo42epi" path="res://Art/Health Bar.png" id="9_3norj"]
+[ext_resource type="Texture2D" uid="uid://dwmlpvdiyeq8p" path="res://Art/Coin bag.png" id="13_f3stg"]
+[ext_resource type="Texture2D" uid="uid://xpedvcodd4x2" path="res://Art/MoreCrewUpgrade (1).png" id="13_vb5vl"]
 [ext_resource type="Texture2D" uid="uid://bkqmu4n5c1s1d" path="res://Art/BP.png" id="14_6hbjp"]
 [ext_resource type="Script" path="res://Scripts/Shop.gd" id="14_7huxb"]
-[ext_resource type="Texture2D" uid="uid://bbml07ien7v6g" path="res://Art/Cannon ball upgrade card.png" id="14_wfqu0"]
 [ext_resource type="Texture2D" uid="uid://bf3qlcvnn7wsu" path="res://Art/S.png" id="16_wruoe"]
 [ext_resource type="Texture2D" uid="uid://eaml17arhk6j" path="res://Art/R.png" id="17_hx8ky"]
 [ext_resource type="Texture2D" uid="uid://ch7v8bbv0k8ux" path="res://Art/SW.png" id="18_ufk1i"]
+[ext_resource type="Texture2D" uid="uid://d02lgwg54nb18" path="res://Art/Trained Crew.png" id="19_gos1k"]
 [ext_resource type="Texture2D" uid="uid://y4yj3g550nag" path="res://Art/DT.png" id="19_jxryy"]
+[ext_resource type="Script" path="res://Scripts/DeadScreen.gd" id="20_5evh7"]
+[ext_resource type="Texture2D" uid="uid://dfy0cr0s3epjg" path="res://Art/ManImDead(screen)BETTER.png" id="20_8rvb1"]
 [ext_resource type="Texture2D" uid="uid://cucsy80inrsqu" path="res://Art/TM.png" id="20_sgejb"]
 [ext_resource type="Texture2D" uid="uid://cqqs62c6nuyn1" path="res://Art/C.png" id="21_dlfh2"]
+[ext_resource type="Texture2D" uid="uid://dfq6ovh8agjft" path="res://Art/ExperiencedCrewUpgrade (1).png" id="21_niqw2"]
+[ext_resource type="AudioStream" uid="uid://l5htagc5evrf" path="res://Audio/ocean-sea-soft-waves-121349.mp3" id="22_3yny4"]
+[ext_resource type="Texture2D" uid="uid://c8ewdor41ho8n" path="res://Art/EliteCrewUpgrade (1).png" id="22_21wae"]
+[ext_resource type="Script" path="res://Scripts/PopUpSettings.gd" id="22_g7frg"]
+[ext_resource type="Texture2D" uid="uid://btlsdm46mt0dp" path="res://Art/RepairUpgrade (1).png" id="23_aw8ns"]
+[ext_resource type="Script" path="res://Scripts/MAIN MENU SLIDER.gd" id="23_y2ajh"]
+[ext_resource type="Script" path="res://Scripts/SFX SLIDER.gd" id="24_cy5by"]
+[ext_resource type="Script" path="res://Scripts/MUSIC SLIDER.gd" id="25_u1klt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1y6k"]
 atlas = ExtResource("3_1u3cd")
@@ -33,6 +45,21 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtivv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d1gtq"]
+bg_color = Color(0.0823529, 0.113725, 0.156863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jtvtv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3r1i8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3sw3f"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ba1w8"]
 texture = ExtResource("3_py1ig")
@@ -118,6 +145,36 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7fjf2"]
 bg_color = Color(0.45098, 0.294118, 0.2, 0.831373)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6j4ag"]
+atlas = ExtResource("20_8rvb1")
+region = Rect2(0, 0, 128, 119)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qu4u3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6j4ag")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngdpc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrtsq"]
+bg_color = Color(0.478431, 0.282353, 0.254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yp41j"]
+bg_color = Color(0.478431, 0.282353, 0.254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bmtd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7eir2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="Main" type="Node"]
 process_mode = 1
 script = ExtResource("1_m3yls")
@@ -128,9 +185,73 @@ visible = false
 script = ExtResource("2_t18u3")
 
 [node name="Board" type="AnimatedSprite2D" parent="PauseMenu"]
-position = Vector2(576, 324)
+position = Vector2(575, 327)
 scale = Vector2(5.0625, 5.0625)
 sprite_frames = SubResource("SpriteFrames_gcal2")
+
+[node name="RESUME" type="Button" parent="PauseMenu/Board"]
+offset_left = -17.0
+offset_top = -5.0
+offset_right = 264.0
+offset_bottom = 77.0
+scale = Vector2(0.121, 0.121)
+theme = ExtResource("7_lo45m")
+theme_override_fonts/font = ExtResource("5_obd52")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_gtivv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d1gtq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jtvtv")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_3r1i8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3sw3f")
+text = "RESUME"
+
+[node name="SETTINGS" type="Button" parent="PauseMenu/Board"]
+offset_left = -16.9877
+offset_top = 12.0494
+offset_right = 264.012
+offset_bottom = 94.0494
+scale = Vector2(0.121, 0.121)
+theme = ExtResource("7_lo45m")
+theme_override_fonts/font = ExtResource("5_obd52")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_gtivv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d1gtq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jtvtv")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_3r1i8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3sw3f")
+text = "SETTINGS"
+
+[node name="MAIN MENU" type="Button" parent="PauseMenu/Board"]
+offset_left = -16.9877
+offset_top = 29.037
+offset_right = 264.012
+offset_bottom = 111.037
+scale = Vector2(0.121, 0.121)
+theme = ExtResource("7_lo45m")
+theme_override_fonts/font = ExtResource("5_obd52")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_gtivv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d1gtq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jtvtv")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_3r1i8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3sw3f")
+text = "MAIN MENU"
+
+[node name="QUIT" type="Button" parent="PauseMenu/Board"]
+offset_left = -17.0
+offset_top = 46.0
+offset_right = 392.0
+offset_bottom = 107.0
+scale = Vector2(0.083, 0.083)
+theme = ExtResource("7_lo45m")
+theme_override_fonts/font = ExtResource("5_obd52")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_gtivv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d1gtq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jtvtv")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_3r1i8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3sw3f")
+text = "QUIT"
 
 [node name="Pirasea" type="Label" parent="PauseMenu"]
 offset_left = 460.0
@@ -171,20 +292,7 @@ text = "Money: 0"
 
 [node name="Coin" type="Sprite2D" parent="Player/Camera2D/UI"]
 position = Vector2(49.5, 78.5)
-texture = ExtResource("7_xydeu")
-
-[node name="CollectedMoney" type="RichTextLabel" parent="Player/Camera2D/UI"]
-offset_left = 65.0
-offset_top = 88.0
-offset_right = 431.0
-offset_bottom = 121.0
-theme = ExtResource("7_lo45m")
-theme_override_font_sizes/normal_font_size = 32
-text = "Total Collected Money: 0"
-
-[node name="Coin2" type="Sprite2D" parent="Player/Camera2D/UI"]
-position = Vector2(49.5, 102.5)
-texture = ExtResource("7_xydeu")
+texture = ExtResource("13_f3stg")
 
 [node name="HealthBar" type="ProgressBar" parent="Player/Camera2D/UI"]
 offset_left = 72.0
@@ -211,12 +319,17 @@ wait_time = 5.0
 autostart = true
 
 [node name="Rammer" type="Timer" parent="."]
-wait_time = 7.0
+wait_time = 10.0
+
+[node name="Bomber" type="Timer" parent="."]
+wait_time = 8.0
+
+[node name="Progression" type="Timer" parent="."]
+wait_time = 30.0
 autostart = true
 
 [node name="Shop" type="CanvasLayer" parent="."]
 process_mode = 3
-visible = false
 script = ExtResource("14_7huxb")
 
 [node name="Cards" type="HBoxContainer" parent="Shop"]
@@ -260,6 +373,25 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Description" type="Label" parent="Shop/Cards/MoreBlackPowder"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.421875
+anchor_top = 0.552083
+anchor_right = 1.29688
+anchor_bottom = 0.833333
+offset_left = -20.0
+offset_top = 6.0
+offset_right = 180.0
+offset_bottom = 39.0
+scale = Vector2(0.2, 0.2)
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 25
+text = "Faster Cannon Balls"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Price" type="HBoxContainer" parent="Shop/Cards/MoreBlackPowder"]
 z_index = 1
 layout_mode = 2
@@ -273,7 +405,8 @@ alignment = 1
 [node name="Coin" type="TextureRect" parent="Shop/Cards/MoreBlackPowder/Price"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("7_xydeu")
+texture = ExtResource("13_f3stg")
+stretch_mode = 3
 
 [node name="Cost" type="Label" parent="Shop/Cards/MoreBlackPowder/Price"]
 layout_mode = 2
@@ -307,7 +440,7 @@ metadata/_edit_use_anchors_ = true
 [node name="MoreCrew" type="TextureRect" parent="Shop/Cards"]
 visible = false
 layout_mode = 2
-texture = ExtResource("14_wfqu0")
+texture = ExtResource("13_vb5vl")
 
 [node name="Label" type="Label" parent="Shop/Cards/MoreCrew"]
 layout_mode = 1
@@ -328,13 +461,32 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Description" type="Label" parent="Shop/Cards/MoreCrew"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.390625
+anchor_top = 0.564516
+anchor_right = 1.46875
+anchor_bottom = 0.564516
+offset_left = -20.0
+offset_top = 6.0
+offset_right = 180.0
+offset_bottom = 39.0
+scale = Vector2(0.2, 0.2)
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 25
+text = "Faster Firing Cannons"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Price" type="HBoxContainer" parent="Shop/Cards/MoreCrew"]
 z_index = 1
 layout_mode = 2
 offset_left = 13.0
-offset_top = 102.333
+offset_top = 99.2684
 offset_right = 203.0
-offset_bottom = 182.333
+offset_bottom = 179.268
 scale = Vector2(0.2, 0.2)
 alignment = 1
 metadata/_edit_group_ = true
@@ -342,7 +494,8 @@ metadata/_edit_group_ = true
 [node name="Coin" type="TextureRect" parent="Shop/Cards/MoreCrew/Price"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("7_xydeu")
+texture = ExtResource("13_f3stg")
+stretch_mode = 3
 
 [node name="Cost" type="Label" parent="Shop/Cards/MoreCrew/Price"]
 layout_mode = 2
@@ -361,9 +514,9 @@ anchor_top = 0.523942
 anchor_right = 0.5
 anchor_bottom = 0.523942
 offset_left = -19.0
-offset_top = 35.0
+offset_top = 31.9354
 offset_right = 19.0
-offset_bottom = 51.0
+offset_bottom = 47.9354
 theme = ExtResource("7_lo45m")
 theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_caexn")
@@ -397,6 +550,25 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Description" type="Label" parent="Shop/Cards/BiggerSails"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4375
+anchor_top = 0.5625
+anchor_right = 1.0625
+anchor_bottom = 0.5625
+offset_left = -20.0
+offset_top = 6.0
+offset_right = 180.0
+offset_bottom = 39.0
+scale = Vector2(0.2, 0.2)
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 25
+text = "Your Ship is Faster"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Price" type="HBoxContainer" parent="Shop/Cards/BiggerSails"]
 z_index = 1
 layout_mode = 2
@@ -410,7 +582,8 @@ alignment = 1
 [node name="Coin" type="TextureRect" parent="Shop/Cards/BiggerSails/Price"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("7_xydeu")
+texture = ExtResource("13_f3stg")
+stretch_mode = 3
 
 [node name="Cost" type="Label" parent="Shop/Cards/BiggerSails/Price"]
 layout_mode = 2
@@ -465,6 +638,25 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Description" type="Label" parent="Shop/Cards/BiggerRudder"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4375
+anchor_top = 0.5625
+anchor_right = 1.0625
+anchor_bottom = 0.5625
+offset_left = -20.0
+offset_top = 6.0
+offset_right = 180.0
+offset_bottom = 39.0
+scale = Vector2(0.2, 0.2)
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 25
+text = "Your Ship Turns Faster"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Price" type="HBoxContainer" parent="Shop/Cards/BiggerRudder"]
 z_index = 1
 layout_mode = 2
@@ -478,7 +670,8 @@ alignment = 1
 [node name="Coin" type="TextureRect" parent="Shop/Cards/BiggerRudder/Price"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("7_xydeu")
+texture = ExtResource("13_f3stg")
+stretch_mode = 3
 
 [node name="Cost" type="Label" parent="Shop/Cards/BiggerRudder/Price"]
 layout_mode = 2
@@ -533,6 +726,26 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Description" type="Label" parent="Shop/Cards/StrongerWood"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4375
+anchor_top = 0.5625
+anchor_right = 1.0625
+anchor_bottom = 0.8125
+offset_left = -20.0
+offset_top = 6.0
+offset_right = 180.0
+offset_bottom = 39.0
+scale = Vector2(0.2, 0.2)
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 25
+text = "Your Ship Has 
+More Health"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Price" type="HBoxContainer" parent="Shop/Cards/StrongerWood"]
 z_index = 1
 layout_mode = 2
@@ -546,7 +759,8 @@ alignment = 1
 [node name="Coin" type="TextureRect" parent="Shop/Cards/StrongerWood/Price"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("7_xydeu")
+texture = ExtResource("13_f3stg")
+stretch_mode = 3
 
 [node name="Cost" type="Label" parent="Shop/Cards/StrongerWood/Price"]
 layout_mode = 2
@@ -601,6 +815,26 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Description" type="Label" parent="Shop/Cards/DoubleTrouble"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4375
+anchor_top = 0.5625
+anchor_right = 1.0625
+anchor_bottom = 0.5625
+offset_left = -20.0
+offset_top = 6.0
+offset_right = 180.0
+offset_bottom = 39.0
+scale = Vector2(0.2, 0.2)
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 25
+text = "Cannons Fire 2 
+Cannonballs insted of 1 "
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Price" type="HBoxContainer" parent="Shop/Cards/DoubleTrouble"]
 z_index = 1
 layout_mode = 2
@@ -614,7 +848,8 @@ alignment = 1
 [node name="Coin" type="TextureRect" parent="Shop/Cards/DoubleTrouble/Price"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("7_xydeu")
+texture = ExtResource("13_f3stg")
+stretch_mode = 3
 
 [node name="Cost" type="Label" parent="Shop/Cards/DoubleTrouble/Price"]
 layout_mode = 2
@@ -669,6 +904,26 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Description" type="Label" parent="Shop/Cards/ThreeMusketeers"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4375
+anchor_top = 0.5625
+anchor_right = 1.0625
+anchor_bottom = 0.5625
+offset_left = -20.0
+offset_top = 6.0
+offset_right = 180.0
+offset_bottom = 39.0
+scale = Vector2(0.2, 0.2)
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 25
+text = "Cannons Fire 3 
+Cannonballs instead of 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Price" type="HBoxContainer" parent="Shop/Cards/ThreeMusketeers"]
 z_index = 1
 layout_mode = 2
@@ -682,7 +937,8 @@ alignment = 1
 [node name="Coin" type="TextureRect" parent="Shop/Cards/ThreeMusketeers/Price"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("7_xydeu")
+texture = ExtResource("13_f3stg")
+stretch_mode = 3
 
 [node name="Cost" type="Label" parent="Shop/Cards/ThreeMusketeers/Price"]
 layout_mode = 2
@@ -716,7 +972,7 @@ metadata/_edit_use_anchors_ = true
 [node name="TrainedCrew" type="TextureRect" parent="Shop/Cards"]
 visible = false
 layout_mode = 2
-texture = ExtResource("14_wfqu0")
+texture = ExtResource("19_gos1k")
 
 [node name="Label" type="Label" parent="Shop/Cards/TrainedCrew"]
 layout_mode = 1
@@ -737,13 +993,33 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Description" type="Label" parent="Shop/Cards/TrainedCrew"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4375
+anchor_top = 0.5625
+anchor_right = 1.0625
+anchor_bottom = 0.5625
+offset_left = -20.0
+offset_top = 6.0
+offset_right = 180.0
+offset_bottom = 39.0
+scale = Vector2(0.2, 0.2)
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 25
+text = "Even Faster
+Firing Cannons"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Price" type="HBoxContainer" parent="Shop/Cards/TrainedCrew"]
 z_index = 1
 layout_mode = 2
 offset_left = 13.0
-offset_top = 102.333
+offset_top = 98.9996
 offset_right = 203.0
-offset_bottom = 182.333
+offset_bottom = 179.0
 scale = Vector2(0.2, 0.2)
 alignment = 1
 metadata/_edit_group_ = true
@@ -751,7 +1027,8 @@ metadata/_edit_group_ = true
 [node name="Coin" type="TextureRect" parent="Shop/Cards/TrainedCrew/Price"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("7_xydeu")
+texture = ExtResource("13_f3stg")
+stretch_mode = 3
 
 [node name="Cost" type="Label" parent="Shop/Cards/TrainedCrew/Price"]
 layout_mode = 2
@@ -770,9 +1047,9 @@ anchor_top = 0.523438
 anchor_right = 0.5
 anchor_bottom = 0.53125
 offset_left = -19.0
-offset_top = 35.0
+offset_top = 31.6666
 offset_right = 19.0
-offset_bottom = 51.0
+offset_bottom = 47.6666
 theme = ExtResource("7_lo45m")
 theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_caexn")
@@ -780,7 +1057,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_7fjf2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_caexn")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_caexn")
 theme_override_styles/focus = SubResource("StyleBoxFlat_caexn")
-metadata/_edit_use_anchors_ = true
 
 [node name="WealthierEnemies" type="TextureRect" parent="Shop/Cards"]
 visible = false
@@ -806,6 +1082,26 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Description" type="Label" parent="Shop/Cards/WealthierEnemies"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4375
+anchor_top = 0.5625
+anchor_right = 1.0625
+anchor_bottom = 0.5625
+offset_left = -20.0
+offset_top = 6.0
+offset_right = 180.0
+offset_bottom = 39.0
+scale = Vector2(0.2, 0.2)
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 25
+text = "Enemies Give 
+More Treasure"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Price" type="HBoxContainer" parent="Shop/Cards/WealthierEnemies"]
 z_index = 1
 layout_mode = 2
@@ -819,7 +1115,8 @@ alignment = 1
 [node name="Coin" type="TextureRect" parent="Shop/Cards/WealthierEnemies/Price"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("7_xydeu")
+texture = ExtResource("13_f3stg")
+stretch_mode = 3
 
 [node name="Cost" type="Label" parent="Shop/Cards/WealthierEnemies/Price"]
 layout_mode = 2
@@ -853,7 +1150,7 @@ metadata/_edit_use_anchors_ = true
 [node name="ExperincedCrew" type="TextureRect" parent="Shop/Cards"]
 visible = false
 layout_mode = 2
-texture = ExtResource("21_dlfh2")
+texture = ExtResource("21_niqw2")
 
 [node name="Label" type="Label" parent="Shop/Cards/ExperincedCrew"]
 layout_mode = 1
@@ -874,6 +1171,25 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Description" type="Label" parent="Shop/Cards/ExperincedCrew"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4375
+anchor_top = 0.5625
+anchor_right = 1.0625
+anchor_bottom = 0.5625
+offset_left = -20.0
+offset_top = 6.0
+offset_right = 180.0
+offset_bottom = 39.0
+scale = Vector2(0.2, 0.2)
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 25
+text = "Even Faster Cannons"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Price" type="HBoxContainer" parent="Shop/Cards/ExperincedCrew"]
 z_index = 1
 layout_mode = 2
@@ -887,7 +1203,8 @@ alignment = 1
 [node name="Coin" type="TextureRect" parent="Shop/Cards/ExperincedCrew/Price"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("7_xydeu")
+texture = ExtResource("13_f3stg")
+stretch_mode = 3
 
 [node name="Cost" type="Label" parent="Shop/Cards/ExperincedCrew/Price"]
 layout_mode = 2
@@ -921,7 +1238,7 @@ metadata/_edit_use_anchors_ = true
 [node name="EliteCrew" type="TextureRect" parent="Shop/Cards"]
 visible = false
 layout_mode = 2
-texture = ExtResource("21_dlfh2")
+texture = ExtResource("22_21wae")
 
 [node name="Label" type="Label" parent="Shop/Cards/EliteCrew"]
 layout_mode = 1
@@ -942,6 +1259,26 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Description" type="Label" parent="Shop/Cards/EliteCrew"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4375
+anchor_top = 0.5625
+anchor_right = 1.0625
+anchor_bottom = 0.5625
+offset_left = -20.0
+offset_top = 6.0
+offset_right = 180.0
+offset_bottom = 39.0
+scale = Vector2(0.2, 0.2)
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 25
+text = "Even Faster Cannons
+Than Before!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Price" type="HBoxContainer" parent="Shop/Cards/EliteCrew"]
 z_index = 1
 layout_mode = 2
@@ -955,7 +1292,8 @@ alignment = 1
 [node name="Coin" type="TextureRect" parent="Shop/Cards/EliteCrew/Price"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = ExtResource("7_xydeu")
+texture = ExtResource("13_f3stg")
+stretch_mode = 3
 
 [node name="Cost" type="Label" parent="Shop/Cards/EliteCrew/Price"]
 layout_mode = 2
@@ -986,12 +1324,19 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_caexn")
 theme_override_styles/focus = SubResource("StyleBoxFlat_caexn")
 metadata/_edit_use_anchors_ = true
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 [node name="Repair" type="TextureRect" parent="Shop/Cards"]
 visible = false
 layout_mode = 2
 texture = ExtResource("13_4witc")
+=======
+[node name="Repair" type="TextureRect" parent="Shop/Cards"]
+visible = false
+layout_mode = 2
+texture = ExtResource("23_aw8ns")
+>>>>>>> origin/Ainesh-WK-10
 
 [node name="Label" type="Label" parent="Shop/Cards/Repair"]
 layout_mode = 1
@@ -1046,6 +1391,10 @@ alignment = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("13_f3stg")
+<<<<<<< HEAD
+=======
+stretch_mode = 3
+>>>>>>> origin/Ainesh-WK-10
 
 [node name="Cost" type="Label" parent="Shop/Cards/Repair/Price"]
 layout_mode = 2
@@ -1120,6 +1469,47 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_3r1i8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_3sw3f")
 text = "MENU"
 
+<<<<<<< HEAD
+=======
+[node name="Stats" type="ColorRect" parent="DeadScreen"]
+offset_left = 823.0
+offset_top = 105.0
+offset_right = 1153.0
+offset_bottom = 557.0
+color = Color(0.47451, 0.313726, 0.215686, 0.203922)
+
+[node name="StatsLabel" type="Label" parent="DeadScreen/Stats"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 324.0
+offset_bottom = 83.0
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 80
+text = "STATS"
+horizontal_alignment = 1
+
+[node name="MoneyLabel" type="Label" parent="DeadScreen/Stats/StatsLabel"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 112.0
+offset_right = 327.0
+offset_bottom = 181.0
+text = "Total Money Collected: 
+0"
+horizontal_alignment = 1
+
+[node name="Kills" type="Label" parent="DeadScreen/Stats/StatsLabel"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 200.0
+offset_right = 327.0
+offset_bottom = 269.0
+text = "Total kills(not including bosses):
+0"
+horizontal_alignment = 1
+
+>>>>>>> origin/Ainesh-WK-10
 [node name="PopUpSettings" type="CanvasLayer" parent="."]
 process_mode = 3
 visible = false
@@ -1242,6 +1632,10 @@ stream = ExtResource("22_3yny4")
 volume_db = 15.0
 autoplay = true
 max_distance = 9.22337e+18
+<<<<<<< HEAD
+=======
+bus = &"SFX"
+>>>>>>> origin/Ainesh-WK-10
 
 [node name="Barrier" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -1254,10 +1648,15 @@ polygon = PackedVector2Array(0, 0, 0, -151, 12370, -157, 12370, 12291, -220, 122
 [connection signal="pressed" from="PauseMenu/Board/SETTINGS" to="PauseMenu" method="_on_settings_pressed"]
 [connection signal="pressed" from="PauseMenu/Board/MAIN MENU" to="PauseMenu" method="_on_main_menu_pressed"]
 [connection signal="pressed" from="PauseMenu/Board/QUIT" to="PauseMenu" method="_on_quit_pressed"]
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> origin/Ainesh-WK-10
 [connection signal="timeout" from="Cannonball" to="." method="_on_cannonball_timeout"]
 [connection signal="timeout" from="Galleon" to="." method="_on_enemy_galleon_timeout"]
 [connection signal="timeout" from="Rammer" to="." method="_on_rammer_timeout"]
+[connection signal="timeout" from="Bomber" to="." method="_on_rammer_timeout"]
+[connection signal="timeout" from="Progression" to="." method="_on_progression_timeout"]
 [connection signal="visibility_changed" from="Shop" to="Shop" method="_on_visibility_changed"]
 [connection signal="pressed" from="Shop/Cards/MoreBlackPowder/MorePlacePowderButton" to="Shop" method="_on_more_place_powder_button_pressed"]
 [connection signal="pressed" from="Shop/Cards/MoreCrew/MoreCrewButton" to="Shop" method="_on_more_crew_button_pressed"]
@@ -1270,3 +1669,8 @@ polygon = PackedVector2Array(0, 0, 0, -151, 12370, -157, 12370, 12291, -220, 122
 [connection signal="pressed" from="Shop/Cards/WealthierEnemies/WealthierEnemiesButton" to="Shop" method="_on_wealthier_enemies_button_pressed"]
 [connection signal="pressed" from="Shop/Cards/ExperincedCrew/ExperincedCrewButton" to="Shop" method="_on_experinced_crew_button_pressed"]
 [connection signal="pressed" from="Shop/Cards/EliteCrew/EliteCrewButton" to="Shop" method="_on_elite_crew_button_pressed"]
+[connection signal="pressed" from="Shop/Cards/Repair/BobTheBuilderButton" to="Shop" method="_on_bob_the_builder_button_pressed"]
+[connection signal="visibility_changed" from="DeadScreen" to="DeadScreen" method="_on_visibility_changed"]
+[connection signal="pressed" from="DeadScreen/Dead/Restart" to="DeadScreen" method="_on_restart_pressed"]
+[connection signal="pressed" from="DeadScreen/Dead/Main Menu" to="DeadScreen" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="PopUpSettings/MarginContainer/RESUMEButton" to="PopUpSettings" method="_on_resume_button_pressed"]

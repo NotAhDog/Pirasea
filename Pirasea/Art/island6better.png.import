@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://tixh3mqifn52"
+=======
+uid="uid://cvljgmxrb31mc"
+>>>>>>> origin/Ainesh-WK-10
 path="res://.godot/imported/island6better.png-d4e8308effccb1977a15b0001684ec0d.ctex"
 metadata={
 "vram_texture": false

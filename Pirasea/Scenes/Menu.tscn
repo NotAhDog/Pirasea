@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://0tetb5sw5505"]
+[gd_scene load_steps=11 format=3 uid="uid://0tetb5sw5505"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_bsgd2"]
 [ext_resource type="Texture2D" uid="uid://bomxyqi2nvenk" path="res://Art/Menu.png" id="2_2kxi5"]
+[ext_resource type="Texture2D" uid="uid://c5bi2lh6srw8g" path="res://Art/menubackground.png" id="2_10d86"]
 [ext_resource type="Theme" uid="uid://bage11eoe04ud" path="res://Themes/ingametheme.tres" id="3_ripkh"]
 [ext_resource type="FontFile" uid="uid://cf8w3t5vni62p" path="res://Themes/Freebooter-6yn1.ttf" id="4_dh0oj"]
 
@@ -21,6 +22,7 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Control" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,6 +33,14 @@ script = ExtResource("1_bsgd2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_10d86")
 
 [node name="Menu" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(579, 302)

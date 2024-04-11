@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=3 format=3 uid="uid://dm6irbe5gl1bg"]
 
 [ext_resource type="Texture2D" uid="uid://tixh3mqifn52" path="res://Art/island6better.png" id="1_7byk6"]
@@ -20,3 +21,28 @@ polygon = PackedVector2Array(524, 529, 580, 495, 647, 461, 693, 450, 748, 416, 7
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_p1juw")
+=======
+[gd_scene load_steps=3 format=3 uid="uid://b7v613h2lhaw7"]
+
+[ext_resource type="Texture2D" uid="uid://cvljgmxrb31mc" path="res://Art/island6better.png" id="1_gqyqh"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ldu85"]
+vertices = PackedVector2Array(86, 139, 85, 139, 125, 120, 500, -500, 500, 500, 189, -107, 158, -187, 152, -4, 150, -39, 167, 55, -16, 35, -65, 66, -65, 65, -18, 4, -500, -500, 79, -191, 32, -179, -74, -179, -153, -167, -500, 500, -160, -88, 7, 181, -82, 175, -138, 144, -137, 103, -133, -59, -65, -33)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(7, 8, 5, 4, 9), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(14, 3, 6, 15), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(14, 17, 18), PackedInt32Array(19, 14, 18, 20), PackedInt32Array(2, 9, 4), PackedInt32Array(0, 2, 4, 19, 21), PackedInt32Array(22, 21, 19), PackedInt32Array(23, 22, 19), PackedInt32Array(23, 19, 20, 24), PackedInt32Array(24, 20, 25, 12), PackedInt32Array(12, 25, 26, 13)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-129, 149, -510, 147, -511, -511, 511, -510, 510, 511, -511, 510, -510, 138, -135, 135, -79, 165, 5, 171, 81, 130, 118, 112, 156, 53, 142, -2, 140, -42, 178, -108, 151, -177, 80.0438, -181.24, 35, -169, -73, -169, -144, -158, -150, -92, -127, -68, -60, -42, -9, 0, -6, 40, -60, 74, -127, 109)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[node name="island_4" type="StaticBody2D"]
+position = Vector2(500, 500)
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(6, 6)
+texture = ExtResource("1_gqyqh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-126, 132, -118, 101, -92, 91, -3, 47, -7, 1, -57, -46, -126, -64, -155, -100, -145, -156, -78, -169, 60, -171, 132, -177, 174, -147, 177, -104, 155, -71, 133, -33, 151, 58, 140, 85, 107, 120, 32, 163, -59, 173)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_ldu85")
+>>>>>>> origin/Ainesh-WK-10

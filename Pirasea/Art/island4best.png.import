@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://vgmyqq0tndtm"
+=======
+uid="uid://dk8sr625efac8"
+>>>>>>> origin/Ainesh-WK-10
 path="res://.godot/imported/island4best.png-c96ffeab5e843c5426995cbba2ed10d3.ctex"
 metadata={
 "vram_texture": false

@@ -1,7 +1,5 @@
 extends CanvasLayer
 
-var player_in_area = false
-
 func _close_shop():
 	get_node("/root/Main/Shop").visible = false
 	for i in get_node("/root/Main/Shop/Cards").get_children():
@@ -120,3 +118,13 @@ func _on_elite_crew_button_pressed():
 func _on_visibility_changed():
 	if self.visible == true: get_tree().paused = true
 	else: get_tree().paused = false
+
+func _on_bob_the_builder_button_pressed():
+	if AutoloadScript.player_money >= int($Cards/Repair/Price/Cost.text):
+		if AutoloadScript.player_max_health > AutoloadScript.player_health: 
+			AutoloadScript.player_health += 1
+			AutoloadScript.player_money -= int($Cards/Repair/Price/Cost.text)
+			get_node("/root/Main/Player/Camera2D/UI/Money").text = "Money: " + str(AutoloadScript.player_money)
+			get_node("/root/Main/Player/Camera2D/UI/HealthBar").value = float(AutoloadScript.player_health) / AutoloadScript.player_max_health*100
+			AutoloadScript.cards_selected = []
+			_close_shop()

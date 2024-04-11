@@ -57,3 +57,6 @@ func calculate_steering(delta):
 
 func _on_area_2d_body_entered(body):
 	AutoloadScript.damaged(body)
+
+func _on_area_2d_area_entered(area):
+	AutoloadScript.damaged(area)

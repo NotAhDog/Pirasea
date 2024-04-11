@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bdfrc1rbd03ym" path="res://Art/Galleon.png" id="2_bv6mv"]
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_qeckk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -18,7 +20,7 @@ polygon = PackedVector2Array(-33, -24, -12, -24, 12, -21, 33, -12, 47, -4, 49, -
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-scale = Vector2(1.1, 1.1)
+scale = Vector2(1.2, 1.2)
 polygon = PackedVector2Array(-33, -24, -12, -24, 12, -21, 33, -12, 47, -4, 49, -2, 49, 2, 47, 4, 33, 12, 12, 21, -12, 24, -33, 24, -40, 23, -54, 3, -54, -3, -40, -22)
 
 [node name="SpawnHandler" type="Node2D" parent="."]
@@ -35,4 +37,5 @@ position = Vector2(-28, 32)
 [node name="Spawn4" type="Node2D" parent="SpawnHandler"]
 position = Vector2(-17, 32)
 
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

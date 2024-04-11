@@ -3,14 +3,21 @@ extends Node
 var cannonball = preload("res://Scenes/cannonball.tscn")
 var enemygalleon = preload("res://Scenes/enemygalleon.tscn")
 var enemyrammer = preload("res://Scenes/rammer.tscn")
+var pirategalleon = preload("res://Scenes/pirate_galleon.tscn")
+var piraterammer = preload("res://Scenes/pirate_rammer.tscn")
+var piratebomber = preload("res://Scenes/pirate_boomer.tscn")
+var navywarship = preload("res://Scenes/navywarship.tscn")
 var cannonballxv = 0
 var cannonballyv = 0
 var island0 = preload("res://Scenes/water.tscn")
 var island1 = preload("res://Scenes/island_1.tscn")
 var island2 = preload("res://Scenes/island_2.tscn")
 var island3 = preload("res://Scenes/island_3.tscn")
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> origin/Ainesh-WK-10
 var island4 = preload("res://Scenes/island_4.tscn")
 var island5 = preload("res://Scenes/island_5.tscn")
 var island6 = preload("res://Scenes/island_6.tscn")
@@ -23,9 +30,13 @@ var island4amount = 0
 var island5amount = 0
 var island6amount = 0
 var island7amount = 0
+<<<<<<< HEAD
 var rocksamount = 0
 var progressionLevel = 0
 >>>>>>> Stashed changes
+=======
+var progressionLevel = 0
+>>>>>>> origin/Ainesh-WK-10
 
 func _ready():
 	AutoloadScript.player_health += 1
@@ -33,32 +44,45 @@ func _ready():
 		var yposis = 1000 + (i * 2000)
 		for x in range(6):
 			var xposis = 1000 + (x * 2000)
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 			_spawn_island(randi_range(0,4), xposis, yposis)
 			
 =======
 			_spawn_island(randi_range(0,8), xposis, yposis)
+=======
+			_spawn_island(randi_range(1,9), xposis, yposis)
+>>>>>>> origin/Ainesh-WK-10
 	print("Water: " + str(island0amount))
 	print("Island 1: " + str(island1amount))
 	print("Island 2: " + str(island2amount))
 	print("Shops: " + str(island3amount))
+<<<<<<< HEAD
 	print ("Island 4: " + str(island4amount))
 	print ("Island 5: " + str(island5amount))
 	print ("Island 6: " + str(island6amount))
 	print ("Island 7: " + str(island7amount))
 
 >>>>>>> Stashed changes
+=======
+
+>>>>>>> origin/Ainesh-WK-10
 func _spawn_island(island, x, y):
 	var islandinstance = island0.instantiate() 
 	var randdirection = [0.0, 90.0, 180.0, 270.0]
 	if island == 1: 
 		islandinstance = island1.instantiate() 
-	if island == 2: 
+		island1amount += 1
+	elif island == 2: 
 		islandinstance = island2.instantiate() 
-	if island == 3: 
+		island2amount += 1
+	elif island == 3: 
 		islandinstance = island3.instantiate() 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> origin/Ainesh-WK-10
 		island3amount += 1
 	elif island == 4: 
 		islandinstance = island4.instantiate() 
@@ -72,7 +96,12 @@ func _spawn_island(island, x, y):
 	elif island == 7: 
 		islandinstance = island7.instantiate() 
 		island7amount += 1
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+	else:
+		island0amount += 1
+>>>>>>> origin/Ainesh-WK-10
 	add_child(islandinstance)
 	islandinstance.position.x = x
 	islandinstance.position.y = y
@@ -146,3 +175,42 @@ func _on_rammer_timeout():
 	var enemyrammerinstance = enemyrammer.instantiate()
 	add_child(enemyrammerinstance)
 	enemyrammerinstance.position = AutoloadScript._choose_random_spawn()
+
+func _on_progression_timeout():
+	progressionLevel += 1
+	if progressionLevel == 1:
+		$Galleon.wait_time = 4
+	if progressionLevel > 2 and progressionLevel <= 10:
+		$Galleon.wait_time -= 0.25
+	if progressionLevel > 4 and progressionLevel <= 13:
+		$Rammer.wait_time -= 1/3
+	if progressionLevel == 4:
+		$Rammer.start(0)
+	if progressionLevel == 8:
+		$Bomber.start(0)
+	if progressionLevel > 8 and progressionLevel <= 14:
+		$Rammer.wait_time -= 1/3
+	#At the 5 minute mark, Rammers spawn every 8 seconds and Galleons 2 seconds
+	#At the 7 minutes mark, rammers are spawning ever 6 2/3 seconds and Bombers every 6 seconds
+	if progressionLevel == 10:
+		for x in range(4):
+			var fleet = pirategalleon.instantiate()
+			self.add_child(fleet)
+			fleet.position = AutoloadScript._choose_random_spawn()
+		for x in range(4):
+			var fleet = piraterammer.instantiate()
+			self.add_child(fleet)
+			fleet.position = AutoloadScript._choose_random_spawn()
+		for x in range(4):
+			var fleet = piratebomber.instantiate()
+			self.add_child(fleet)
+			fleet.position = AutoloadScript._choose_random_spawn()
+	if progressionLevel == 20:
+		var warship = navywarship.instantiate()
+		self.add_child(warship)
+		warship.position = AutoloadScript._choose_random_spawn()
+	print("Progression Level: " + str(progressionLevel))
+	print("Galleon " + str($Galleon.wait_time))
+	print("Rammer " + str($Rammer.wait_time))
+	print("Bomber " + str($Bomber.wait_time))
+	
