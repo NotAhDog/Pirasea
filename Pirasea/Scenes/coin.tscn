@@ -12,5 +12,5 @@ texture = ExtResource("1_fq477")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_kkopo")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered2"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dadc2u4m8itxp"]
+[gd_scene load_steps=58 format=3 uid="uid://dadc2u4m8itxp"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_m3yls"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="2_i2gmc"]
@@ -9,7 +9,6 @@
 [ext_resource type="FontFile" uid="uid://cf8w3t5vni62p" path="res://Themes/Freebooter-6yn1.ttf" id="5_obd52"]
 [ext_resource type="Theme" uid="uid://bage11eoe04ud" path="res://Themes/ingametheme.tres" id="7_lo45m"]
 [ext_resource type="Texture2D" uid="uid://c4xyf3wo42epi" path="res://Art/Health Bar.png" id="9_3norj"]
-[ext_resource type="Texture2D" uid="uid://c81ol31kbyrn2" path="res://Art/CrewAttackUpgrade.png" id="13_4witc"]
 [ext_resource type="Texture2D" uid="uid://dwmlpvdiyeq8p" path="res://Art/Coin bag.png" id="13_f3stg"]
 [ext_resource type="Texture2D" uid="uid://xpedvcodd4x2" path="res://Art/MoreCrewUpgrade (1).png" id="13_vb5vl"]
 [ext_resource type="Texture2D" uid="uid://bkqmu4n5c1s1d" path="res://Art/BP.png" id="14_6hbjp"]
@@ -31,6 +30,8 @@
 [ext_resource type="Script" path="res://Scripts/MAIN MENU SLIDER.gd" id="23_y2ajh"]
 [ext_resource type="Script" path="res://Scripts/SFX SLIDER.gd" id="24_cy5by"]
 [ext_resource type="Script" path="res://Scripts/MUSIC SLIDER.gd" id="25_u1klt"]
+[ext_resource type="Texture2D" uid="uid://b8j4am35m6rw0" path="res://Art/Chestclosed.png" id="30_g2wyj"]
+[ext_resource type="Texture2D" uid="uid://dcqhfilfxf5sv" path="res://Art/Chestopened.png" id="31_2u2i7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1y6k"]
 atlas = ExtResource("3_1u3cd")
@@ -175,6 +176,16 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7eir2"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_icw8s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s8net"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jdtdy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_srmtm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jq3oo"]
 
 [node name="Main" type="Node"]
 process_mode = 1
@@ -1622,6 +1633,71 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_0bmtd")
 theme_override_styles/focus = SubResource("StyleBoxFlat_7eir2")
 text = "RESUME"
 
+[node name="WinScreen" type="CanvasLayer" parent="."]
+
+[node name="Closed" type="Sprite2D" parent="WinScreen"]
+visible = false
+position = Vector2(510, 330)
+scale = Vector2(6, 6)
+texture = ExtResource("30_g2wyj")
+
+[node name="Button" type="Button" parent="WinScreen/Closed"]
+offset_left = -35.0
+offset_top = -21.0
+offset_right = 35.0
+offset_bottom = 28.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_icw8s")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s8net")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jdtdy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_srmtm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jq3oo")
+
+[node name="Opened" type="Sprite2D" parent="WinScreen"]
+visible = false
+position = Vector2(510, 330)
+scale = Vector2(6, 6)
+texture = ExtResource("31_2u2i7")
+
+[node name="Label" type="Label" parent="WinScreen/Opened"]
+offset_left = -12.4999
+offset_top = -26.5
+offset_right = 264.5
+offset_bottom = 56.5
+scale = Vector2(0.1, 0.1)
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 80
+text = "Congrats!"
+
+[node name="Button" type="Button" parent="WinScreen/Opened"]
+offset_left = -28.1667
+offset_top = -14.0
+offset_right = -4.16667
+offset_bottom = -5.0
+scale = Vector2(0.1, 0.1)
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_icw8s")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s8net")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jdtdy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_srmtm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jq3oo")
+text = "Go again"
+
+[node name="Button2" type="Button" parent="WinScreen/Opened"]
+offset_left = 9.66667
+offset_top = -13.3333
+offset_right = 137.667
+offset_bottom = 57.6667
+scale = Vector2(0.1, 0.1)
+theme = ExtResource("7_lo45m")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_icw8s")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s8net")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jdtdy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_srmtm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jq3oo")
+text = "Menu"
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("22_3yny4")
 volume_db = 2.5
@@ -1635,6 +1711,7 @@ collision_mask = 2
 
 [node name="Barrier" type="CollisionPolygon2D" parent="Barrier"]
 polygon = PackedVector2Array(0, 0, 0, -151, 12370, -157, 12370, 12291, -220, 12290, -171, -147, 0, -151, 0, 12032, 12032, 12032, 12032, 0)
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="PauseMenu/Board/RESUME" to="PauseMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenu/Board/SETTINGS" to="PauseMenu" method="_on_settings_pressed"]

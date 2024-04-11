@@ -21,7 +21,9 @@ var cards_selected = []
 func damaged(body):
 	if "coin" in str(body).to_lower():
 		player_money += 1
+		total_collected_money += 1
 		get_node("/root/Main/Player/Camera2D/UI/Money").text = "Money: " + str(player_money)
+		get_node("/root/Main/DeadScreen/Stats/StatsLabel/MoneyLabel").text = "Total Collected Money: " + str(player_money)
 		body.queue_free()
 	if iframes == false:
 		if "boom" in str(body).to_lower() or "body" in str(body).to_lower() or "harpoon" in str(body).to_lower():

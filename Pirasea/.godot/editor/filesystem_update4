@@ -1,6 +1,7 @@
-res://Scenes/Menu.tscn
-res://Scripts/boom.gd
 res://Scenes/main.tscn
+res://Scripts/boom.gd
+res://Scripts/autoload.gd
+res://Scenes/Menu.tscn
 res://Scenes/autoload.tscn
 res://Scenes/pirate_boomer.tscn
 res://Scenes/pirate_galleon.tscn
@@ -8,6 +9,3 @@ res://Scenes/pirate_rammer.tscn
 res://Scenes/galleon.tscn
 res://Scenes/rocks.tscn
 res://Scenes/coin.tscn
-res://Scripts/bomber.gd
-res://Scripts/enemygalleon.gd
-res://Scripts/rammer.gd
